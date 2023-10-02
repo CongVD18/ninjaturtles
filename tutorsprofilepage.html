@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="profilepage.css">
+    <!-- Internal CSS -->
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            list-style:none;
+            font-family:'Josefin Sans', sans-serif;
+        }
+        .container{
+            display:flex;
+        }
+        .content{
+            display:flex;
+            background-color:#f0f0f0;
+            padding:20px;
+            border: 2px solid black;
+            width: 80%;
+            margin:20px;
+        }
+        .leftColumn{
+            flex:30%;
+            padding:30px 25px;
+            width:35%;
+            background: linear-gradient(to right,#01a9ac,#01dbd0);
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+            text-align:center;
+            color:#fff;
+        }
+        .leftColumn img{
+            margin-bottom:10px;
+            border-radius:5px;
+        }
+
+        .leftColumn h4{
+            margin-bottom:10px;
+        }
+        .leftColumn p{
+            font-size:15px;
+        }
+
+        .rightColumn{
+            flex:70%;
+            padding:10px;
+            width:65%;
+            background: #fff;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+            padding: 30px 25px;
+        }
+        .rightColumn h2{
+            margin-bottom:15px;
+            padding-bottom:5px;
+            border-bottom:1px solid #e0e0e0;
+            color:#353c4e;
+            text-transform: uppercase;
+            letter-spacing:5px;
+        }
+        .rightColumn h4{
+            font-size: 25px;
+            margin-bottom:5px;
+        }
+        .rightColumn p{
+            font-size:17px;
+            margin-bottom:15px;
+        }
+        textarea{
+            width:80%;
+            font-size: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="item">
+            <img class="icon" src="/icon1" />
+            <div class="text">The App</div>
+        </div>
+        <hr />
+        <div class="item">
+            <img class="icon" src="/icon2" />
+            <div class="text">Home</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon3" />
+            <div class="text">Resources</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon4" />
+            <div class="text">Learning materials</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon4" />
+            <div class="text">Profile</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon5" />
+            <div class="text">Settings</div>
+        </div>
+    </div>
+    
+    <!-- Kids Profile -->
+    <div class="content">
+        <div class="leftColumn">
+            <img src="images/tutor man.jpg" width="150" alt="Profile Picture">
+            <h3>Recent status:</h3>
+            <br />
+            <p>"I like to teach children!"</p>
+        </div>
+        <div class="rightColumn">
+            <div class="profile">
+                <h2>Profile Details</h2>
+                <div class ="profile_data">
+                    <div class ="data">
+                        <h4>Name</h4>
+                        <p>Mr Ong</p>
+                    </div>
+                    <div class="data">
+                        <h4>Age</h4>
+                        <p>52</p>
+                    </div>
+                    <div class="data">
+                        <h4>Highest Qualification</h4>
+                        <p>Bachelors Degree - National University of Singapore (1990)</p>
+                    </div>
+                    <div class="data">
+                        <h4>Prefers to teach</h4>
+                        <p>Primary School - Math and Science</p>
+                        <p>Secondary School - Physics</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

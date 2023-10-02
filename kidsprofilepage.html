@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="profilepage.css">
+    <!-- Internal CSS -->
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            list-style:none;
+            font-family:'Josefin Sans', sans-serif;
+        }
+        .container{
+            display:flex;
+        }
+        .content{
+            display:flex;
+            background-color:#f0f0f0;
+            padding:20px;
+            border: 2px solid black;
+            width: 80%;
+            margin:20px;
+        }
+        .leftColumn{
+            flex:30%;
+            padding:30px 25px;
+            width:35%;
+            background: linear-gradient(to right,#01a9ac,#01dbd0);
+            border-top-left-radius:5px;
+            border-bottom-left-radius:5px;
+            text-align:center;
+            color:#fff;
+        }
+        .leftColumn img{
+            margin-bottom:10px;
+            border-radius:5px;
+        }
+
+        .leftColumn h4{
+            margin-bottom:10px;
+        }
+        .leftColumn p{
+            font-size:15px;
+        }
+
+        .rightColumn{
+            flex:70%;
+            padding:10px;
+            width:65%;
+            background: #fff;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+            padding: 30px 25px;
+        }
+        .rightColumn h2{
+            margin-bottom:15px;
+            padding-bottom:5px;
+            border-bottom:1px solid #e0e0e0;
+            color:#353c4e;
+            text-transform: uppercase;
+            letter-spacing:5px;
+        }
+        .rightColumn h4{
+            font-size: 25px;
+            margin-bottom:5px;
+        }
+        .rightColumn p{
+            font-size:17px;
+            margin-bottom:15px;
+        }
+        textarea{
+            width:80%;
+            font-size: 15px;
+        }
+        .profile-container{
+            display:flex;
+            flex-direction:column;
+            width:85%;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="item">
+            <img class="icon" src="/icon1" />
+            <div class="text">The App</div>
+        </div>
+        <hr />
+        <div class="item">
+            <img class="icon" src="/icon2" />
+            <div class="text">Dashboard</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon3" />
+            <div class="text">Search</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon4" />
+            <div class="text">Insights</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon4" />
+            <div class="text">Docs</div>
+        </div>
+        <div class="item">
+            <img class="icon" src="/icon5" />
+            <div class="text">Settings</div>
+        </div>
+    </div>
+    
+    <div class="profile-container">
+    <!-- Kids Profile -->
+    <div class="content">
+        <div class="leftColumn">
+            <img src="images/wad2_secondary.jpg" width="150" alt="Profile Picture">
+            <h3>Recent status:</h3>
+            <br />
+            <p>"I need help for O-Levels!"</p>
+        </div>
+        <div class="rightColumn">
+            <div class="profile">
+                <h2>Child's Details</h2>
+                <div class ="profile_data">
+                    <div class ="data">
+                        <h4>Name</h4>
+                        <p>Joshua Soh</p>
+                    </div>
+                    <div class="data">
+                        <h4>Age</h4>
+                        <p>15</p>
+                    </div>
+                    <div class="data">
+                        <h4>Level</h4>
+                        <p>Secondary School</p>
+                    </div>
+                    <div class="data">
+                        <h4>Bio</h4>
+                        <textarea rows="10">I like to eat pie.</textarea>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+    <!-- Parents Profile -->
+    <div class="content">
+        <div class="leftColumn" style="background: linear-gradient(to right,#a645c9,#c778dd)">
+            <img src="images/woman.jpg" width="150" alt="Profile Picture">
+            <h3>Recent status:</h3>
+            <br />
+            <p>"I need some help..."</p>
+        </div>
+        <div class="rightColumn">
+            <div class="profile">
+                <h2>Parent's Details</h2>
+                <div class ="profile_data">
+                    <div class ="data">
+                        <h4>Name</h4>
+                        <p>Mary Jane</p>
+                    </div>
+                    <div class="data">
+                        <h4>Age</h4>
+                        <p>42</p>
+                    </div>
+                    <div class="data">
+                        <h4>Email</h4>
+                        <p>maryjane1@gmail.com</p>
+                    </div>
+                    <div class="data">
+                        <h4>Number</h4>
+                        <p>+65 92132132</p>
+                    </div>
+                    <div class="data">
+                        <h4>Bio</h4>
+                        <textarea rows="10">Looking for a tutor to help me teach my son... he eats too much pie... please contact me at @maryjane1@gmail.com or 92132132.</textarea>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
