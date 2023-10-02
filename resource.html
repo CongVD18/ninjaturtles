@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!"> APP NAME</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#!">Home</a></li>
+          <li><a href="#!">Resource Library</a></li>
+          <!-- <li>
+            <a href="#!">Services</a>
+            <ul class="nav-dropdown">
+              <li><a href="#!">Web Design</a></li>
+              <li><a href="#!">Web Development</a></li>
+              <li><a href="#!">Graphic Design</a></li>
+            </ul>
+          </li> -->
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#!">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </section>
+  <div class="overall">
+    <div class="academic-contents">
+      <div class="academic-level" onclick="redirect()">
+        Primary Level
+      </div>
+      <div class="academic-level" onclick="redirect()">
+        Secondary Level
+      </div>
+    </div>
+    
+  </div>
+  
+  <script src="website.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+</body>
+</html>
