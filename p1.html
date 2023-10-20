@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation Bar</title>
+    <!-- Include Tailwind CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!"> APP NAME</a>
+      </div>
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#!">Home</a></li>
+          <li><a href="#!">Resource Library</a></li>
+          <!-- <li>
+            <a href="#!">Services</a>
+            <ul class="nav-dropdown">
+              <li><a href="#!">Web Design</a></li>
+              <li><a href="#!">Web Development</a></li>
+              <li><a href="#!">Graphic Design</a></li>
+            </ul>
+          </li> -->
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="#!">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+  </section>
+  <div class="tab-group">
+    <div class="tab">
+      <input class="tab-radio" type="radio" id="tab-1" name="tab-group[]" checked>
+      <label class="tab-label" for="tab-1">Worksheets</label>
+      <div class="tab-content">
+        <div class="content-row">
+            <div class="card">
+              <div class="image"></div>
+                <div class="content">
+                  <a href="#">
+                   <span class="title">
+                     English Comprehension 1
+                   </span>
+                  </a>
+                  <p class="desc">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                   dolores, possimus pariatur animi temporibus nesciunt praesentium 
+                  </p>
+                  <button class="action" onclick="window.open('resources/Intern Testimonial.pdf', '_blank')">
+                    View Content
+                  </button>
+                  <a href="resources/Intern Testimonial.pdf" download>
+                    <button class="action">
+                      Download
+                    </button>
+                  </a>
+                </div>
+            </div>
+            <div class="card">
+              <div class="image"></div>
+                <div class="content">
+                  <a href="#">
+                   <span class="title">
+                     English Comprehension 2
+                   </span>
+                  </a>
+                  <p class="desc">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                   dolores, possimus pariatur animi temporibus nesciunt praesentium 
+                  </p>
+                  <button class="action" onclick="window.open('resources/Intern Testimonial.pdf', '_blank')">
+                    View Content
+                  </button>
+                  <a href="resources/Intern Testimonial.pdf" download>
+                    <button class="action">
+                      Download
+                    </button>
+                  </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="tab">
+      <input class="tab-radio" type="radio" id="tab-2" name="tab-group[]" >
+      <label class="tab-label" for="tab-2">Lecture Notes</label>
+      <div class="tab-content">
+        Lecture Notes are boring
+      </div>
+    </div>
+    <div class="tab">
+      <input class="tab-radio" type="radio" id="tab-3" name="tab-group[]" >
+      <label class="tab-label" for="tab-3">Past Year Exams</label>
+      <div class="tab-content">
+        Exams are important
+      </div>
+    </div>
+    <div class="tab">
+      <a href="#pop-up" class="tab-button">Upload</a>
+    </div>
+    <div id="popup1" class="popup-overlay">
+      <div class="popup">
+            <h2>Upload Form</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+              <input type="text">
+            </div>
+      </div>
+    </div>
+    <div class="popup-overlay" id="pop-up">
+      <form class="popup">
+        <h2>UPLOAD FORM</h2>
+        <a class="close" href="#">&times;</a>
+
+        <p type="Title:"><input class="text" placeholder="Write your file title here.."></input></p>
+        <p type="Short Description:"><input class="text" placeholder="Write your file description here.."></input></p>
+        <p type="Document File:"><input type="file" id="myFile" name="filename"></input></p><br>
+        
+        
+
+        <button type="submit" class="btn">Upload</button>
+
+      </form>
+    </div>
+  </div>
+  
+  <script src="website.js"></script>
+  
+</body>
+</html>
