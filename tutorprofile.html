@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .max-dimensions {
+            max-width: 300px;
+            max-height: 200px;
+        }
+        .image-upload {
+            text-align: center;
+            position: relative;
+        }
+        .image-preview {
+            width: 200px; /* Set the desired width */
+            height: 300px; /* Set the desired height */
+            border: 2px dashed #ccc;
+            padding: 10px;
+            cursor: pointer;
+            position: relative;
+            margin: 0 auto; /* Center horizontally */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+        }
+        #imageUpload {
+            display: none;
+        }
+        .upload-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .subject-container {
+            display: inline-block;
+            width: auto; /* Let it adjust its width based on content */
+            vertical-align: top;
+        }
+
+        /* Add some margin between the containers */
+        .subject-container + .subject-container {
+            margin-left: 10px;
+        }
+
+        /* Adjust styles for the label elements if needed */
+        .subject-container label {
+            margin-bottom: 5px;
+            display: block;
+        }
+    </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const teachPrimaryCheckbox = document.getElementById('teachPrimary');
+            const teachLowerSecondaryCheckbox = document.getElementById('teachLowerSecondary');
+            const teachUpperSecondaryCheckbox = document.getElementById('teachUpperSecondary');
+            const primarySubjectsList = document.getElementById('primarySubjects');
+            const lowerSecondarySubjectsList = document.getElementById('lowerSecondarySubjects');
+            const upperSecondarySubjectsList = document.getElementById('upperSecondarySubjects');
+
+            // Event listeners for checkboxes
+            teachPrimaryCheckbox.addEventListener('change', function () {
+                if (teachPrimaryCheckbox.checked) {
+                    primarySubjectsList.style.display = 'block';
+                } else {
+                    primarySubjectsList.style.display = 'none';
+                }
+            });
+
+            teachLowerSecondaryCheckbox.addEventListener('change', function () {
+                if (teachLowerSecondaryCheckbox.checked) {
+                    lowerSecondarySubjectsList.style.display = 'block';
+                } else {
+                    lowerSecondarySubjectsList.style.display = 'none';
+                }
+            });
+
+            teachUpperSecondaryCheckbox.addEventListener('change', function () {
+                if (teachUpperSecondaryCheckbox.checked) {
+                    upperSecondarySubjectsList.style.display = 'block';
+                } else {
+                    upperSecondarySubjectsList.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!"> APP NAME</a>
+          </div>
+          <nav>
+            <div class="nav-mobile">
+              <a id="nav-toggle" href="#!"><span></span></a>
+            </div>
+            <ul class="nav-list">
+              <li><a href="#!">Home</a></li>
+              <li><a href="#!">Resource Library</a></li>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="#!">Log Out</a></li>
+            </ul>
+          </nav>
+        </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 p-3 border bg-light">
+                    <form class="row g-3" id="profileForm" enctype="multipart/form-data">
+                        <!-- Image Upload and User Information -->
+                        <div class="col-md-3 col-sm-12 text-center">
+                            <div class="image-upload">
+                                <label for="imageUpload" class="form-label">Profile Image</label>
+                                <div class="image-preview">
+                                    <input type="file" id="imageUpload" name="profileImage" accept="image/*">
+                                    <label for="imageUpload" class="upload-button">Upload Image</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Side (Form) -->
+                        <div class="col-md-9 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="firstName">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="emailAddress" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="emailAddress">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contactNumber" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control" id="emailAddress">
+                                </div>
+                            </div>
+                                <div class="col-9">
+                                    <label for="contactNumber" class="form-label">Highest Education Qualification</label>
+                                    <input type="text" class="form-control" id="educationQualification">
+                                </div>
+                                <div class="col-9">
+                                    <label for="contactNumber" class="form-label">Current School</label>
+                                    <input type="text" class="form-control" id="educationQualification">
+                                </div>
+                        <!-- Checkbox Options -->
+                        <div class="col-12">
+                            <label class="form-label">I prefer to teach:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="teachPrimary">
+                                <label class="form-check-label" for="teachPrimary">Primary School</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="teachLowerSecondary">
+                                <label class="form-check-label" for="teachLowerSecondary">Lower Secondary</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="teachUpperSecondary">
+                                <label class="form-check-label" for="teachUpperSecondary">Upper Secondary</label>
+                            </div>
+                        </div>
+
+                            <!-- Checkbox Options - Preferred Subjects (Initially Hidden) -->
+                        <div class="col-12 pt-3 pb-3" id="preferredSubjects">
+                            <label class="form-label">Preferred Subjects:</label>
+                            <div class="d-flex flex-wrap">
+                        <!-- Primary School Subjects -->
+                        <div id="primarySubjects" style="display: none;" class="subject-container">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="primaryMathSubject">
+                                <label class="form-check-label" for="mathSubject">Primary School Math</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="primaryEnglishSubject">
+                                <label class="form-check-label" for="englishSubject">Primary School English</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="primaryScienceSubject">
+                                <label class="form-check-label" for="scienceSubject">Primary School Science</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="primaryChineseSubject">
+                                <label class="form-check-label" for="chineseSubject">Primary School Chinese</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="primaryHigherChineseSubject">
+                                <label class="form-check-label" for="higherChineseSubject">Primary School Higher Chinese</label>
+                            </div>
+                        </div>
+
+                            <!-- Lower Secondary Subjects -->
+                            <div id="lowerSecondarySubjects" style="display: none;" class="subject-container">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecMathSubject">
+                                    <label class="form-check-label" for="mathSubject">Lower Sec Math</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecEnglishSubject">
+                                    <label class="form-check-label" for="englishSubject">Lower Sec English</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecScienceSubject">
+                                    <label class="form-check-label" for="scienceSubject">Lower Sec Science</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecChineseSubject">
+                                    <label class="form-check-label" for="chineseSubject">Lower Sec Chinese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecChineseSubject">
+                                    <label class="form-check-label" for="higherChineseSubject">Lower Sec Higher Chinese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecGeographySubject">
+                                    <label class="form-check-label" for="geographySubject">Lower Sec Geography</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecHistorySubject">
+                                    <label class="form-check-label" for="historySubject">Lower Sec History</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="lowerSecLiteratureSubject">
+                                    <label class="form-check-label" for="literatureSubject">Lower Sec Literature</label>
+                                </div>
+                            </div>
+
+                            <!-- Upper Secondary Subjects -->
+                            <div id="upperSecondarySubjects" style="display: none;" class="subject-container">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecEMathSubject">
+                                    <label class="form-check-label" for="mathSubject">Upper Sec E Math</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecAMathSubject">
+                                    <label class="form-check-label" for="mathSubject">Upper Sec A Math</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecEnglishSubject">
+                                    <label class="form-check-label" for="englishSubject">Upper Sec English</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecPhysicsSubject">
+                                    <label class="form-check-label" for="physicsSubject">Upper Sec Physics</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecChemistrySubject">
+                                    <label class="form-check-label" for="chemSubject">Upper Sec Chemistry</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecBiologySubject">
+                                    <label class="form-check-label" for="bioSubject">Upper Sec Biology</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecChineseSubject">
+                                    <label class="form-check-label" for="chineseSubject">Upper Sec Chinese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecChineseSubject">
+                                    <label class="form-check-label" for="higherChineseSubject">Upper Sec Higher Chinese</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecGeographySubject">
+                                    <label class="form-check-label" for="geographySubject">Upper Sec Geography</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecHistorySubject">
+                                    <label class="form-check-label" for="historySubject">Upper Sec History</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecSocialStudiesySubject">
+                                    <label class="form-check-label" for="historySubject">Upper Sec Social Studies</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecLiteratureSubject">
+                                    <label class="form-check-label" for="literatureSubject">Upper Sec Literature</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="upperSecPOASubject">
+                                    <label class="form-check-label" for="literatureSubject">Principles of Accounts</label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
