@@ -100,35 +100,25 @@
                 </form>
             </div>
 
-            <!-- Registration Container (Initially hidden) -->
             <div class="registration_container" style="display: none;">
                 <form action="">
                     <h1>Register</h1>
-
-                    <!-- Registration form input fields here -->
                     <div class="input_box">
                         <input type="text" value="Full Name" required>
-                        
                     </div>
-
                     <div class="input_box">
-                        <input type="email" value="Email" required>
-                        
+                        <input type="email" placeholder="Email" required>
                     </div>
-
                     <div class="input_box">
-                        <input type="password" value="password" required>
-                        
+                        <input type="password" placeholder="Password" required>
                     </div>
-
                     <button type="submit" class="btn">Register</button>
-
-                    <!-- Switch to Login Button in Registration Container -->
                     <div class="login_link">
                         <p>Already have an account? <a href="#" onclick="toggleForm('login')">Back to Login</a></p>
                     </div>
                 </form>
             </div>
+
         </div>
     </div>
 </div>
@@ -155,6 +145,8 @@
         }
     }
 
+
+
     function toggleForm(formType) {
         var loginContainer = document.querySelector(".login_container");
         var registrationContainer = document.querySelector(".registration_container");
@@ -162,11 +154,13 @@
         if (formType === 'login') {
             loginContainer.style.display = "block";
             registrationContainer.style.display = "none";
-        } else if (formType === 'registration') {
+        } 
+        else if (formType === 'registration') {
             loginContainer.style.display = "none";
             registrationContainer.style.display = "block";
         }
     }
+
 </script>
 </body>
 </html>
