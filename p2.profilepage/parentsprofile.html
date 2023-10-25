@@ -11,6 +11,39 @@
         max-width: 300px;
         max-height: 200px;
     }
+      .image-upload {
+        text-align: center;
+        position: relative;
+        }
+
+      .image-preview {
+        width: 200px; /* Set the desired width */
+        height: 300px; /* Set the desired height */
+        border: 2px dashed #ccc;
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        margin: 0 auto; /* Center horizontally */
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+      }
+
+      #imageUpload, #imageUpload2 {
+        display: none;
+      }
+
+      .upload-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: #007bff;
+        cursor: pointer;
+      }
+
+      
     </style>
 </head>
 <body>
@@ -36,45 +69,57 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="p-3 border bg-light">
-                      <img src="images/woman.jpg" alt="Image Description" class="img-fluid mx-auto d-block mb-3 max-dimensions">
-                        <form class="row g-3">
+                      <form class="row g-3" enctype="multipart/form-data" id="parentForm">                        <!-- Add the input field for uploading an image -->
+                        <div class="col-12 image-upload">
+                          <label for="imageUpload" class="form-label">Parent</label>
+                          <div class="image-preview">
+                            <div id="imagePreview" class="image-placeholder"></div>
+                            <input type="file" id="imageUpload" accept="image/*">
+                            <label for="imageUpload" class="upload-button">Upload Image</label>
+                          </div>
+                        </div>
                             <div class="col-md-6">
                               <label for="firstName" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="firstName">
+                              <input type="text" class="form-control" id="firstName" required>
                             </div>
                             <div class="col-md-6">
                               <label for="lastName" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="lastName">
+                              <input type="text" class="form-control" id="lastName" required>
                             </div>
                             <div class="col-12">
                               <label for="emailAddress" class="form-label">Email Address</label>
-                              <input type="email" class="form-control" id="emailAddress" placeholder="jocelyn.tan@gmail.com">
+                              <input type="email" class="form-control" id="emailAddress" required>
                             </div>
                             <div class="col-12">
                               <label for="contactNumber" class="form-label">Contact Number</label>
-                              <input type="number" class="form-control" id="phoneNumber">
+                              <input type="number" class="form-control" id="phoneNumber" required>
                             </div>
                             <div class="col-12">
                               <label for="inputBio" class="form-label">Bio</label>
                               <textarea class="form-control" id="inputBio"></textarea>
-                            </div>
-                            <div class="col-12 text-center">
-                              <button type="submit" class="btn btn-primary">Save Details</button>
                             </div>
                           </form>
                           </div>
                         </div>
                   <div class="col-sm-12 col-md-6">
                     <div class="p-3 border bg-light">
-                      <img src="images/wad2_secondary.jpg" alt="Image Description" class="img-fluid mx-auto d-block mb-3 max-dimensions">
-                        <form class="row g-3">
+                      <form class="row g-3" enctype="multipart/form-data" id="childForm">
+                        <!-- Add the input field for uploading an image -->
+                        <div class="col-12 image-upload">
+                          <label for="imageUpload" class="form-label">Child</label>
+                          <div class="image-preview">
+                            <div id="imagePreview2" class="image-placeholder"></div>
+                            <input type="file" id="imageUpload2" accept="image/*">
+                            <label for="imageUpload" class="upload-button">Upload Image</label>
+                          </div>
+                        </div>
                             <div class="col-md-6">
                               <label for="firstName" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="firstNameChild">
+                              <input type="text" class="form-control" id="firstNameChild" required>
                             </div>
                             <div class="col-md-6">
                               <label for="lastName" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="lastNameChild">
+                              <input type="text" class="form-control" id="lastNameChild" required>
                             </div>
                             <div class="col-12">
                               <label for="educationLevel" class="form-label">Current Education Level</label>
@@ -87,21 +132,23 @@
 
                           <!-- Create a list of all MRT's in Singapore -->
                             <div class="col-12">
-                              <label for="nearestMRT" class="form-label">Nearest MRT</label>
-                              <input type="text" class="form-control" id="nearestMRT">
+                              <label for="nearestMRT">Nearest MRT: </label>
+                              <select id="nearestMRT" name="nearestMRT">
+                                  <!-- The dropdown options will be added here -->
+                              </select>
                             </div>
                             <div class="col-12">
                               <label for="subjects" class="form-label">Subjects</label>
                               <div id="subjects-checkbox">
                                 <!-- The checkbox options will be added here dynamically -->
                             </div>
-                            <div class="col-12 pt-3 text-center">
-                              <button type="submit" class="btn btn-primary">Save Details</button>
-                            </div>
                           </form>
                           </div>
                         </div>
         </div>
+        <div class="col-12 text-center pt-3">
+          <button type="submit" id="saveDetailsButton" class="btn btn-primary">Save Details</button>
+      </div>
         </div>
 
         <script>
@@ -160,6 +207,46 @@
       
           // Initial update based on the selected education level
           updateSubjectsCheckboxes();
+
+          document.getElementById('saveDetailsButton').addEventListener('click', function() {
+          // You can add form validation here if needed
+          
+          // Submit both forms
+          document.getElementById('parentForm').submit();
+          document.getElementById('childForm').submit();
+
+          
+          });
+
+          function populateDropdown() {
+            // Path to your text file containing station names
+            const textFilePath = 'stations.txt';
+
+            // Select the dropdown element
+            const dropdown = document.getElementById('nearestMRT');
+
+            // Make a fetch request to load the text file
+            fetch(textFilePath)
+                .then(response => response.text())
+                .then(data => {
+                    const stationNames = data.split('\n');
+
+                    // Remove any empty entries
+                    const cleanStationNames = stationNames.filter(name => name.trim() !== '');
+
+                    // Add station names to the dropdown
+                    cleanStationNames.forEach(name => {
+                        const option = document.createElement('option');
+                        option.value = name;
+                        option.text = name;
+                        dropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Call the populateDropdown function to populate the dropdown list
+        populateDropdown();
       </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
