@@ -79,25 +79,29 @@
                           </div>
                         </div>
                             <div class="col-md-6">
-                              <label for="firstName" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="firstName" required>
+                              <label for="firstName" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="parentsName" required>
                             </div>
                             <div class="col-md-6">
-                              <label for="lastName" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="lastName" required>
-                            </div>
-                            <div class="col-12">
                               <label for="emailAddress" class="form-label">Email Address</label>
                               <input type="email" class="form-control" id="emailAddress" required>
                             </div>
                             <div class="col-12">
+                              <label for="parentsGender">Gender:  </label>
+                              <select id="parentsGender" name="parentsGender">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                              </select>
+                        </div>
+                            <div class="col-md-6">
                               <label for="contactNumber" class="form-label">Contact Number</label>
                               <input type="number" class="form-control" id="phoneNumber" required>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-12">
                               <label for="inputBio" class="form-label">Bio</label>
                               <textarea class="form-control" id="inputBio"></textarea>
                             </div>
+
                           </form>
                           </div>
                         </div>
@@ -114,12 +118,22 @@
                           </div>
                         </div>
                             <div class="col-md-6">
-                              <label for="firstName" class="form-label">First Name</label>
-                              <input type="text" class="form-control" id="firstNameChild" required>
+                              <label for="firstName" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="nameChild" required>
                             </div>
-                            <div class="col-md-6">
-                              <label for="lastName" class="form-label">Last Name</label>
-                              <input type="text" class="form-control" id="lastNameChild" required>
+                            <div class="col-12">
+                              <label for="parentsGender">Gender:  </label>
+                              <select id="parentsGender" name="parentsGender">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                              </select>
+                            </div>
+                            <!-- Create a list of all MRT's in Singapore -->
+                            <div class="col-12">
+                              <label for="nearestMRT">Nearest MRT: </label>
+                              <select id="nearestMRT" name="nearestMRT">
+                                  <!-- The dropdown options will be added here -->
+                              </select>
                             </div>
                             <div class="col-12">
                               <label for="educationLevel" class="form-label">Current Education Level</label>
@@ -130,13 +144,7 @@
                               </select>
                           </div>
 
-                          <!-- Create a list of all MRT's in Singapore -->
-                            <div class="col-12">
-                              <label for="nearestMRT">Nearest MRT: </label>
-                              <select id="nearestMRT" name="nearestMRT">
-                                  <!-- The dropdown options will be added here -->
-                              </select>
-                            </div>
+
                             <div class="col-12">
                               <label for="subjects" class="form-label">Subjects</label>
                               <div id="subjects-checkbox">
