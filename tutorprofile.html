@@ -149,14 +149,20 @@
                                     <input type="text" class="form-control" id="educationQualification">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-12 pt-3">
+                            <div class="row pt-3">
+                                <div class="col-6">
                                     <label for="tutorGender">Gender:  </label>
                                     <select id="tutorGender" name="tutorGender">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
+                                <div class="col-6">
+                                    <label for="nearestMRT">Nearest MRT: </label>
+                                    <select id="nearestMRT" name="nearestMRT">
+                                        <!-- The dropdown options will be added here -->
+                                    </select>
+                                  </div>
                             </div>
                         <!-- Checkbox Options -->
                         <div class="col-12 pt-3">
@@ -306,7 +312,38 @@
                     </div>
                 </div>
             
-        
+        <script>
+            function populateDropdown() {
+            // Path to your text file containing station names
+            const textFilePath = 'stations.txt';
+
+            // Select the dropdown element
+            const dropdown = document.getElementById('nearestMRT');
+
+            // Make a fetch request to load the text file
+            fetch(textFilePath)
+                .then(response => response.text())
+                .then(data => {
+                    const stationNames = data.split('\n');
+
+                    // Remove any empty entries
+                    const cleanStationNames = stationNames.filter(name => name.trim() !== '');
+
+                    // Add station names to the dropdown
+                    cleanStationNames.forEach(name => {
+                        const option = document.createElement('option');
+                        option.value = name;
+                        option.text = name;
+                        dropdown.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Call the populateDropdown function to populate the dropdown list
+        populateDropdown();
+
+        </script>
 
 
 
