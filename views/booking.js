@@ -17,17 +17,21 @@ let tutorProfiles1 = [
 
 ]
 
-let tuitionLising = [
-    {listingID: 'abc', tutorID: 'nnnnn', date: '23/11/2023', time: '3PM-5PM', status: 'available'},
-    {listingID: 'abcd', tutorID: 'nnnnn', date: '24/11/2023', time: '4PM-6PM', status: 'available'},
-    {listingID: 'xyz', tutorID: 'xxxxx', date: '22/11/2023', time: '7PM-9PM', status: 'available'},
-    {listingID: 'xyzv', tutorID: 'xxxxx', date: '25/11/2023', time: '3PM-5PM', status: 'available'},
-    {listingID: 'xyznb', tutorID: 'xxxxx', date: '22/11/2023', time: '7PM-9PM', status: 'available'}
+let tuitionListing = [
+    {listingID: 'abcasdw', tutorID: 'nnnnn', date: '23/11/2023', time: '3PM-5PM', status: 'available', parentID: ''},
+    {listingID: 'abcdadh', tutorID: 'nnnnn', date: '24/11/2023', time: '4PM-6PM', status: 'pending', parentID: 'aaaaa'},
+    {listingID: 'abcakjl', tutorID: 'nnnnn1', date: '23/11/2023', time: '3PM-5PM', status: 'pending', parentID: 'bbbbb'},
+    {listingID: 'abcdsdw', tutorID: 'nnnnn1', date: '24/11/2023', time: '4PM-6PM', status: 'confirmed', parentID: 'ccccc'},
+    {listingID: 'abcwwww', tutorID: 'nnnnn1', date: '23/11/2023', time: '3PM-5PM', status: 'available', parentID: ''},
+    {listingID: 'abcdppp', tutorID: 'nnnnn', date: '24/11/2023', time: '4PM-6PM', status: 'available', parentID: ''},
+    {listingID: 'xyzllll', tutorID: 'xxxxx1', date: '22/11/2023', time: '7PM-9PM', status: 'available', parentID: ''},
+    {listingID: 'xyzvasw', tutorID: 'xxxxx1', date: '25/11/2023', time: '3PM-5PM', status: 'available', parentID: ''},
+    {listingID: 'xyznbpo', tutorID: 'xxxxx', date: '22/11/2023', time: '7PM-9PM', status: 'available', parentID: ''}
 ]
 
 //store the current user Infor
 let parentProfile = {
-    parentID: '2222', name: 'Nickel', sex: 'm', nearestMRT: 'Ang Mo Kio', childEducationLevel: 'Primary', childSex: 'f', childName: 'Kim', subject: ['Math', 'English'] 
+    parentID: 'aaaaa', name: 'Nickel', sex: 'm', nearestMRT: 'Ang Mo Kio', childEducationLevel: 'Primary', childSex: 'f', childName: 'Kim', subject: ['Math', 'English'] 
 }           
 
 //Retrieve mrtCoordinates
@@ -128,7 +132,7 @@ const app = Vue.createApp({
                 timeSlots = []
                 tutorID = tutor.tutorID
                 //retrieve the tuition listing from batabase based on the Tutor ID
-                for (listing of tuitionLising) {
+                for (listing of tuitionListing) {
                     if (tutorID == listing.tutorID) {
                         timeSlots.push(listing)
                     }

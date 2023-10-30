@@ -69,23 +69,30 @@
             <div class="input-group justify-content-center text-align-center">
               <!-- Filter for Education Level -->
               <div class="col-2 mx-1">
+                <label for="eduLevel" class="form-label">Education Level</label>
                 <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                   <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                 </select>
               </div>
               <!-- Filter for Subjects, will change accordingly to Education Level -->
               <div class="col-2 mx-1">
+                <label for="subject" class="form-label">Subject</label>
                 <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
                   <option v-for="subject in filter.subjects">{{subject}}</option>
                 </select>
               </div>
               <!-- Filter by Region -->
               <div class="col-2 mx-1">
+                <label for="region" class="form-label">Distance Radius</label>
                 <select id="region" class="form-select" aria-label="Default select example">
-                  <option value="1">One</option>
+                  <option value="">One</option>
                 </select>
               </div>
-              <button id="button" class="btn btn-outline-dark mx-1 h-50 align-items-end" type="submit"><i class="fas fa-search"></i></button>
+              <div class="col-1 align-self-end">
+                <button id="button" class="btn btn-outline-dark mx-1 h-50" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
             </div>
           </form>
         </div>
