@@ -100,156 +100,159 @@
       </div>
     </nav>
     <!-- End of Navigation Bar -->
-    <!-- Booking requests -->
     <div class="container" id="app">
       <div class="row">
-        <button class="btn btn-primary">Test</button>
-    
-        <div id="popupForm" class="popup-form">
-            <div class="popup-content">
-                <span class="close" id="closePopupButton">&times;</span>
-                <h2>Enter Preferred Time and Date</h2>
-                <form id="preferencesForm">
-                  <label for="preferredDate">Date:</label>
-                  <input type="date" id="preferredDate" name="preferredDate">
-                  <br>
-                  <label for="preferredTime">Preferred Time:</label>
-                  <select id="preferredTime" name="preferredTime">
-                      <option value="8am-10am">8:00 AM - 10:00 AM</option>
-                      <option value="10am-12pm">10:00 AM - 12:00 PM</option>
-                      <option value="1pm-3pm">1:00 PM - 3:00 PM</option>
-                      <option value="3pm-5pm">3:00 PM - 5:00 PM</option>
-                      <option value="5pm-7pm">5:00 PM - 7:00 PM</option>
-                      <option value="7pm-9pm">7:00 PM - 9:00 PM</option>
-                  </select>
-                  <br>
-                  <button type="button" id="saveButton" class="btn btn-primary">Save</button>
-              </form>
-
-            </div>
-        </div>
         <div class="col-lg-8">
+          <!-- Display Pending Listing -->
           <div class="p-3 border bg-light mb-3">
-            <h4 class="text-center">My Requests</h4>
+            <h4 class="text-center">Your Requests</h4>
             <table class="table">
               <thead>
                   <tr>
                       <th>Parent's Name</th>
                       <th>Child's Name</th>
                       <th>Education Level</th>
-                      <th>Subjects</th>
                       <th>Date & Time</th>
-                      <th>Distance</th>
                       <th>Action</th>
                   </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Josephine</td>
-                  <td>Guo Lai</td>
-                  <td>Primary School</td>
-                  <td>English</td>
-                  <td>12 October 2023 7:00 PM - 9:00 PM</td>
-                  <td>2km</td>
-                  <td>
-                    <i class="tick-cross-icon">&#10004;</i> <!-- Tick (✔) -->
-                    <i class="cross-icon">&#10008;</i> <!-- Cross (✘) -->
-                  </td>
+                <!-- Pending Listing -->
+                <tr v-for="listing in pendingListings">
+                  <td>{{listing.parentName}}</td>
+                  <td>{{listing.childName}}</td>
+                  <td>{{listing.eduLevel}}</td>
+                  <td>{{listing.date}} {{listing.time}}</td>
+                  <td><button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</button></td>
                 </tr>
-                <tr>
-                  <td>Josephine</td>
-                  <td>Guo Lai</td>
-                  <td>Primary School</td>
-                  <td>English</td>
-                  <td>12 October 2023 7:00 PM - 9:00 PM</td>
-                  <td>2km</td>
-                  <td>
-                    <i class="tick-cross-icon">&#10004;</i> <!-- Tick (✔) -->
-                    <i class="cross-icon">&#10008;</i> <!-- Cross (✘) -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>Josephine</td>
-                  <td>Guo Lai</td>
-                  <td>Primary School</td>
-                  <td>English</td>
-                  <td>12 October 2023 7:00 PM - 9:00 PM</td>
-                  <td>2km</td>
-                  <td>
-                    <i class="tick-cross-icon">&#10004;</i> <!-- Tick (✔) -->
-                    <i class="cross-icon">&#10008;</i> <!-- Cross (✘) -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>Josephine</td>
-                  <td>Guo Lai</td>
-                  <td>Primary School</td>
-                  <td>English</td>
-                  <td>12 October 2023 7:00 PM - 9:00 PM</td>
-                  <td>2km</td>
-                  <td>
-                    <i class="tick-cross-icon">&#10004;</i> <!-- Tick (✔) -->
-                    <i class="cross-icon">&#10008;</i> <!-- Cross (✘) -->
-                  </td>
-                </tr>
-                <tr>
-                  <td>Josephine</td>
-                  <td>Guo Lai</td>
-                  <td>Primary School</td>
-                  <td>English</td>
-                  <td>12 October 2023 7:00 PM - 9:00 PM</td>
-                  <td>2km</td>
-                  <td>
-                    <i class="tick-cross-icon">&#10004;</i> <!-- Tick (✔) -->
-                    <i class="cross-icon">&#10008;</i> <!-- Cross (✘) -->
-                  </td>
-                </tr>
+                <!-- Modal to accept/reject -->
+                <div v-for="listing of pendingListings">
+                  <div class="modal fade" :id="listing.listingID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Book a Tuition Session with </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form>
+                        <div class="modal-body">
+                          <ul>
+                            <li>{{listing.parentName}}</li>
+                            <li>{{listing.childName}}</li>
+                            <li>{{listing.childGender}}</li>
+                            <li>{{listing.eduLevel}}</li>
+                            <li v-if="listing.addNote != ''">
+                              {{listing.addNote}}
+                            </li>
 
+                          </ul>
+                        </div>
+                        <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button v-on:click="handleAccept(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Accept</button> 
+                        <button v-on:click="handleReject(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Reject</button> 
+                        <!-- data-bs-dismiss="modal" to close modal after booking -->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </tbody>
               </table>
           </div>
+              <!-- Display Available Listing -->
               <div class="p-3 border bg-light">
-                <table class="table">
-                  <thead>
-                      <tr>
-                        <th>Your Listings</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                        <td> </td>
-                        <td>23 October 2023</td>
-                        <td>7:00 PM - 9:00 PM</td>
-                      </tr>
-                  </tbody>
-                  </table>
+                <h4 class="text-center">Your Listings</h4>
+                <ul class="list-group list-group-flush text-center"> 
+                  <li v-for="listing in availableListings" class="list-group-item border text-center mb-2 mx-2">
+                      <strong>{{listing.date}}</strong>  <br>
+                      {{listing.time}}
+                  </li>
+                </ul>
+                <!-- Create New Listing Form --> 
+                <!-- open button -->
+                <div class="text-center">
+                  <button type="button" class="btn btn-light text-center fs-4" data-bs-toggle="modal" data-bs-target="#modal"> + </button>  
+                </div>
+                <!-- Modal -->
+                <div id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Viewing Pending Listing </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form @submit.prevent="handleNewListing()">
+                          <div class="modal-body">
+                            <label class="form-label" for="preferredDate">Date</label>
+                            <input v-model="newListing.date" class="form-control" type="date" id="preferredDate" name="preferredDate">
+                            <br>
+                            <label class="form-label" for="preferredTime">Time</label>
+                            <select v-model="newListing.time" class="form-control" id="preferredTime" name="preferredTime">
+                                <option value="8AM-10AM">8:00 AM - 10:00 AM</option>
+                                <option value="10PM-12PM">10:00 AM - 12:00 PM</option>
+                                <option value="1PM-3PM">1:00 PM - 3:00 PM</option>
+                                <option value="3PM-5PM">3:00 PM - 5:00 PM</option>
+                                <option value="5PM-7PM">5:00 PM - 7:00 PM</option>
+                                <option value="7PM-9PM">7:00 PM - 9:00 PM</option>
+                            </select>
+                            <br>
+                          </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Create</button> 
+                        <!-- data-bs-dismiss="modal" to close modal after booking -->
+                        </div>
+                      </form>
+                    </div>
+                    </div>
+                </div>
               </div>
         </div>
+        <!-- Display Confirmed Listing -->
         <div class="col-lg-3">
           <div class="p-3 border bg-light">
             <center><strong>Upcoming Sessions</strong></center>
             <br />
-            <div class="card">
+            <div v-for="listing of confirmedListings" class="card">
               <div class="card-body">
-                <h5 class="card-title">Guo Lai</h5>
-                <p class="card-text">English</p>
-                <p class="card-text">12 October 2023 7:00 PM - 9:00 PM</p>
-                <p class="card-text">2km</p>
-                <a href="#" class="btn btn-primary">View</a>
+                <h5 class="card-title">{{listing.childName}}</h5>
+                <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                <a href="#" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</a>
+              </div>
+            </div>
+            <div v-for="listing of confirmedListings">
+              <div class="modal fade" :id="listing.listingID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">View confirmed listing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form>
+                    <div class="modal-body">
+                      <ul>
+                        <li>{{listing.parentName}}</li>
+                        <li>{{listing.childName}}</li>
+                        <li>{{listing.childGender}}</li>
+                        <li>{{listing.eduLevel}}</li>
+                        <li v-if="listing.addNote != ''">
+                          {{listing.addNote}}
+                        </li>
+
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                    <button data-bs-dismiss="modal"  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                    <!-- data-bs-dismiss="modal" to close modal after booking -->
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
             <br />
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Guo Lai</h5>
-                <p class="card-text">Math</p>
-                <p class="card-text">12 October 2023 7:00 PM - 9:00 PM</p>
-                <p class="card-text">2km</p>
-                <a href="#" class="btn btn-primary">View</a>
-              </div>
-            </div>
+           
           
         </div> 
         </div>

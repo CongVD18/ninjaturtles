@@ -68,27 +68,25 @@
           <form @submit.prevent="handleFilter()">
             <div class="input-group justify-content-center text-align-center">
               <!-- Filter for Education Level -->
-              <div class="col-2 mx-1">
+              <div class="col-md-2 col-6 m-1">
                 <label for="eduLevel" class="form-label">Education Level</label>
                 <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                   <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                 </select>
               </div>
               <!-- Filter for Subjects, will change accordingly to Education Level -->
-              <div class="col-2 mx-1">
+              <div class="col-md-2 col-6 m-1">
                 <label for="subject" class="form-label">Subject</label>
                 <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
                   <option v-for="subject in filter.subjects">{{subject}}</option>
                 </select>
               </div>
               <!-- Filter by Region -->
-              <div class="col-2 mx-1">
-                <label for="region" class="form-label">Distance Radius</label>
-                <select id="region" class="form-select" aria-label="Default select example">
-                  <option value="">One</option>
-                </select>
+              <div class="col-md-2 col-6 m-1">
+                <label for="distanceRadius" class="form-label">Distance Radius (Km)</label>
+                <input class="form-control" type="number" id="distanceRadius" placeholder="Enter a positve number" min="0" v-model="filterResult.distanceRadius">
               </div>
-              <div class="col-1 align-self-end">
+              <div class="col-md-1 col-6 align-self-end m-1">
                 <button id="button" class="btn btn-outline-dark mx-1 h-50" type="submit">
                   <i class="fas fa-search"></i>
                 </button>
@@ -118,7 +116,7 @@
                                 </li>
                             </ul>
                             <p>Nearest MRT: {{tutor.nearestMRT}}</p>
-                            <p class="text-muted fs-6">Distance from your nearest MRT Station: {{tutor.distance[0]}} {{tutor.distance[1]}} </p>
+                            <p class="text-muted fs-6">Distance from your nearest MRT Station: {{tutor.distance}} km </p>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + tutor.tutorID">
                                 Schedule Session
                             </button>
@@ -151,7 +149,7 @@
                             </div>
                           </form>
                         </div>
-                        </div>
+                      </div>
                     </div>
               </div>
 
