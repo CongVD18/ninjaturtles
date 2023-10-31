@@ -22,14 +22,18 @@
     font-family: 'Poppins', sans-serif;
     }
 
-    a:hover{
-      color: blue;
+    #image {
+      width: 150px;
+      height: 150px;
+      max-width: 100%;
+      max-height: 100%; /* Added to ensure the image doesn't exceed the container */
+      object-fit: cover; /* This will maintain the aspect ratio and cover the container */
     }
 
-    #firstsection {
-    background: url('../images/tuitionclass.jpg');
-    background-size: cover;
-    background-position: center;
+    .carousel-inner img {
+      width: 100%;
+      height: 600px; 
+      object-fit: cover;
     }
 
     </style>
@@ -37,7 +41,7 @@
   
   <body>
     <!-- Start of Navigation Bar -->
-    <nav class="navbar bg-gradient navbar-expand-lg bg-body-tertiary py-3">
+    <nav class="navbar dark navbar-expand-lg bg-primary-subtle py-3" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">Bridging Dream</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,39 +54,58 @@
               <a class="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="#">Log In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Resource Library</a>
+              <a class="nav-link" href="#">Sign Up</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up/Log In</a>
           </ul>
         </div>
       </div>
-    </nav>
+  </nav>
     <!-- End of Navigation Bar -->
 
-    <!-- Start of hero section -->
-    <section class="bg-dark text-light p-5 text-center text-sm-start" id="firstsection">
-      <div class="container py-5">
-        <div class="d-sm-flex align-items-center justify-content-between py-5">
-          <div>
-            <h1>Would you like to give or receive</h1>
-            <h3 class="my-4">free tuition</h3>
-            <p class="lead my-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis illo expedita recusandae quidem ipsa, accusamus consequatur minima earum unde, voluptate maxime deleniti dignissimos amet vel aperiam impedit! Excepturi, id molestias!
-            </p>
-            <button class="btn btn-primary btn-lg">Sign Up/Login</button>
+    <!-- Start of Introduction Section -->
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../images/intro_photo_6.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>One to One Tuition</h1>
+            <p>Receive free tuition from our volunteering students</p>
           </div>
-          <a href="#">
-            <img src="teaching.jpg" class="img-fluid rounded mx-auto d-block">
-          </a>
+        </div>
+        <div class="carousel-item">
+          <img src="../images/intro_photo_3.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1>Resouceful Learning Contents</h1>
+            <p>A well-organised collection educational resources catering to all primary and secondary levels</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../images/intro_photo_5.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 style="color:rgb(233, 122, 11)">Fast and Effective Booking System</h1>
+            <p style="color:rgb(238, 152, 65)">An easy-to-use booking system to allow parents to select tuition session on their preference</p>
+          </div>
         </div>
       </div>
-    </section>
-    <!-- end of hero section -->
-
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- End of Introduction Section -->
     <!-- start of subcription section -->
     <section class="bg-primary text-light p-5">
       <div class="container py-5">
@@ -101,6 +124,7 @@
     </section>
 
     <!-- end of subcription section -->
+
 
     <!-- start of tutor listing section -->
     <section class="p-5 bg-success bg-opacity-75">
