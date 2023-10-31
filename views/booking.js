@@ -47,6 +47,7 @@ const app = Vue.createApp({
     created() {
         //trigger renderProfiles onload
         this.renderProfiles()
+        console.log(this.swiper)
     },
 
     data() {
@@ -85,12 +86,7 @@ const app = Vue.createApp({
             filterResult: {
                 subject: 'Primary Math',
                 distanceRadius: null,
-            },
-
-            //sort MRT stations based on region for filter
-            regions: ['North']
-
-            
+            }
         }
     },    
     methods: {
