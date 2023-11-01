@@ -61,7 +61,7 @@
       box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
       font-family: var(--Rubik);
       z-index: 1;
-      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;
+      background: #f4f3ee;
     }
     
     .section-1 .row .col-md-6 .panel h1 {
@@ -93,11 +93,9 @@
     }
 
     #icon {
-      font-size: large;
+      font-size:larger;
       color: brown;
     }
-
-  
     </style>
   </head>
   
@@ -105,7 +103,7 @@
     <!-- Start of Navigation Bar -->
     <nav class="navbar dark navbar-expand-lg bg-transparent  py-3" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html" style="color: #12443B; font-weight: bolder; font-size: 30px;" >Bridging Dream</a>
+        <a class="navbar-brand" href="index.html" style="color: #12443B; font-weight: bolder; font-size: 30px;" >Bridging Dreams</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" style="color: #12443B"></span>
         </button>
@@ -129,7 +127,7 @@
 
     <!-- start of new section -->
     <section class="section-1">
-      <div class="container text-center">
+      <div class="container ">
         <div class="row">
           <div class="col-md-6 col-12">
             <div class="pray">
@@ -137,12 +135,12 @@
             </div>
           </div>
           <div class="col-md-6 col-12">
-            <div class="panel text-left">
-              <h1>Our Story to Bridging Dream</h1>
+            <div class=" text-left">
+              <h1 style="text-align:center">Our Story</h1>
               <p pt-3>
-                In the vibrant hea  rt of Singapore, where opportunity and prosperity often grace the lives of the fortunate,
+                In the vibrant heart of Singapore, where opportunity and prosperity often grace the lives of the fortunate,
                 we discovered a hidden truth: the untapped brilliance within low-income families yearning for a chance to shine.
-                In this city, like many others, educational inequality casts a shadow over the dreams of many children.<span id="dots">...</span>
+                In this city, like many others, educational inequality casts a shadow over the dreams of many children<span id="dots">...</span>
 
                 <span id="more_content">
                     <br><br>
@@ -228,13 +226,13 @@
     <section class="bg-transparent bg-gradient text-light" >
       <div class="container py-5">
         <div class="d-md-flex jusitfy-content-between align-items-center">
-          <h5 class="mb-3 mb-md-0">
+          <h5 class="mb-3 mb-md-0" style="color: #12443B">
             Subscribe here to receive updates from us
           </h5>
           <div class="input-group news-input">
             <input type="text" class="form-control" placeholder="Enter your email" name="">
 
-            <button class="btn btn-outline-warning btn-lg">
+            <button class="btn btn-outline-success btn-lg">
               Discover
             </button>
         </div>
@@ -243,6 +241,7 @@
 
     <!-- end of subcription section -->
 
+    <hr style="color:#12443B">
 
     <!-- start of footer section -->
     <footer id="contact" class="page-footer p-2 text-md-left">
@@ -265,7 +264,7 @@
             </p>
               
           </div>
-
+          
           <div class="col-lg-2 col-md-2 mx-auto">
             <h5 class="text-uppercase font-weight-bold mb-4">Follow Us</h5>
 
@@ -315,25 +314,28 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hide the "more_content" element when the page first loads
+      var moreText = document.getElementById("more_content");
+      moreText.style.display = "none";
+    });
+    
     function toreadMoreorLess() {
       var dots = document.getElementById("dots");
       var moreText = document.getElementById("more_content");
       var btnText = document.getElementById("myBtn");
-
-      
-      // If the dot text "..." is hidden, full text will be shown using "inline"
-      if (dots.style.display === "none") {
-          dots.style.display = "inline";
-          btnText.innerHTML = "Read more";
-          moreText.style.display = "none";
+    
+      // If the "more_content" element is hidden, show it, change the button text, and show the "Show less" button
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = "Read less";
       } 
-      // else, dot text "..." is shown, full text will be hidden
+      // If the "more_content" element is visible, hide it, change the button text, and show the "Show more" button
       else {
-          dots.style.display = "none";
-          btnText.innerHTML = "Read less";
-          moreText.style.display = "inline";
+        moreText.style.display = "none";
+        btnText.innerHTML = "Read more";
       }
-  }
+    }
   </script>
 
 </body>
