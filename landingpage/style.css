@@ -5,3 +5,4 @@
     max-height: 100%; /* Added to ensure the image doesn't exceed the container */
     object-fit: cover; /* This will maintain the aspect ratio and cover the container */
 }
+

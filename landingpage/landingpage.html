@@ -10,7 +10,7 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
 
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -35,14 +35,67 @@
       object-fit: cover;
     }
 
+    .section-1 {
+      padding: 20vmin 0vmin;
+    }
     
+    .section-1 .row .col-md-6 .pray img {
+      opacity: 0.8;
+      width: 80%;
+      border-radius: 0.2em;
+    }
+    
+    .section-1 .row .col-md-6:last-child {
+      position: relative;
+    }
+    
+    .section-1 .row .col-md-6 .panel {
+      position: absolute;
+      top: 7vmin;
+      left: -18vmin;
+      border-radius: 5px;
+      text-align: left;
+      padding: 13vmin 5vmin 20vmin 10vmin;
+      box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+      font-family: var(--Rubik);
+      z-index: 1;
+      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;
+    }
+    
+    .section-1 .row .col-md-6 .panel h1 {
+      text-align: center;
+      font-size: 2em;
+      color:rgb(224, 202, 202);
+      
+    }
+    
+    .section-1 .row .col-md-6 .panel p {
+      font-size: 0.9em;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    #myBtn{
+      width: 30%;
+      height: 45px;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0 , 0 , .1);
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+      margin-top: 10px;
+      border: 2px solid rgba(255, 255, 255, .2);
+  }
 
     </style>
   </head>
   
   <body>
     <!-- Start of Navigation Bar -->
-    <nav class="navbar dark navbar-expand-lg bg-info bg-gradient py-3" data-bs-theme="dark">
+    <nav class="navbar dark navbar-expand-lg bg-transparent  py-3" data-bs-theme="dark">
       <div class="container">
         <a class="navbar-brand" href="index.html">Bridging Dream</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,6 +118,62 @@
       </div>
   </nav>
     <!-- End of Navigation Bar -->
+
+    <!-- start of new section -->
+    <section class="section-1">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="pray">
+              <img src="myshoes.jpeg" alt="Pray" class="photo1" />
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class="panel text-left">
+              <h1>Our Story to Bridging Dream</h1>
+              <p pt-3>
+                In the vibrant hea  rt of Singapore, where opportunity and prosperity often grace the lives of the fortunate,
+                we discovered a hidden truth: the untapped brilliance within low-income families yearning for a chance to shine.
+                In this city, like many others, educational inequality casts a shadow over the dreams of many children.<span id="dots">...</span>
+
+                <span id="more_content">
+                    <br><br>
+                    In response, we set forth on a mission called "Bridging Dreams." We envisioned a Singapore where every child,
+                    regardless of their background, could access quality education. We recognized the disparities – better schools
+                    for the privileged, the burden of competition, and the challenges faced by hardworking parents.
+
+                    <br><br>
+
+                    "Bridging Dreams" is more than just a website; it's a lifeline for those whose dreams are dimmed by circumstance.
+                    Our platform connects low-income families with dedicated volunteer tutors who inspire and teach. Families find tutors
+                    tailored to their needs, and tutors share their qualifications and expertise.
+
+                    <br><br>
+
+                    But we didn't stop there. Our platform fosters a nurturing community where families, tutors, and students come together
+                    to share resources, exchange ideas, and offer support. We provide access to essential resources, such as worksheets,
+                    lesson plans, and reference materials, all reviewed by our community.
+
+                    <br><br>
+
+                    Together with local educational institutions and student volunteers, we're expanding our reach, making quality education
+                    accessible to all Singaporeans. Our story is one of determination, empathy, and the unwavering belief that every child's
+                    dreams are worth nurturing.
+
+                    <br><br>
+                    Join us in "Bridging Dreams", and help us create a brighter, more equal Singapore for all.
+
+                </span>
+            </p>
+            <!-- Read more or less of story button-->
+            <button onclick="toreadMoreorLess()" id="myBtn">Read more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end of  section -->
 
     <!-- Start of Introduction Section -->
 
@@ -126,35 +235,6 @@
 
     <!-- end of subcription section -->
 
-
-    <!-- start of new section -->
-    <section class="section-1">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-6 col-12">
-            <div class="pray">
-              <img src="../assets/pexels-photo-1904769.jpeg" alt="Pray" class="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-12">
-            <div class="panel text-left">
-              <h1>Mr. Devid Smith</h1>
-              <p class="pt-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
-                voluptatum, id ex ratione omnis reiciendis possimus officiis.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
-                ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero totam recusandae hic
-                expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae quod reprehenderit excepturi!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end of  section -->
 
     <!-- start of footer section -->
     <footer id="contact" class="page-footer p-5 text-md-left">
@@ -225,6 +305,28 @@
     </footer>
     <!-- End of footer bottom -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+    function toreadMoreorLess() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more_content");
+      var btnText = document.getElementById("myBtn");
+
+      
+      // If the dot text "..." is hidden, full text will be shown using "inline"
+      if (dots.style.display === "none") {
+          dots.style.display = "inline";
+          btnText.innerHTML = "Read more";
+          moreText.style.display = "none";
+      } 
+      // else, dot text "..." is shown, full text will be hidden
+      else {
+          dots.style.display = "none";
+          btnText.innerHTML = "Read less";
+          moreText.style.display = "inline";
+      }
+  }
+  </script>
+
+</body>
 </html>
