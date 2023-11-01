@@ -24,7 +24,7 @@
   </style>
 </head>
 <body>
-  
+  <!-- Login container -->
   <div class="container" id="login_container">
     <div class="row px-3">
       <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
@@ -81,7 +81,7 @@
   <div class="container" id="register_container" style="display: none;">
     <div class="row px-3">
       <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
-        <div class="img-left d-none d-md-flex"></div>
+        
 
         <div class="card-body">
           <h4 class="title text-center mt-4 font-weight-bold">
@@ -120,12 +120,15 @@
             
             <div class="text-center mb-2">
               Already have an account?
-              <a href="#" class="register-link" onclick="toggleContainers()">
+              <a href="#" class="login_link" onclick="toggleContainers()">
                 Log In
               </a>
             </div>
           </form>
         </div>
+
+        <!-- Move it out here so that the image will move to the right yuh -->
+        <div class="img-left d-none d-md-flex"></div>
       </div>
     </div>
   </div>
