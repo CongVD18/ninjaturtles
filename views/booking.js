@@ -31,7 +31,7 @@ let tuitionListing = [
 
 //store the current user Infor
 let parentProfile = {
-    parentID: 'aaaaa', name: 'Nickel', sex: 'm', nearestMRT: 'Ang Mo Kio', childEducationLevel: 'Primary', childSex: 'f', childName: 'Kim', subject: ['Math', 'English'] 
+    parentID: 'aaaaa', name: 'Nickel', gender: 'm', nearestMRT: 'Ang Mo Kio', childEducationLevel: 'Primary', childGender: 'f', childName: 'Kim', subject: ['Math', 'English'] 
 }           
 
 //Retrieve mrtCoordinates
@@ -47,6 +47,7 @@ const app = Vue.createApp({
     created() {
         //trigger renderProfiles onload
         this.renderProfiles()
+        console.log(this.swiper)
     },
 
     data() {
@@ -84,13 +85,8 @@ const app = Vue.createApp({
 
             filterResult: {
                 subject: 'Primary Math',
-                region: '',
-            },
-
-            //sort MRT stations based on region for filter
-            regions: ['North']
-
-            
+                distanceRadius: null,
+            }
         }
     },    
     methods: {
@@ -103,8 +99,8 @@ const app = Vue.createApp({
         },
         
         //convert array subjects to string
-        handleSubjectArray() {
-            for (tutor of this.tutors) {
+        handleSubjectArray(tutors) {
+            for (tutor of tutors) {
                 subjectStr = ''
                 subjects = tutor['subject']
                 //if the length of the array > 1, add 'and ' to the last subject
@@ -127,8 +123,8 @@ const app = Vue.createApp({
             }
         },
         //add a list of tuition listing of each tutor into data tutors as a key value pair timeslot: []
-        handleTimeSlot() {
-            for (tutor of this.tutors) {
+        handleTimeSlot(tutors) {
+            for (tutor of tutors) {
                 timeSlots = []
                 tutorID = tutor.tutorID
                 //retrieve the tuition listing from batabase based on the Tutor ID
@@ -144,16 +140,17 @@ const app = Vue.createApp({
                     return timeslots = dateA - dateB;
                 })
                 tutor['timeSlots'] = timeSlots
+                console.log(timeSlots)
             }
         },
 
-        calculateDistance() {
+        calculateDistance(tutors) {
             //get coordinates of the parent nearest MRt
             parentMRT = parentProfile.nearestMRT
             parentStr = parentMRT.split(' ').join('')
             parentCoordinates = mrtCoordinates[parentStr]
 
-            for (tutor of this.tutors) {
+            for (tutor of tutors) {
             //get coordinates of the tutor
                 tutorMRT = tutor.nearestMRT
                 tutorStr = tutorMRT.split(' ').join('')
@@ -164,18 +161,17 @@ const app = Vue.createApp({
                 const destination = new google.maps.LatLng(tutorCoordinates[0], tutorCoordinates[1]);
 
                 let distance = google.maps.geometry.spherical.computeDistanceBetween(origin, destination);
-                //if more than 1000 meter, display as km else display at meter
-                if (distance > 999) {
-                    distance = distance/1000
-                    distance = [distance.toFixed(1), 'km']
-                }
-
-                else {
-                    distance = [Math.ceil(distance / 100) * 100, 'm']
-                    
-                }
+                
+                distance = distance/1000
+                distance = distance.toFixed(1)
+               
                 tutor['distance'] = distance
             }
+
+            //sort based on distance
+            tutors.sort((a, b) => {
+                return a.distance - b.distance
+            })
     
         },
 
@@ -187,14 +183,29 @@ const app = Vue.createApp({
         },
 
         handleFilter() {
-            console.log(this.filterResult.subject, this.filterResult.region)
-            //retrieve from the database the tutors that matches the filter
+            console.log(this.filterResult.subject, this.filterResult.distanceRadius)
+            //retrieve from the database the tutors that matches the filter: subject
+            //each time the filtered is clicked, it need to retrieve a new set of tutors from the database else the listing of subjects will be messed up
+            let subjectFiltered = tutorProfiles1
             //push the array of object into this.tutors to render
-            this.tutors = tutorProfiles1
-            this.handleTimeSlot()
-            this.handleSubjectArray()
-            this.calculateDistance()
-            console.log(this.tutors)
+           
+            let finalFiltered = []
+            this.handleTimeSlot(subjectFiltered)
+            this.handleSubjectArray(subjectFiltered)
+            this.calculateDistance(subjectFiltered)
+            if (this.filterResult.distanceRadius !== null) {
+                for (tutor of subjectFiltered) {
+                    console.log(tutor)
+                    if (tutor.distance < this.filterResult.distanceRadius) {
+                        finalFiltered.push(tutor)
+                    }
+                }
+                this.tutors = finalFiltered
+            }
+            else {
+                this.tutors = subjectFiltered
+            }
+
         },
 
         resetSelected() {
@@ -204,9 +215,9 @@ const app = Vue.createApp({
 
         renderProfiles() {
             this.tutors = tutorProfiles
-            this.handleTimeSlot()
-            this.handleSubjectArray()
-            this.calculateDistance()
+            this.handleTimeSlot(this.tutors)
+            this.handleSubjectArray(this.tutors)
+            this.calculateDistance(this.tutors)
         }
     }
 })
