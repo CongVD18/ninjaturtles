@@ -17,13 +17,15 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!-- Swiperjs -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    
+    <!-- Icon from Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        /* font-family: 'Poppins', 'sans-serif'; */
+        font-family: 'Constantia', serif;
+        background: #cfe0e1;
       }
 
       /* body {
@@ -183,73 +185,59 @@
 
   </head>
 <body>
+    <!-- Start of Navigation Bar -->
+    <nav class="navbar dark navbar-expand-lg" style="background-color: #cfe0e1">
+      <div class="container">
+        <a class="navbar-brand" href="index.html" style="color: #12443B; font-weight: bolder; font-size: 30px;" >Bridging Dreams</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="color: #12443B"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home" style="color: #12443B; font-size: 20px">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="color: #12443B; font-size: 20px">Resource Library</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+      <!-- End of Navigation Bar -->
+
     <!-- Tutor Listing -->
     <div id="app">
-       <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Bridging Dream</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">My Profile</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Questions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Instructions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        </nav>   
       <!-- Filter -->
-      <div class="container-fluid bg-primary text-white p-5">
+      <div class="container-fluid bg-primary text-white p-1">
         <div class="row">
           <form @submit.prevent="handleFilter()">
             <div class="input-group justify-content-center text-align-center">
               <!-- Filter for Education Level -->
               <div class="col-md-2 col-6 m-1">
-                <label for="eduLevel" class="form-label">Education Level</label>
+                <label for="eduLevel" class="form-label" style="color: #12443B">Education Level</label>
                 <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                   <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                 </select>
               </div>
               <!-- Filter for Subjects, will change accordingly to Education Level -->
               <div class="col-md-2 col-6 m-1">
-                <label for="subject" class="form-label">Subject</label>
+                <label for="subject" class="form-label" style="color: #12443B">Subject</label>
                 <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
                   <option v-for="subject in filter.subjects">{{subject}}</option>
                 </select>
               </div>
               <!-- Filter by Region -->
               <div class="col-md-2 col-6 m-1">
-                <label for="distanceRadius" class="form-label">Distance Radius (Km)</label>
-                <input class="form-control" type="number" id="distanceRadius" placeholder="Enter a positve number" min="0" v-model="filterResult.distanceRadius">
+                <label for="distanceRadius" class="form-label" style="color: #12443B">Your prefered distance</label>
+                <input class="form-control" type="number" id="distanceRadius" placeholder="In Kilometer" min="0" v-model="filterResult.distanceRadius">
               </div>
               <div class="col-md-1 col-6 align-self-end m-1">
                 <button id="button" class="btn btn-outline-dark mx-1 h-50" type="submit">
