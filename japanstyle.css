@@ -382,3 +382,14 @@ form label {
 	letter-spacing: 0;
 	text-transform: none;
 }
+/* stylelint-disable-next-line no-duplicate-selectors */
+select.form-control {
+  &[size],
+  &[multiple] {
+    height: auto;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+}
