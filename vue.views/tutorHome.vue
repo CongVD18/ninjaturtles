@@ -10,7 +10,7 @@
                                 <th>Parent's Name</th>
                                 <th>Child's Name</th>
                                 <th>Education Level</th>
-                                <th>Subject</th>
+                                <th>Interested Subject</th>
                                 <th>Date & Time</th>
                                 <th>Action</th>
                             </tr>
@@ -20,26 +20,26 @@
                                 <td>{{request.parentName}}</td>
                                 <td>{{request.childName}}</td>
                                 <td>{{request.educationLevel}}</td>
-                                <td>{{request.listingID}}</td>
+                                <td>{{ request.subjectInterested }}</td>
                                 <td>{{request.date}} | {{ request.time }}</td>
-                                <td><a href="#" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + request.listingID">View</a></td>
+                                <td><button href="#" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + request.listingID">View</button></td>
                                 
-                                <div v-for="request of requests" :key="request.tutorID">
+                                <div v-for="request of requests" :key="request.tutorID" class="bg-light">
                                     <div class="modal fade" :id="request.listingID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Book a Tuition Session with </h5>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Book a Tuition Session with <span><strong>{{ request.childName }} </strong></span></h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <ul>
-                                                        <li>{{request.parentName}}</li>
-                                                        <li>{{request.childName}}</li>
-                                                        <li>{{request.childGender}}</li>
-                                                        <li>{{request.educationLevel}}</li>
+                                                        <li><strong>Parent's Name: </strong>{{request.parentName}}</li>
+                                                        <li><strong>Child's Name: </strong> {{request.childName}}</li>
+                                                        <li><strong>Child's Gender: </strong> {{request.childGender}}</li>
+                                                        <li><strong>Child's Education Level: </strong>{{request.educationLevel}}</li>
                                                         <li v-if="request.notes != ''">
-                                                        {{request.notes}}
+                                                        <strong>Special Notes to take note: </strong>{{request.notes}}
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -157,7 +157,6 @@ import { db , auth} from '/src/firebase/init.js'
         
         data() {
             return {
-                popupVisible: false,
                 id: null,
                 form: {
                     date: null,
@@ -173,12 +172,7 @@ import { db , auth} from '/src/firebase/init.js'
             }
         },
         methods: {
-            showPopup() {
-                this.popupVisible = true
-            },
-            closePopup(){
-                this.popupVisible = false
-            },
+            
             addNewProfile: function() {
                 var selectedDate = new Date(this.form.date)
                 var newDate = selectedDate.toLocaleDateString(undefined,this.options)
