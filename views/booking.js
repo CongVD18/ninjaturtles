@@ -43,7 +43,6 @@ let mrtCoordinates = {
 
 let mrtStations = {
     Yishun: {name: 'Yishun MRT', coordinates: [1.429666, 103.835044]},
-    Bishan: 
 }
 
 //Functions 
