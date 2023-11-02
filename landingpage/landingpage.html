@@ -22,7 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Constantia', serif;
-    background: #cfe0e1;
+    background: white ;
     }
 
     #image {
@@ -52,12 +52,6 @@
     }
     
     .section-1 .row .col-md-6 .panel {
-      position: absolute;
-      top: 7vmin;
-      left: -18vmin;
-      border-radius: 5px;
-      text-align: left;
-      padding: 13vmin 5vmin 20vmin 10vmin;
       box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
       font-family: var(--Rubik);
       z-index: 1;
@@ -96,36 +90,38 @@
       font-size:larger;
       color: brown;
     }
+
+    #story {
+      background-image: url(../images/pieces-blue-stationery.jpg);
+      background-size: cover;
+      background-position: center;
+    }
     </style>
   </head>
   
   <body>
     <!-- Start of Navigation Bar -->
-    <nav class="navbar dark navbar-expand-lg bg-transparent py-3" data-bs-theme="dark">
+    <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="landingpage.html">
-          <img src="/GitHub/ninjaturtles/images/bridgingdreamslogo.png" alt="Your Logo" style="max-height: 75px; padding-left:20px;">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" style="color: #12443B"></span>
+        <a class="navbar-brand" href="landingpage.html" style="font-weight: bolder; font-size: 26px">Bridging Dream</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home" style="color: #12443B; font-size: 20px; padding-top:30px">Home</a>
+              <a class="nav-link active" aria-current="page" href="#home" style="font-size: 20px">Home</a>
+            </li>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="color: #12443B; font-size: 20px; padding-top:30px">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"style="color: #12443B; font-size: 20px; padding-top:30px">Sign Up</a>
+              <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="font-size: 20px">Log In/Sign Up</a>
             </li>
           </ul>
         </div>
       </div>
-  </nav>
-    <!-- End of Navigation Bar -->
+      </nav>   
+  <!-- End of Navigation Bar -->
 
     <!-- start of new section -->
     <section class="section-1">
@@ -133,7 +129,7 @@
         <div class="row">
           <div class="col-md-6 col-12">
             <div class="pray">
-              <img src="myshoes.jpeg" alt="Pray" class="photo1" style="width: 80%;"/>
+              <img src="../LogIn/yay.avif" alt="Pray" class="photo1">
             </div>
           </div>
           <div class="col-md-6 col-12">
@@ -172,7 +168,7 @@
                     <br><br>
                     Join us in "Bridging Dreams", and help us create a brighter, more equal Singapore for all.
 
-                </span>
+                <!-- </span> -->
             </p>
             <!-- Read more or less of story button-->
             <!-- <button onclick="toreadMoreorLess()" id="myBtn">Read more</button> -->
