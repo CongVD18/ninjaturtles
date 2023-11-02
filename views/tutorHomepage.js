@@ -19,6 +19,10 @@ let parentProfiles = [
     {parentID: 'ccccc', name: 'Katherine', gender: 'f', nearestMRT: 'Punggol', childEducationLevel: 'Primary', childGender: 'f', childName: 'Kua', subject: ['Math', 'English']}
 ]
 
+
+
+
+
 const app = Vue.createApp({
     created() {
         this.renderListings()

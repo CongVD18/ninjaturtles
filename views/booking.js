@@ -41,6 +41,11 @@ let mrtCoordinates = {
     AngMoKio: [1.370025,103.849588]
 }
 
+let mrtStations = {
+    Yishun: {name: 'Yishun MRT', coordinates: [1.429666, 103.835044]},
+    Bishan: 
+}
+
 //Functions 
 //Render TutorProfiles
 const app = Vue.createApp({
