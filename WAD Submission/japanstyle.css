@@ -297,6 +297,15 @@ section.section-sm {
 	transition: all 0.3s ease-in-out;
 }
 
+.btn:after {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 2px;
+	background-color: #000;
+	right: 100%; bottom: 14px; left: 40px;
+	transition: 0.3s ease-in-out;
+}
 
 @media (pointer: fine) {
 	.btn:hover:after {

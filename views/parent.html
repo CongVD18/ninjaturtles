@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Home</title>
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Icon from Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Constantia', serif;
+        background: #cfe0e1;
+    }
+
+
+    h3 {
+        color: #12443B;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .card-inner .front1 {
+        border-radius: 15px;
+        background-size: cover ;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px 40px;
+    }
+
+    .card .card-inner .front {
+        border-radius: 15px;
+        position: relative;
+    }
+
+    .front1 .back1 {
+        position: absolute;
+    }
+
+    .card .card-inner {
+        overflow: hidden;
+        border-radius: 15px; /* Set border-radius for the entire card-inner */
+    }
+
+    .card img.card-img-top {
+        border-radius: 15px 15px 15px 15px;
+    }
+
+
+    #recommendation {
+        border: 5px solid #f4f3ee;
+    }
+    
+    .front1 > h2  {
+        background: transparent;
+        text-align: center;
+    }
+
+    .front1 > p  {
+        background: transparent;
+        text-align: center;
+    }
+
+    #back1 {
+        background: white;
+        color: #333;
+        padding: 20px 40px;
+        transform: translateY(180deg);
+    }
+
+    #hoverme {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+
+    .card .card-inner {
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+
+    .card .front1 {
+        transform: rotateY(0deg);
+    }
+
+    .card .back1 {
+        transform: rotateY(180deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        backface-visibility: hidden;
+    }
+
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card:hover .content-container {
+        transform: rotateY(180deg);
+    }
+    </style>
+</head>
+<body>
+    <!-- Start of Navigation Bar -->
+    <nav class="navbar dark navbar-expand-lg" style="background-color: #cfe0e1">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" style="color: #12443B; font-weight: bolder; font-size: 30px;" >Bridging Dreams</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: #12443B"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home" style="color: #12443B; font-size: 20px">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="color: #12443B; font-size: 20px">Resource Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+        <!-- End of Navigation Bar -->
+
+
+        <!-- Start of Recommendation -->
+        <div class="container-fluid bg-transparent " id="recommendation">
+            <div class="row">
+                <h3>Our Recommendation</h3>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="front1" style="background: url(./pictures/login.jpg)">
+                                <!-- <img src="./pictures/login.jpg" class="card-img-top" alt="..."> -->
+                                <h2>Vu Duc Cong</h2>
+                                <p>Tutor: Science & English</p>
+                                <button id="hoverme">Hover me </button>
+                            </div>
+                            <div class="back1">
+                                <p>Available Session</p>
+                                <ul>
+                                    <li>
+                                        22/11/2023 7PM - 9PM
+                                    </li>
+                                </ul>
+                                <p>Nearest MRT: Bishan</p>
+                                <p>Distance from MRT: 2.1km</p>
+                                <button>Schedule Lesson</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="front">
+                                <img src="./pictures/login.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="front">
+                                <img src="./pictures/login.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                    <div class="card">
+                        <div class="card-inner">
+                            <div class="front">
+                                <img src="./pictures/login.jpg" class="card-img-top" alt="...">
+                            </div>
+                            <div class="back"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

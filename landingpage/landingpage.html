@@ -10,17 +10,19 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- Import Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    /*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');*/
 
     html body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(90deg, rgba(3,0,36,1) 0%, rgba(97,84,175,1) 0%, rgba(37,208,242,1) 100%);
+    font-family: 'Constantia', serif;
+    background: #cfe0e1;
     }
 
     #image {
@@ -35,36 +37,152 @@
       object-fit: cover;
     }
 
+    .section-1 {
+      padding: 5vmin 0vmin;
+    }
     
+    .section-1 .row .col-md-6 .pray img {
+      opacity: 0.8;
+      width: 80%;
+      border-radius: 0.2em;
+    }
+    
+    .section-1 .row .col-md-6:last-child {
+      position: relative;
+    }
+    
+    .section-1 .row .col-md-6 .panel {
+      position: absolute;
+      top: 7vmin;
+      left: -18vmin;
+      border-radius: 5px;
+      text-align: left;
+      padding: 13vmin 5vmin 20vmin 10vmin;
+      box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+      font-family: var(--Rubik);
+      z-index: 1;
+      background: #f4f3ee;
+    }
+    
+    .section-1 .row .col-md-6 .panel h1 {
+      text-align: center;
+      font-size: 2em;
+      color:rgb(224, 202, 202);
+      
+    }
+    
+    .section-1 .row .col-md-6 .panel p {
+      font-size: 0.9em;
+      color: rgba(0, 0, 0, 0.5);
+    }
 
+    #myBtn{
+      width: 30%;
+      height: 45px;
+      background: transparent;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0 , 0 , .1);
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+      margin-top: 10px;
+      border: 2px solid rgba(255, 255, 255, .2);
+    }
+
+    #icon {
+      font-size:larger;
+      color: brown;
+    }
     </style>
   </head>
   
   <body>
     <!-- Start of Navigation Bar -->
-    <nav class="navbar dark navbar-expand-lg bg-info bg-gradient py-3" data-bs-theme="dark">
+    <nav class="navbar dark navbar-expand-lg bg-transparent py-3" data-bs-theme="dark">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Bridging Dream</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="landingpage.html">
+          <img src="/GitHub/ninjaturtles/images/bridgingdreamslogo.png" alt="Your Logo" style="max-height: 75px; padding-left:20px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="color: #12443B"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              <a class="nav-link active" aria-current="page" href="#home" style="color: #12443B; font-size: 20px; padding-top:30px">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Log In</a>
+              <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="color: #12443B; font-size: 20px; padding-top:30px">Log In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link" href="#"style="color: #12443B; font-size: 20px; padding-top:30px">Sign Up</a>
             </li>
           </ul>
         </div>
       </div>
   </nav>
     <!-- End of Navigation Bar -->
+
+    <!-- start of new section -->
+    <section class="section-1">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="pray">
+              <img src="myshoes.jpeg" alt="Pray" class="photo1" style="width: 80%;"/>
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <div class=" text-left">
+              <h1 style="text-align:center">Our Story</h1>
+              <p pt-3>
+                In the vibrant heart of Singapore, where opportunity and prosperity often grace the lives of the fortunate,
+                we discovered a hidden truth: the untapped brilliance within low-income families yearning for a chance to shine.
+                In this city, like many others, educational inequality casts a shadow over the dreams of many children
+                <!-- <span id="dots">...</span> -->
+
+                <!-- <span id="more_content"> -->
+                    <br><br>
+                    In response, we set forth on a mission called "Bridging Dreams." We envisioned a Singapore where every child,
+                    regardless of their background, could access quality education. We recognized the disparities – better schools
+                    for the privileged, the burden of competition, and the challenges faced by hardworking parents.
+
+                    <br><br>
+
+                    "Bridging Dreams" is more than just a website; it's a lifeline for those whose dreams are dimmed by circumstance.
+                    Our platform connects low-income families with dedicated volunteer tutors who inspire and teach. Families find tutors
+                    tailored to their needs, and tutors share their qualifications and expertise.
+
+                    <br><br>
+
+                    But we didn't stop there. Our platform fosters a nurturing community where families, tutors, and students come together
+                    to share resources, exchange ideas, and offer support. We provide access to essential resources, such as worksheets,
+                    lesson plans, and reference materials, all reviewed by our community.
+
+                    <br><br>
+
+                    Together with local educational institutions and student volunteers, we're expanding our reach, making quality education
+                    accessible to all Singaporeans. Our story is one of determination, empathy, and the unwavering belief that every child's
+                    dreams are worth nurturing.
+
+                    <br><br>
+                    Join us in "Bridging Dreams", and help us create a brighter, more equal Singapore for all.
+
+                </span>
+            </p>
+            <!-- Read more or less of story button-->
+            <!-- <button onclick="toreadMoreorLess()" id="myBtn">Read more</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end of  section -->
 
     <!-- Start of Introduction Section -->
 
@@ -111,13 +229,13 @@
     <section class="bg-transparent bg-gradient text-light" >
       <div class="container py-5">
         <div class="d-md-flex jusitfy-content-between align-items-center">
-          <h5 class="mb-3 mb-md-0">
+          <h5 class="mb-3 mb-md-0" style="color: #12443B">
             Subscribe here to receive updates from us
           </h5>
           <div class="input-group news-input">
             <input type="text" class="form-control" placeholder="Enter your email" name="">
 
-            <button class="btn btn-outline-warning btn-lg">
+            <button class="btn btn-outline-success btn-lg">
               Discover
             </button>
         </div>
@@ -126,70 +244,42 @@
 
     <!-- end of subcription section -->
 
-
-    <!-- start of new section -->
-    <section class="section-1">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-6 col-12">
-            <div class="pray">
-              <img src="../assets/pexels-photo-1904769.jpeg" alt="Pray" class="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-12">
-            <div class="panel text-left">
-              <h1>Mr. Devid Smith</h1>
-              <p class="pt-4">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere iure adipisci harum ducimus accusantium, repudiandae aperiam
-                voluptatum, id ex ratione omnis reiciendis possimus officiis.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vitae, tenetur quidem eum aliquid vel labore sint placeat
-                ad deserunt consectetur fugit ullam. Eius unde neque ducimus obcaecati ipsum quos vero totam recusandae hic
-                expedita nemo sit, illum harum. Quisquam impedit ullam itaque facere et ad molestiae quod reprehenderit excepturi!
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end of  section -->
+    <hr style="color:#12443B">
 
     <!-- start of footer section -->
-    <footer id="contact" class="page-footer p-5 text-md-left">
+    <footer id="contact" class="page-footer p-2 text-md-left">
       <div class="container py-5">
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <h5 class="text-uppercase font-weight-bold mb-4">
-              Bridging Dream
+              Bridging Dreams
             </h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse corporis ducimus deleniti voluptatem nisi iure nostrum quo repellat atque ut laudantium iste inventore sint dolores dignissimos, cum magni cumque laborum?
+              Founded on 18th October 2023
+            </p>
+
+            <p>
+              Made by Information System Students 
+            </p>
+            
+            <p>
+              Singapore Management Univeristy 
+            </p>
+              
+          </div>
+          
+          <div class="col-lg-2 col-md-2 mx-auto">
+            <h5 class="text-uppercase font-weight-bold mb-4">Follow Us</h5>
+
+            <p id="icon">
+              <i class='bx bxl-facebook'></i>
+              <i class='bx bxl-instagram'></i>
+              <i class='bx bxl-twitter'></i>
+              <i class='bx bxl-youtube'></i>
+
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-2 mx-auto">
-            <h5 class="text-uppercase font-weight-bold mb-4">Services</h5>
-
-            <ul class="list-unstyled">
-              <li class="mb-1"><a href="#">Math</a></li>
-              <li class="mb-1"><a href="#">English</a></li>
-              <li class="mb-1"><a href="#">Chinese</a></li>
-              <li class="mb-1"><a href="#">Vietnamese</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-2 mx-auto">
-            <h5 class="text-uppercase font-weight-bold mb-4">Page Links</h5>
-
-            <ul class="list-unstyled">
-              <li class="mb-1"><a href="#">Home</a></li>
-              <li class="mb-1"><a href="#">Abut</a></li>
-              <li class="mb-1"><a href="#">Tutor</a></li>
-              <li class="mb-1"><a href="#">Contact</a></li>
-            </ul>
-          </div>
           
           <div class="col-lg-3 col-xs-12 location">
             <h5 class="text-uppercase font-weight-bold mb-4">Location</h5>
@@ -201,7 +291,7 @@
               +65 9451 8710
             </p>
             <p class="d-flex">
-              bridgingdreaminfo@gmail.com
+              bridgingdreamsinfo@gmail.com
             </p>
 
           </div>
@@ -215,7 +305,7 @@
     <footer class="p-3 bg-dark text-white text-center position-relative">
       <div class="container">
         <p class="mb-0">
-          Copyright &copy; 2022 Bridging Dream
+          Copyright &copy; 2023 Bridging Dreams
         </p>
 
         <a href="#" class="position-absolute bottom-0 end-0 p-5">
@@ -225,6 +315,31 @@
     </footer>
     <!-- End of footer bottom -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Hide the "more_content" element when the page first loads
+      var moreText = document.getElementById("more_content");
+      moreText.style.display = "none";
+    });
+    
+    function toreadMoreorLess() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more_content");
+      var btnText = document.getElementById("myBtn");
+    
+      // If the "more_content" element is hidden, show it, change the button text, and show the "Show less" button
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = "Read less";
+      } 
+      // If the "more_content" element is visible, hide it, change the button text, and show the "Show more" button
+      else {
+        moreText.style.display = "none";
+        btnText.innerHTML = "Read more";
+      }
+    }
+  </script>
+
+</body>
 </html>
