@@ -1,6 +1,6 @@
 body{
   height: 100vh;
-  background: #cfe0e1 !important;
+  background: whitesmoke !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,7 @@ body{
 
 .img-left{
   width: 45%;
-  background: url('img.jpg') center;
+  background: url('../bluetheme.jpeg') center;
   background-size: cover;
 }
 
@@ -58,7 +58,7 @@ body{
 }
 
 .form-input input:focus, .form-input input:valid{
-  border: 2px solid #12443B;
+  border: 2px solid #0069d9;
 }
 
 .form-input input:focus::placeholder{
@@ -66,7 +66,7 @@ body{
 }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
-  background-color: #12443B !important;
+  background-color: #0069d9 !important;
   border: 0px;
 }
 
