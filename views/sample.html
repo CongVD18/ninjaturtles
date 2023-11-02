@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Home</title>
+
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Icon from Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Constantia', serif;
+        background: #cfe0e1;
+    }
+
+
+    .row {
+        border: 5px solid #f4f3ee;
+
+    }
+    h3 {
+        color: #12443B;
+        text-align: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .card {
+        width: 242px;
+        height: 300px;
+        perspective: 800px;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+        border-radius: 33px;
+    }
+
+    .front,
+    .back {
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+
+    .back {
+        background-color: #f4f3ee;
+        transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+
+
+    .viewMoreButton, .backButton, .schedule {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+    }
+
+    h3, p {
+        background: transparent;
+        text-align: center;
+        font-weight: 400;
+    }
+    
+    .viewMoreButton {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+    }
+
+    .backButton {
+        position: absolute;
+        bottom: 10px;
+        left: 10px; /* Adjust the horizontal position for the "Back" button */
+        padding: 10px 20px; /* Adjust padding for size */
+        font-size: 16px; /* Adjust font size */
+        color: #12443B; /* Set text color */
+        background-color: #cfe0e1;
+         
+    }
+
+    .schedule {
+        position: absolute;
+        bottom: 10px;
+        right: 10px; /* Adjust the horizontal position for the "Schedule Lesson" button */
+        padding: 10px 20px; /* Adjust padding for size (match "Back" button) */
+        font-size: 16px; /* Adjust font size (match "Back" button) */
+        color: #12443B; /* Set text color (match "Back" button) */
+        background-color: #cfe0e1;
+        
+    }
+
+    .back > h3 {
+        padding-bottom: 50px;
+    }
+
+    .back > p {
+        padding-bottom: 80px;
+    }
+
+    .custom-row {
+        width: 600px;
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Start of Navigation Bar -->
+    <nav class="navbar dark navbar-expand-lg" style="background-color: #cfe0e1">
+        <div class="container">
+          <a class="navbar-brand" href="index.html" style="color: #12443B; font-weight: bolder; font-size: 30px;" >Bridging Dreams</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="color: #12443B" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: #12443B"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home" style="color: #12443B; font-size: 20px">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="color: #12443B; font-size: 20px">Resource Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">My Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"style="color: #12443B; font-size: 20px">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        </nav>
+    <!-- End of Navigation Bar -->
+
+    <!-- Start of Filter -->
+    <div class="container-fluid text-white p-3" style="background-color: #12443B">
+        <div class="row custom-row" >
+          <form @submit.prevent="handleFilter()" class="w-100">
+            <div class="input-group justify-content-center text-align-center" id="form">
+              <!-- Filter for Education Level -->
+              <div class="col-md-3 col-sm-6 col-12 m-1">
+                <!-- <label for="eduLevel" class="form-label" style="color:#12443B">Education Level</label> -->
+                <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
+                    <option value="" style="color:#12443B">Select Education Level</option>
+                    <option v-for="eduLevel in eduLevels" :value="eduLevel.key"></option>
+                </select>
+              </div>
+              <!-- Filter for Subjects, will change accordingly to Education Level -->
+              <div class="col-md-3 col-sm-6 col-12 m-1">
+                <!-- <label for="subject" class="form-label" style="color:#12443B">Subject</label> -->
+                <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
+                    <option value="" style="color:#12443B">Select Subject</option>
+                    <option v-for="subject in filter.subjects"></option>
+                </select>
+              </div>
+              <!-- Filter by Region -->
+              <div class="col-md-3 col-sm-6 col-12 m-1">
+                <!-- <label for="distanceRadius" class="form-label" style="color:#12443B">Distance Radius (Km)</label> -->
+                <input class="form-control" type="number" id="distanceRadius" placeholder="Enter distance radius(km)" min="0" v-model="filterResult.distanceRadius">
+              </div>
+              <div class="col-md-2 col-sm-6 col-12 m-1 align-self-end">
+                <button id="button" class="btn btn-outline-success " type="submit">Search
+                  <!-- <i class="fas fa-search"></i> -->
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    <!-- End of Filter -->
+
+    <!-- Start of Recommendation -->
+    <div class="container-fluid bg-transparent " id="recommendation">
+        <div class="row">
+            <h3>Our Recommendation</h3>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                <div class="card" id="card1">
+                    <div class="front" style="background-image: url(./pictures/login.jpg);">
+                        <h3>Vu Duc Cong</h3>
+                        <p>Teaching: Chinese & Math</p>
+                        <button class="viewMoreButton">View more</button>
+                    </div>
+                    <div class="back">
+                        <h3>Avalable Session</h3>
+                        <p>2.1 km away from Bishan MRT</p>
+                        <button class="backButton">Back</button>
+                        <button class="schedule" data-bs-toggle="modal" data-bs-target="#modal1">Schedule Lesson</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                <div class="card" id="card2">
+                    <div class="front" style="background-image: url(./pictures/login.jpg);">
+                        <h3>Vu Duc Cong</h3>
+                        <p>Teaching: Chinese & Math</p>
+                        <button class="viewMoreButton">View more</button>
+                    </div>
+                    <div class="back">
+                        <h3>Avalable Session</h3>
+                        <p>2.1 km away from Bishan MRT</p>
+                        <button class="backButton">Back</button>
+                        <button class="schedule" data-bs-toggle="modal" data-bs-target="#modal2">Schedule Lesson</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                <div class="card" id="card3">
+                    <div class="front" style="background-image: url(./pictures/login.jpg);">
+                        <h3>Vu Duc Cong</h3>
+                        <p>Teaching: Chinese & Math</p>
+                        <button class="viewMoreButton">View more</button>
+                    </div>
+                    <div class="back">
+                        <h3>Avalable Session</h3>
+                        <p>2.1 km away from Bishan MRT</p>
+                        <button class="backButton">Back</button>
+                        <button class="schedule" data-bs-toggle="modal" data-bs-target="#modal3">Schedule Lesson</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-4 pb-4">
+                <div class="card" id="card4">
+                    <div class="front" style="background-image: url(./pictures/login.jpg);">
+                        <h3>Vu Duc Cong</h3>
+                        <p>Teaching: Chinese & Math</p>
+                        <button class="viewMoreButton">View more</button>
+                    </div>
+                    <div class="back">
+                        <h3>Avalable Session</h3>
+                        <p>2.1 km away from Bishan MRT</p>
+                        <button class="backButton">Back</button>
+                        <button class="schedule" data-bs-toggle="modal" data-bs-target="#modal4">Schedule Lesson</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <!-- End of Recommendation -->
+
+    <!-- Start of Form Populate -->
+    <div class="modal fade" :id="tutor.tutorID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Book a Tuition Session with {{tutor.name}}</h5>
+            <button v-on:click="resetSelected()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form @submit.prevent="handleBooking()">
+            <div class="modal-body">
+                    <label for="select" class="col-form-label">Tuition Session</label>
+                    <select id="select" class="form-select" aria-label="Default select example" v-model="selected" required>
+                        <option v-for="slot in tutor.timeSlots" :value="slot.listingID">
+                            {{slot.date}} {{slot.time}}
+                        </option>
+                      </select>
+                    <label for="comment">Additional Notes: </label>
+                    <textarea v-model="notes" class="form-control" rows="5" id="comment" name="text" :placeholder="'Write a note to ' + tutor.name + '...'"></textarea>
+            </div>
+            <div class="modal-footer">
+            <button v-on:click="resetSelected()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Book Now</button> 
+            <!-- data-bs-dismiss="modal" to close modal after booking -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+
+    // Get all the buttons with class "viewMoreButton" and add click event listeners
+    const viewMoreButtons = document.querySelectorAll('.viewMoreButton');
+    viewMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.card');
+            card.style.transform = 'rotateY(180deg)';
+        });
+    });
+
+    // Get all the buttons with class "backButton" and add click event listeners
+    const backButton = document.querySelectorAll('.backButton');
+    backButton.forEach(button => {
+        button.addEventListener('click', function() {
+            const card = this.closest('.card');
+            card.style.transform = 'rotateY(0deg)';
+        });
+    });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

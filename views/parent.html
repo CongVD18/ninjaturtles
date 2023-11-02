@@ -41,7 +41,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 40px 40px;
+        padding: 108px 40px;
     }
 
     .card .card-inner .front {
@@ -81,10 +81,10 @@
         background: white;
         color: #333;
         padding: 20px 40px;
-        transform: translateY(180deg);
+        
     }
 
-    #hoverme {
+    #viewMoreButton {
         background: transparent;
         border: 2px solid rgba(255, 255, 255, .2);
         border-radius: 10px;
@@ -95,11 +95,11 @@
         transition: transform 1s;
         transform-style: preserve-3d;
     }
-
+    
     .card .front1 {
         transform: rotateY(0deg);
     }
-
+    
     .card .back1 {
         transform: rotateY(180deg);
         position: absolute;
@@ -109,13 +109,54 @@
         bottom: 0;
         backface-visibility: hidden;
     }
-
-    .card:hover .card-inner {
+    
+    .card .card-inner.flipped {
         transform: rotateY(180deg);
     }
 
-    .card:hover .content-container {
+    .container2 {
+        width: 242px;
+        height: 300px;
+        perspective: 800px;
+    }
+
+    .card2 {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        transition: transform 1500ms;
+        transform-style: preserve-3d;
+    }
+
+    .front2,
+    .back2 {
+        height: 100%;
+        width: 100%;
+        border-radius: 2rem;
+        box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .front2 {
+        background-image: url(./pictures/login.jpg);
+    }
+
+    .back2 {
+        background-color: #3a3a3a;
         transform: rotateY(180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    #viewMoreButton2 {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
     }
     </style>
 </head>
@@ -161,10 +202,10 @@
                                 <!-- <img src="./pictures/login.jpg" class="card-img-top" alt="..."> -->
                                 <h2>Vu Duc Cong</h2>
                                 <p>Tutor: Science & English</p>
-                                <button id="hoverme">Hover me </button>
+                                <button id="viewMoreButton">View more </button>
                             </div>
                             <div class="back1">
-                                <p>Available Session</p>
+                                <!-- <p>Available Session</p>
                                 <ul>
                                     <li>
                                         22/11/2023 7PM - 9PM
@@ -172,7 +213,7 @@
                                 </ul>
                                 <p>Nearest MRT: Bishan</p>
                                 <p>Distance from MRT: 2.1km</p>
-                                <button>Schedule Lesson</button>
+                                <button>Schedule Lesson</button> -->
                             </div>
                         </div>
                     </div>
@@ -214,6 +255,38 @@
             </div>
         </div>
         
+        <div class="container2">
+            <div class="card2">
+                <div class="front2">
+                    <button id="viewMoreButton2">View more</button>
+                </div>
+                <div class="back2">
+                    <h3>Back of Card</h3>
+                    <p>Additional info on the back of the card</p>
+                    <button id="backButton2">Back</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        document.getElementById('viewMoreButton').addEventListener('click', function() {
+            const card = this.closest('.card');
+            card.querySelector('.card-inner').classList.toggle('flipped');
+        });
+
+        document.getElementById('viewMoreButton2').addEventListener('click', function() {
+            const card2 = document.querySelector('.card2');
+            card2.style.transform = 'rotateY(180deg)';
+        });
+
+        document.getElementById('backButton2').addEventListener('click', function() {
+            const card2 = document.querySelector('.card2');
+            card2.style.transform = 'rotateY(0deg)';
+        });
+
+        </script>
+
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
