@@ -1,8 +1,8 @@
 //Retrieve tutors with active = true"
 let tutorProfiles = [
-    {tutorID: 'nnnnn', name: 'Thomas', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
-    {tutorID: 'xxxxx', name: 'Cheryl', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science', 'English'], active: true},
-    {tutorID: 'nnnnn1', name: 'Cong', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
+    {tutorID: 'nnnnn', name: 'Thomas', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Lower Sec Math', 'Primary English', 'Science'], active: true},
+    {tutorID: 'xxxxx', name: 'Cheryl', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Upper Sec Science', 'Lower Sec English'], active: true},
+    {tutorID: 'nnnnn1', name: 'Cong', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Primary Math', 'Upper Sec English', 'Science'], active: true},
     {tutorID: 'xxxxx1', name: 'Josh', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science', 'English'], active: true}
 
 ]
@@ -13,7 +13,11 @@ let tutorProfiles1 = [
     {tutorID: 'nnnnkxca', name: 'Kelvin', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
     {tutorID: 'xxxxxascasc', name: 'Jing Jia', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science'], active: true},
     {tutorID: 'nnnnn1asdac', name: 'Cong', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
-    {tutorID: 'xxxxx1asdasd', name: 'Josh', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science', 'English'], active: true}
+    {tutorID: 'xxxxx1asdasd', name: 'Josh', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science', 'English'], active: true},
+    {tutorID: 'nnnnkxcaasdawd', name: 'Kelvin', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
+    {tutorID: 'xxxxxascascasdaef', name: 'Jing Jia', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science'], active: true},
+    {tutorID: 'nnnnn1asdacaffasd', name: 'Cong', sex: 'm', profileURL: './pictures/thomas.png', nearestMRT: 'Yishun', contactNo: '91234567', subject: ['Math', 'English', 'Science'], active: true},
+    {tutorID: 'xxxxx1asdasdasdawdasd', name: 'Josh', sex: 'f', profileURL: './pictures/cheryl.png', nearestMRT: 'Bishan', contactNo: '91234568', subject: ['Science', 'English'], active: true}
 
 ]
 
@@ -24,10 +28,13 @@ let tuitionListing = [
     {listingID: 'abcdsdw', tutorID: 'nnnnn1', date: '24/11/2023', time: '4PM-6PM', status: 'confirmed', parentID: 'ccccc'},
     {listingID: 'abcwwww', tutorID: 'nnnnn1', date: '23/11/2023', time: '3PM-5PM', status: 'available', parentID: ''},
     {listingID: 'abcdppp', tutorID: 'nnnnn', date: '24/11/2023', time: '4PM-6PM', status: 'available', parentID: ''},
-    {listingID: 'xyzllll', tutorID: 'xxxxx1', date: '22/11/2023', time: '7PM-9PM', status: 'available', parentID: ''},
+    {listingID: 'xyzllll', tutorID: 'xxxxx1', date: '22/11/2023', time: '7PM-9PM', status: 'confirmed', parentID: ''},
     {listingID: 'xyzvasw', tutorID: 'xxxxx1', date: '25/11/2023', time: '3PM-5PM', status: 'available', parentID: ''},
     {listingID: 'xyznbpo', tutorID: 'xxxxx', date: '22/11/2023', time: '7PM-9PM', status: 'available', parentID: ''}
 ]
+
+
+
 
 //store the current user Infor
 let parentProfile = {
@@ -59,6 +66,9 @@ const app = Vue.createApp({
             tutors: [], //Store Tutor Profiles to display
             selected: null, //store selected Tuition Listing
             notes: '', //parent notes to tutor
+            upComingSess: [],
+            pendingRequest: [],
+
 
             filter: {
                 eduLevel: 'primary'
@@ -90,7 +100,18 @@ const app = Vue.createApp({
             filterResult: {
                 subject: 'Primary Math',
                 distanceRadius: null,
-            }
+            },
+
+            confirmedBooking: [
+                {bookingID: 'iiikkkasd', listingID: 'abcdsdw', tutorID: 'nnnnn1', tutorName: 'Cong',date: '24/11/2023', time: '4PM-6PM', status: 'confirmed', parentID: 'aaaaa'},
+                {bookingID: 'asdwdasdw', listingID: 'abcdadh', tutorID: 'nnnnn', tutorName: 'Thomas', date: '24/11/2023', time: '4PM-6PM', status: 'confirmed', parentID: 'aaaaa'},
+            ],
+
+            pendingBooking: [
+                {bookingID: 'iiikkkasd', listingID: 'abcdsdw', tutorID: 'nnnnn1', tutorName: 'Thomas', date: '24/11/2023', time: '4PM-6PM', status: 'pending', parentID: 'aaaaa'},
+                {bookingID: 'asdwdasdw', listingID: 'abcdadh', tutorID: 'nnnnn', tutorName: 'Josh', date: '24/11/2023', time: '4PM-6PM', status: 'pending', parentID: 'aaaaa'},
+                {bookingID: 'asdwdaahw', listingID: 'abcakjl', tutorID: 'nnnnn1', tutorName: 'Kang', date: '23/11/2023', time: '3PM-5PM', status: 'pending', parentID: 'aaaaa'},
+            ]
         }
     },    
     methods: {
@@ -111,7 +132,7 @@ const app = Vue.createApp({
                 if (subjects.length > 1) {
                     for (subject of subjects) {
                         if (subjects.indexOf(subject) == (subjects.length-1)) {
-                            subjectStr += `and ${subject}`
+                            subjectStr += `and ${subject}.`
                         }
                         else {
                             subjectStr += `${subject}, `
@@ -123,7 +144,7 @@ const app = Vue.createApp({
                     subjectStr += subjects.toString()
                 }
                 //assign the value back the object
-                tutor['subject'] = subjectStr
+                tutor['subjectstr'] = subjectStr
             }
         },
         //add a list of tuition listing of each tutor into data tutors as a key value pair timeslot: []
@@ -133,7 +154,7 @@ const app = Vue.createApp({
                 tutorID = tutor.tutorID
                 //retrieve the tuition listing from batabase based on the Tutor ID
                 for (listing of tuitionListing) {
-                    if (tutorID == listing.tutorID) {
+                    if (tutorID == listing.tutorID && listing.status == 'available') {
                         timeSlots.push(listing)
                     }
                 }
@@ -145,6 +166,12 @@ const app = Vue.createApp({
                 })
                 tutor['timeSlots'] = timeSlots
                 console.log(timeSlots)
+            }
+        },
+
+        handleDisplayTimeslots() {
+            for (timeslot of timeSlots) {
+
             }
         },
 

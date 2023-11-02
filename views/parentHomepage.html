@@ -23,6 +23,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Constantia', serif;
         /* font-family: 'Poppins', 'sans-serif'; */
       }
 
@@ -35,28 +36,13 @@
       } */
 
       /* Carousel Styling */
-
-      .slide-container {
-          max-width: 1120px;
-          width: 100%;
-          padding: 40px 0;
-          background-color: #FFF;
-          display: flex;
-          align-items: stretch;
-      }
-
-      .slide-content {
-          margin: 0 40px;
-          overflow: hidden;
-          border-radius: 25px;
-      }
-
-      .card {
+      .card-display {
           border-radius: 25px;
           background-color: #FFF;
           height: 100%;
           position: relative;
-          padding-bottom: 120px;
+          padding-bottom: 130px;
+          box-shadow: 10px 10px 5px lightgrey;
       }
 
       .image-content,
@@ -64,7 +50,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          padding: 10px 14px;
+          padding: 3px 5px;
       }
 
       .card-image {
@@ -78,8 +64,8 @@
 
       .image-content {
           position: relative;
-          row-gap: 5px;
-          padding: 25px 0;
+          row-gap: 3px;
+          padding: 18px 0;
       }
 
       .overlay {
@@ -117,16 +103,16 @@
       }
 
       .name {
-          font-size: 18px;
-          font-weight: 500;
-          color: #333;
+          font-size: 22px;
+          /* font-weight: 500; */
+          /* color: #333; */
       }
 
-      .description {
+      /* .description {
           font-size: 14px;
           color: #707070;
           text-align: center;
-      }
+      } */
 
       .cardButton {
           position: absolute;
@@ -135,21 +121,21 @@
           bottom: 5px;
       }
 
-      .swiper-navBtn {
+      /* .swiper-navBtn {
           color: #6e93f7;
           transition: color 0.3s ease;
-      }
+      } */
 
-      .swiper-navBtn:hover {
+      /* .swiper-navBtn:hover {
           color: #4070F4;
-      }
+      } */
 
-      .swiper-navBtn::before,
+      /* .swiper-navBtn::before,
       .swiper-navBtn::after {
           font-size: 40px;
-      }
+      } */
 
-      .swiper-button-next {
+      /* .swiper-button-next {
           right: 0;
       }
 
@@ -164,19 +150,26 @@
 
       .swiper-pagination-bullet-active {
           background-color: #4070F4;
-      }
+      } */
 
       /* Other Styling */
       .distanceInfor {
         position: absolute;
         font-size: 12px;
-        font: italic;
-        bottom: 50px;
+        /* font-style: italic; */
+        bottom: 60px;
+        
+
       }
 
       .mrtInfor {
         position: absolute;
-        bottom: 75px;
+        bottom: 80px;
+      }
+
+      .timeslots {
+        list-style: none;
+        padding: 5px 10px;
       }
 
     </style>
@@ -184,7 +177,7 @@
   </head>
 <body>
     <!-- Tutor Listing -->
-    <div id="app">
+    <div id="app" style="background-color: whitesmoke;">
        <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
         <div class="container">
           <a class="navbar-brand" href="index.html">Bridging Dream</a>
@@ -228,7 +221,7 @@
         </div>
         </nav>   
       <!-- Filter -->
-      <section class="bg-primary text-light p-5 text-center text-sm-start" id="container1">
+      <section class=" text-light p-5 text-center text-sm-start" id="container1" style="background-color: #0069d9;">
         <div class="jumbotron">
           <div class="text-center">
             <h1 class="display-4">Welcome to Your Homepage</h1>
@@ -258,12 +251,9 @@
                   </div>
                   <!-- Filter by Region -->
                   <div class="col-md-3 col-6 m-1">
-                    <label for="documentType" class="form-label">Document Type</label>
-                    <select id="documentType" class="form-select" v-model="filterResult.documentType">
-                      <option selected value="note">Lecture Note</option>
-                      <option value="worksheet">Exercise Worksheer</option>
-                      <option value="examPaper">Exam Paper</option>
-                    </select>
+                    <label for="distanceRadius" class="form-label">Distance Radius (km)</label>
+                    <input class="form-control" type="number" id="distanceRadius" v-model="filterResult.distanceRadius">
+
                   </div>
                   <div class="col-md-1 col-6 align-self-end m-1">
                     <button id="button" class="btn btn-warning mx-1 h-50" type="submit">
@@ -280,30 +270,8 @@
      
       <!-- Recommended Section -->
       <!-- Tutor Browse -->
-      <div class="container">
-            <div class="row px-4">
-              <div v-for="tutor of tutors">
-                    <!-- Display Infor -->
-                    <!-- <div class="card h-100 w-100" style="height: 50vh;">
-                        <img :src="tutor.profileURL" class="card-img-top p-3" alt="...">
-                        <div class="card-body">
-                            
-                            <h5 class="card-title">{{tutor['name']}}</h5>
-                            <p >Hi I'm {{tutor.name}}, I'm efficient in teaching {{tutor.subject}}</p>
-                            <p>I'm available on: </p>
-                            <ul class="list-group list-group-flush text-center"> 
-                                <li v-for="timeSlot in tutor.timeSlots" class="list-group-item border text-center mb-2 mx-2">
-                                    <strong>{{timeSlot.date}}</strong>  <br>
-                                    {{timeSlot.time}}
-                                </li>
-                            </ul>
-                            <p>Nearest MRT: {{tutor.nearestMRT}}</p>
-                            <p class="text-muted fs-6">Distance from your nearest MRT Station: {{tutor.distance}} km </p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + tutor.tutorID">
-                                Schedule Session
-                            </button>
-                        </div>
-                    </div> -->
+      <!-- Modals -->
+      <div v-for="tutor of tutors">
                     <div class="modal fade" :id="tutor.tutorID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                         <div class="modal-content">
@@ -331,42 +299,147 @@
                         </div>
                       </div>
                     </div>
-              </div>
+            
 
-            </div>
       </div>
-      <div class="slide-container swiper">
-        <div class="slide-content">
-            <div class="card-wrapper swiper-wrapper">
-                <div v-for="tutor of tutors" class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img class="card-img" :src="tutor.profileURL" alt="">
-                        </div>
-                    </div>
-                    <div class="card-content">
-                      <h2 class="name">{{tutor.name}}</h2>
-                      <p >Hi I'm {{tutor.name}}, I'm efficient in teaching {{tutor.subject}}</p>
-                      <p>I'm available on: </p>
-                      <ul class="list-group list-group-flush"> 
-                        <li v-for="timeSlot in tutor.timeSlots" class="list-group-item border mb-2 mx-2">
-                            {{timeSlot.date}}
-                            {{timeSlot.time}}
-                        </li>
-                      </ul>
-                      <p class="mrtInfor" >Nearest MRT: {{tutor.nearestMRT}}</p>
-                      <p class="distanceInfor">(Distance from your nearest MRT Station: {{tutor.distance}} km)</p>
-                      <button type="button" class="btn btn-primary cardButton" data-bs-toggle="modal" :data-bs-target="'#' + tutor.tutorID">Schedule Lesson</button>
-                    </div>
-                </div>
+      <div class="container-fluid my-2">
+        <div class="row">
+          <div class="col-md-10 col-sm-12-order-1 ">
+            <div class="row text-center">
+              <h4>Our Recommended Tutors</h4>
             </div>
+            <div class="row justify-content-around">
+              <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-2">
+                <div  class="card-display swiper-slide">
+                  <div class="image-content">
+                      <span class="overlay"></span>
+    
+                      <div class="card-image">
+                          <img class="card-img" :src="tutor.profileURL" alt="">
+                      </div>
+                      <!-- <div class="title" style="z-index: 100;">
+                        <h2 class="name text-dark">{{tutor.name}}</h2>
+                      </div> -->
+                  </div>
+                  <div class="card-content">
+                    <h1 class="name text-dark">{{tutor.name}}</h1>
+                    <div class="subjects text-center">
+                      <h5 >I'm efficient in teaching:</h5>
+                      <button class="btn btn-warning m-1" disabled v-for="subject in tutor.subject">
+                        {{subject}}
+                      </button>
+                    </div>  
+
+                   
+                    <!-- <h5>I'm available on:</h5>
+                    <ul class="list-group list-group-flush p-1"> 
+                      <li v-for="timeSlot in tutor.timeSlots" class="timeslots border p-1 mb-2 mx-1">
+                          {{timeSlot.date}}
+                          {{timeSlot.time}}
+                      </li>
+                    </ul> -->
+                    <p class="mrtInfor">Location: {{tutor.nearestMRT}}</p>
+                    <p class="distanceInfor">{{tutor.distance}} km away from you</p>
+                    <button type="button" class="btn btn-primary cardButton" data-bs-toggle="modal" :data-bs-target="'#' + tutor.tutorID">Book</button>
+                  </div>
+              </div>
+              </div>
+            </div>
+            
+          </div>
+          
+          <div class="col-md-2 col-12-order-0"> 
+            <div class="container-fluid bg-light">
+              <h4>Upcoming Sessions</h4>
+              <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
+                <div class="card-body">
+                  <h5 class="card-title">{{listing.tutorName}}</h5>
+                  <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid bg-light">
+              <h4>Your Requests</h4>
+              <div v-for="listing of pendingBooking" class="card my-2 w-100 text-center">
+                <div class="card-body">
+                  <h5 class="card-title">{{listing.tutorName}}</h5>
+                  <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
-        <div class="swiper-pagination"></div>
-    </div> 
+      </div>
+        <!-- start of footer section -->
+        <footer id="contact" class="page-footer p-2 text-md-left">
+          <div class="container py-5">
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-6">
+                <h5 class="text-uppercase font-weight-bold mb-4">
+                  Bridging Dreams
+                </h5>
+                <p>
+                  Founded on 18th October 2023
+                </p>
+    
+                <p>
+                  Made by Information System Students 
+                </p>
+                
+                <p>
+                  Singapore Management Univeristy 
+                </p>
+                  
+              </div>
+              
+              <div class="col-lg-2 col-md-2 mx-auto">
+                <h5 class="text-uppercase font-weight-bold mb-4">Follow Us</h5>
+    
+                <p id="icon">
+                  <i class='bx bxl-facebook'></i>
+                  <i class='bx bxl-instagram'></i>
+                  <i class='bx bxl-twitter'></i>
+                  <i class='bx bxl-youtube'></i>
+    
+                </p>
+              </div>
+    
+              
+              <div class="col-lg-3 col-xs-12 location">
+                <h5 class="text-uppercase font-weight-bold mb-4">Location</h5>
+    
+                <p class="d-flex">
+                  147 Killiney Road
+                </p>
+                <p class="d-flex">
+                  +65 9451 8710
+                </p>
+                <p class="d-flex">
+                  bridgingdreamsinfo@gmail.com
+                </p>
+    
+              </div>
+            </div>
+          </div>
+        </footer>
+    
+        <!-- End of footer section -->
+    
+        <!-- Start of footer bottom -->
+        <footer class="p-3 bg-dark text-white text-center position-relative">
+          <div class="container">
+            <p class="mb-0">
+              Copyright &copy; 2023 Bridging Dreams
+            </p>
+    
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+              <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+          </div>
+        </footer>
+        <!-- End of footer bottom -->
   </div>
 
     
@@ -378,37 +451,5 @@
     <script src="./booking.js"></script>
     <!-- Boostrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-     var swiper = new Swiper(".slide-content", {
-          spaceBetween: 25,
-          loop: true,
-          centerSlide: true,
-          fade: true,
-          grabCursor: true,
-          pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-              dynamicBullets: true,
-          },
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-
-          breakpoints: {
-              0: {
-                  slidesPerView: 1,
-              }, 
-              550: {
-                  slidesPerView: 2,
-              },
-              950: {
-                  slidesPerView: 3,
-              }
-          }
-      });
-
-      
-  </script>
 </body>
 </html>
