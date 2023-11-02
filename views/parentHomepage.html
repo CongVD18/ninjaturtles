@@ -228,38 +228,55 @@
         </div>
         </nav>   
       <!-- Filter -->
-      <div class="container-fluid bg-primary text-white p-5">
-        <div class="row">
-          <form @submit.prevent="handleFilter()">
-            <div class="input-group justify-content-center text-align-center">
-              <!-- Filter for Education Level -->
-              <div class="col-md-2 col-6 m-1">
-                <label for="eduLevel" class="form-label">Education Level</label>
-                <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
-                  <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
-                </select>
-              </div>
-              <!-- Filter for Subjects, will change accordingly to Education Level -->
-              <div class="col-md-2 col-6 m-1">
-                <label for="subject" class="form-label">Subject</label>
-                <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
-                  <option v-for="subject in filter.subjects">{{subject}}</option>
-                </select>
-              </div>
-              <!-- Filter by Region -->
-              <div class="col-md-2 col-6 m-1">
-                <label for="distanceRadius" class="form-label">Distance Radius (Km)</label>
-                <input class="form-control" type="number" id="distanceRadius" placeholder="Enter a positve number" min="0" v-model="filterResult.distanceRadius">
-              </div>
-              <div class="col-md-1 col-6 align-self-end m-1">
-                <button id="button" class="btn btn-outline-dark mx-1 h-50" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
+      <section class="bg-primary text-light p-5 text-center text-sm-start" id="container1">
+        <div class="jumbotron">
+          <div class="text-center">
+            <h1 class="display-4">Welcome to Your Homepage</h1>
+            <p class="lead" style="font-style: italic;">"This is where you can find your desired tutors based on your preferences"</p>
+            <hr class="my-4">
+          </div>
+       
+          
+
+          <div class="container">
+            <div class="row">
+              <form @submit.prevent="handleFilter()">
+                <div class="input-group justify-content-center text-align-center">
+                  <!-- Filter for Education Level -->
+                  <div class="col-md-3 col-6 m-1">
+                    <label for="eduLevel" class="form-label">Education Level</label>
+                    <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
+                      <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
+                    </select>
+                  </div>
+                  <!-- Filter for Subjects, will change accordingly to Education Level -->
+                  <div class="col-md-3 col-6 m-1">
+                    <label for="subject" class="form-label">Subject</label>
+                    <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
+                      <option v-for="subject in filter.subjects">{{subject}}</option>
+                    </select>
+                  </div>
+                  <!-- Filter by Region -->
+                  <div class="col-md-3 col-6 m-1">
+                    <label for="documentType" class="form-label">Document Type</label>
+                    <select id="documentType" class="form-select" v-model="filterResult.documentType">
+                      <option selected value="note">Lecture Note</option>
+                      <option value="worksheet">Exercise Worksheer</option>
+                      <option value="examPaper">Exam Paper</option>
+                    </select>
+                  </div>
+                  <div class="col-md-1 col-6 align-self-end m-1">
+                    <button id="button" class="btn btn-warning mx-1 h-50" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
+
+      </section>
      
       <!-- Recommended Section -->
       <!-- Tutor Browse -->
