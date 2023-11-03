@@ -70,21 +70,21 @@
                 <div class="input-group justify-content-center text-align-center">
                   <!-- Filter for Education Level -->
                   <div class="col-md-3 col-6 m-1">
-                    <label for="eduLevel" class="form-label">Education Level</label>
+                    <label for="eduLevel" class="form-label" style="font-size: 20px;">Education Level</label>
                     <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                       <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                     </select>
                   </div>
                   <!-- Filter for Subjects, will change accordingly to Education Level -->
                   <div class="col-md-3 col-6 m-1">
-                    <label for="subject" class="form-label">Subject</label>
+                    <label for="subject" class="form-label" style="font-size: 20px;">Subject</label>
                     <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
                       <option v-for="subject in filter.subjects">{{subject}}</option>
                     </select>
                   </div>
                   <!-- Filter by Region -->
                   <div class="col-md-3 col-6 m-1">
-                    <label for="documentType" class="form-label">Document Type</label>
+                    <label for="documentType" class="form-label" style="font-size: 20px;">Document Type</label>
                     <select id="documentType" class="form-select" v-model="filterResult.documentType">
                       <option selected value="note">Lecture Note</option>
                       <option value="worksheet">Exercise Worksheer</option>
