@@ -22,8 +22,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Constantia', serif;
-    background: white ;
+    background: whitesmoke ;
     }
+
+    body {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      }
 
     #image {
       max-width: 100%;
@@ -96,14 +104,32 @@
       background-size: cover;
       background-position: center;
     }
+
+    #nav_bar {
+      background-color: #fff;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      
+    }
+    
+    /* Add space between the navigation brand and the navigation links */
+    .navbar-brand {
+      margin-right: 20px; /* Adjust the margin as needed */
+    }
+    
+    .navbar-nav {
+      margin-left: auto; /* Push the ul to the right to create space */
+    }
+    
     </style>
   </head>
   
   <body>
     <!-- Start of Navigation Bar -->
-    <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
+    <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
       <div class="container">
-        <a class="navbar-brand" href="landingpage.html" style="font-weight: bolder; font-size: 26px">Bridging Dream</a>
+        <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -111,11 +137,10 @@
           <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home" style="font-size: 20px">Home</a>
-            </li>
+              <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../LogIn/RegisterForm/login.html" style="font-size: 20px">Log In/Sign Up</a>
+              <a class="nav-link active font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 20px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
             </li>
           </ul>
         </div>
@@ -298,9 +323,9 @@
     <!-- End of footer section -->
 
     <!-- Start of footer bottom -->
-    <footer class="p-3 bg-dark text-white text-center position-relative">
+    <footer class="p-3 text-white text-center position-relative" style="background-color:#007bff">
       <div class="container">
-        <p class="mb-0">
+        <p class="mb-0" style="font-weight: bold">
           Copyright &copy; 2023 Bridging Dreams
         </p>
 

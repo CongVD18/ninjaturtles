@@ -1,10 +1,27 @@
 body{
   height: 100vh;
   background: whitesmoke !important;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+}
+
+#nav_bar {
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  
+}
+
+/* Add space between the navigation brand and the navigation links */
+.navbar-brand {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.navbar-nav {
+  margin-left: auto; /* Push the ul to the right to create space */
 }
 
 .card{
@@ -12,6 +29,7 @@ body{
   border: 0 !important;
   border-radius: 20px !important;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
 }
 
 .img-left{
