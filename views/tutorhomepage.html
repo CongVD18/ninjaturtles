@@ -102,7 +102,7 @@
     <!-- End of Navigation Bar -->
     <div class="container" id="app">
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-9 my-4">
           <!-- Display Pending Listing -->
           <div class="p-3 border bg-light mb-3">
             <h4 class="text-center">Your Requests</h4>
@@ -161,14 +161,20 @@
               </table>
           </div>
               <!-- Display Available Listing -->
-              <div class="p-3 border bg-light">
+          <div class="p-3 border bg-light">
                 <h4 class="text-center">Your Listings</h4>
-                <ul class="list-group list-group-flush text-center"> 
-                  <li v-for="listing in availableListings" class="list-group-item border text-center mb-2 mx-2">
-                      <strong>{{listing.date}}</strong>  <br>
-                      {{listing.time}}
-                  </li>
-                </ul>
+                <table class="table text-center">
+                  <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                  </tr>
+                  <tr v-for="listing in availableListings" >
+                    <td>{{listing.date}}</td>
+                    <td>{{listing.time}}</td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+                  </tr>
+                </table>
                 <!-- Create New Listing Form --> 
                 <!-- open button -->
                 <div class="text-center">
@@ -207,55 +213,54 @@
                     </div>
                     </div>
                 </div>
-              </div>
+          </div>
         </div>
         <!-- Display Confirmed Listing -->
-        <div class="col-lg-3">
+        <div class="col-lg-3 my-4">
           <div class="p-3 border bg-light">
-            <center><strong>Upcoming Sessions</strong></center>
-            <br/>
-            <div v-for="listing of confirmedListings" class="card">
+            <center><h4>Upcoming Sessions</h4></center>
+            <div v-for="listing of confirmedListings" class="card mb-3 text-center">
               <div class="card-body">
                 <h5 class="card-title">{{listing.childName}}</h5>
                 <p class="card-text">{{listing.date}} {{listing.time}}</p>
                 <a href="#" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</a>
               </div>
             </div>
-            <div v-for="listing of confirmedListings">
-              <div class="modal fade" :id="listing.listingID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">View confirmed listing</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form>
-                    <div class="modal-body">
-                      <ul>
-                        <li>{{listing.parentName}}</li>
-                        <li>{{listing.childName}}</li>
-                        <li>{{listing.childGender}}</li>
-                        <li>{{listing.eduLevel}}</li>
-                        <li v-if="listing.addNote != ''">
-                          {{listing.addNote}}
-                        </li>
-
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                    <button data-bs-dismiss="modal"  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
-                    <!-- data-bs-dismiss="modal" to close modal after booking -->
-                    </div>
-                  </form>
+        </div>
+        <div v-for="listing of confirmedListings">
+          <div class="modal fade" :id="listing.listingID" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">View confirmed listing</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              </div>
+                <form>
+                <div class="modal-body">
+                  <ul>
+                    <li>{{listing.parentName}}</li>
+                    <li>{{listing.childName}}</li>
+                    <li>{{listing.childGender}}</li>
+                    <li>{{listing.eduLevel}}</li>
+                    <li v-if="listing.addNote != ''">
+                      {{listing.addNote}}
+                    </li>
+
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                <button data-bs-dismiss="modal"  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                <!-- data-bs-dismiss="modal" to close modal after booking -->
+                </div>
+              </form>
             </div>
-            <br />
-           
-          
-        </div> 
           </div>
+        </div>
+        <br />
+       
+      
+        </div> 
       </div>
     </div>
   </div>
