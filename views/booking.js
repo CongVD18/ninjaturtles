@@ -108,8 +108,8 @@ const app = Vue.createApp({
             ],
 
             pendingBooking: [
-                {bookingID: 'iiikkkasd', listingID: 'abcdsdw', tutorID: 'nnnnn1', tutorName: 'Thomas', date: '24/11/2023', time: '4PM-6PM', status: 'pending', parentID: 'aaaaa'},
-                {bookingID: 'asdwdasdw', listingID: 'abcdadh', tutorID: 'nnnnn', tutorName: 'Josh', date: '24/11/2023', time: '4PM-6PM', status: 'pending', parentID: 'aaaaa'},
+                {bookingID: 'iiikkkasd', listingID: 'abcdsdw', tutorID: 'nnnnn1', tutorName: 'Thomas', date: '24/11/2023', time: '4PM-6PM', status: 'rejected', parentID: 'aaaaa'},
+                {bookingID: 'asdwdasdw', listingID: 'abcdadh', tutorID: 'nnnnn', tutorName: 'Josh', date: '24/11/2023', time: '4PM-6PM', status: 'rejected', parentID: 'aaaaa'},
                 {bookingID: 'asdwdaahw', listingID: 'abcakjl', tutorID: 'nnnnn1', tutorName: 'Kang', date: '23/11/2023', time: '3PM-5PM', status: 'pending', parentID: 'aaaaa'},
             ]
         }
