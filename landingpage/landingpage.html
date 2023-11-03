@@ -126,6 +126,21 @@
       background-image: url(../LogIn/yay.avif);
     }
 
+    .carousel-caption {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+
+  .carousel-caption h1, .carousel-caption p {
+    background: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background for better readability */
+    color: #fff; /* Text color */
+    padding: 10px;
+  }
+
     </style>
   </head>
   
@@ -154,7 +169,7 @@
       
     <!-- start of new section -->
     <section class="section-1">
-      <div class="container ">
+      <div class="container">
         <div class="row">
           <div class="col-md-6 col-12">
 
@@ -212,23 +227,29 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="../images/intro_photo_6.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>One to One Tuition</h1>
-            <p>Receive free tuition from our volunteering students</p>
+          <div class="carousel-caption d-flex align-items-center justify-content-center">
+            <div>
+              <h1>One to One Tuition</h1>
+              <p>Receive free tuition from our volunteering students</p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="../images/intro_photo_3.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1>Resouceful Learning Contents</h1>
-            <p>A well-organised collection educational resources catering to all primary and secondary levels</p>
+          <div class="carousel-caption d-flex align-items-center justify-content-center">
+            <div>
+              <h1>Resourceful Learning Contents</h1>
+              <p>A well-organized collection of educational resources catering to all primary and secondary levels</p>
+            </div>
           </div>
         </div>
         <div class="carousel-item">
           <img src="../images/intro_photo_5.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h1 style="color:rgb(227, 46, 46)">Fast and Effective Booking System</h1>
-            <p style="color:rgb(227, 46, 46)">An easy-to-use booking system to allow parents to select tuition session on their preference</p>
+          <div class="carousel-caption d-flex align-items-center justify-content-center">
+            <div>
+              <h1 style="color:#007bff">Fast and Effective Booking System</h1>
+              <p style="color:#007bff">An easy-to-use booking system to allow parents to select tuition sessions at their preference</p>
+            </div>
           </div>
         </div>
       </div>
