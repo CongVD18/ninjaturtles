@@ -17,7 +17,8 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!-- Swiperjs -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
       * {
         margin: 0;
@@ -155,7 +156,7 @@
       /* Other Styling */
       .distanceInfor {
         position: absolute;
-        font-size: 12px;
+        font-size: 15px;
         /* font-style: italic; */
         bottom: 60px;
         
@@ -338,7 +339,7 @@
                           {{timeSlot.time}}
                       </li>
                     </ul> -->
-                    <p class="mrtInfor">Location: {{tutor.nearestMRT}}</p>
+                    <p class="mrtInfor"><i class="fa-solid fa-location-dot" style="color: #ff0f0f;"></i>  {{tutor.nearestMRT}}</p>
                     <p class="distanceInfor">{{tutor.distance}} km away from you</p>
                     <button type="button" class="btn btn-primary cardButton" data-bs-toggle="modal" :data-bs-target="'#' + tutor.tutorID">Book</button>
                   </div>
