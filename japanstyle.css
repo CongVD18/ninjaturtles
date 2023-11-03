@@ -4,13 +4,13 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	background-color: #F4F3EE;
-	color: #646464;
-	font-family: "runda",sans-serif;
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.5625;
+body{
+  height: 100vh;
+  background: whitesmoke !important;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
 }
 
 body.menu-open {

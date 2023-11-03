@@ -132,13 +132,22 @@
         .btn-primary:hover {
             background-color: #0056b3; 
         }
-        .navbar-brand {
-        margin-right: 20px; /* Adjust the margin as needed */
-        }
-        
-        .navbar-nav {
-        margin-left: auto; /* Push the ul to the right to create space */
-        }
+        #nav_bar {
+            background-color: #fff;
+            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            
+            }
+
+            /* Add space between the navigation brand and the navigation links */
+            .navbar-brand {
+            margin-right: 20px; /* Adjust the margin as needed */
+            }
+
+            .navbar-nav {
+            margin-left: auto; /* Push the ul to the right to create space */
+            }
 
         .maximum-dimensions{
             max-width:800px;
@@ -160,6 +169,16 @@
             border: 5px solid #8B4513; /* Dark border color resembling a chalkboard frame */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
         }
+        .rounded-custom {
+            border-radius: 20px; /* Adjust the radius value as needed */
+        }
+        .shadowed-container {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px; /* Add padding for spacing and better visualization */
+            background-color: whitesmoke; /* You can adjust the background color as needed */
+        }
+
+        
     
 
         </style>
@@ -204,7 +223,7 @@
 <body>
     <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
         <div class="container">
-          <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
+          <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff; font-family: 'Constantia', serif; ">Bridging Dreams</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -212,16 +231,16 @@
             <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Resource Library</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Profile</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Logout</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
               </li>
             </ul>
           </div>
@@ -246,7 +265,7 @@
             <div class="container">
             <div class="row">
                 <div class="col-1"></div>
-                <div class="col-10 p-3 border bg-light">
+                <div class="col-10 p-3 bg-white border rounded-custom shadowed-container">
                     <form class="row g-3 " id="profileForm" enctype="multipart/form-data" @submit.prevent="addNewProfile">
                         <!-- Image Upload and User Information Left Side -->
                         <div class="col-md-12 col-sm-12 col-lg-3 text-center">
@@ -290,15 +309,16 @@
                                 </div>
                                 <div class="col-6">
                                     <label for="nearestMRT">Nearest MRT: </label>
-                                    <select id="nearestMRT" v-model="form.location" name="nearestMRT">
-                                        <!-- The dropdown options will be added here -->
-                                        <option value="" disabled>Select an MRT station</option>
-                                        <option v-for="station in mrtStations" :key="station">
-                                            {{ station }}
-                                        </option>
-                                    </select>
+                                    <div class="position-static">
+                                        <select id="nearestMRT" v-model="form.location" name="nearestMRT" class="form-select">
+                                            <!-- The dropdown options will be added here -->
+                                            <option value="" disabled>Select an MRT station</option>
+                                            <option v-for="station in mrtStations" :key="station">
+                                                {{ station }}
+                                            </option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
                             
                             <!-- Checkbox Options -->
                             <div class="row">

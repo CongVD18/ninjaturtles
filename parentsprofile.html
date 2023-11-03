@@ -109,7 +109,7 @@
       /* Style checkboxes and radio buttons */
       form label {
       font-family: 'Constantia', serif;
-      font-size: 25px;
+      font-size: 15px;
       font-weight: 400;
       letter-spacing: 0.1rem;
       margin-bottom: 1rem;
@@ -132,13 +132,29 @@
       .btn-primary:hover {
           background-color: #0056b3; 
       }
+      #nav_bar {
+          background-color: #fff;
+          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          
+          }
+
+          /* Add space between the navigation brand and the navigation links */
+          .navbar-brand {
+          margin-right: 20px; /* Adjust the margin as needed */
+          }
+
+          .navbar-nav {
+          margin-left: auto; /* Push the ul to the right to create space */
+          }
 
       </style>
 </head>
 <body>
-  <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
+  <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Bridging Dreams</a>
+      <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -146,38 +162,21 @@
         <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tutor listing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Resource Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Questions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Instructions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Logout</a>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
+    </nav>   
 
   <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
     <img class="position-absolute illustration-mt-fuji z-index-minus-1" src="https://www.tenjakuwhisky.co.uk/wp-content/themes/tenjaku/img/svg/illustration-fuji.svg" alt="Mt. Fuji">
