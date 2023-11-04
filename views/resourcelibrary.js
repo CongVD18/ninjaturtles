@@ -27,8 +27,18 @@ const app = Vue.createApp({
             filterResult: {
                 subject: 'Primary Math',
                 documentType: 'Lecture Note'
-            }
+            },
+
+            //Typing animation data
+            text: '',
+            phrases: ['Resource Library'],
+            sleepTime: 100,
+            curPhraseIndex: 0,
         }
+    },
+
+    created() {
+        this.writeLoop();
     },
 
     methods: {
@@ -38,6 +48,34 @@ const app = Vue.createApp({
             this.filterResult.subject = subjects[0]
             this.filter.subjects = subjects
         },
+
+        sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        },
+        
+        async writeLoop() {
+            while (true) {
+              let curWord = this.phrases[this.curPhraseIndex];
+  
+              for (let i = 0; i < curWord.length; i++) {
+                this.text = curWord.substring(0, i + 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 10);
+  
+              for (let i = curWord.length; i > 0; i--) {
+                this.text = curWord.substring(0, i - 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 5);
+  
+              if (this.curPhraseIndex === this.phrases.length - 1) 
+                {this.curPhraseIndex = 0;} 
+              else {this.curPhraseIndex++;}
+            }
+        }
     }
 })
 
