@@ -8,11 +8,8 @@ body{
 }
 
 #nav_bar {
-  background-color: #fff;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  
+  text-transform: uppercase;
 }
 
 /* Add space between the navigation brand and the navigation links */
