@@ -239,8 +239,8 @@
     </section>
         <div class="container">
             <div class="row">
-              <div class="col-md-1"></div>
-                <div class="col-sm-12 col-md-5">
+              <div class="col-lg-1"></div>
+                <div class="col-sm-12 col-md-12 col-lg-5">
                     <div class="p-3 border bg-white border rounded-custom shadowed-container">
                       <form class="row g-3" enctype="multipart/form-data" id="parentForm">                        <!-- Add the input field for uploading an image -->
                         <div class="col-12 image-upload">
@@ -251,11 +251,11 @@
                             <label for="imageUpload" class="upload-button">Upload Image</label>
                           </div>
                         </div>
-                            <div class="col-md-6">
+                            <div class="col-xl-6 col-12">
                               <label for="firstName" class="form-label">Name *</label>
                               <input type="text" class="form-control" id="parentsName" placeholder="Enter your name" required>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-xl-6 col-12">
                               <label for="emailAddress" class="form-label">Email Address</label>
                               <input type="email" disabled v-model="email" class="form-control" id="emailAddress" required>
                           </div>
@@ -278,7 +278,7 @@
                           </form>
                           </div>
                         </div>
-                  <div class="col-sm-12 col-md-5">
+                  <div class="col-sm-12 col-md-12 col-lg-5">
                     <div class="p-3 bg-white border rounded-custom shadowed-container">
                       <form class="row g-3" enctype="multipart/form-data" id="childForm">
                         <!-- Add the input field for uploading an image -->
@@ -335,7 +335,7 @@
           <button type="submit" id="saveDetailsButton" class="btn btn-primary">Save Details</button>
       </div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-lg-1"></div>
 
         <script>
           // Get references to the select element and the div where checkboxes will be added
