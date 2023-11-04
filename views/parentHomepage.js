@@ -58,7 +58,10 @@ const app = Vue.createApp({
     created() {
         //trigger renderProfiles onload
         this.renderProfiles()
-        console.log(this.swiper)
+        
+        //typing animation
+        this.writeLoop();
+        
     },
 
     data() {
@@ -69,6 +72,11 @@ const app = Vue.createApp({
             upComingSess: [],
             pendingRequest: [],
 
+            //Typing animation data
+            text: '',
+            phrases: ['Your Homepage'],
+            sleepTime: 100,
+            curPhraseIndex: 0,
 
             filter: {
                 eduLevel: 'primary'
@@ -171,7 +179,7 @@ const app = Vue.createApp({
 
         handleDisplayTimeslots() {
             for (timeslot of timeSlots) {
-
+                
             }
         },
 
@@ -237,6 +245,34 @@ const app = Vue.createApp({
                 this.tutors = subjectFiltered
             }
 
+        },
+
+        sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        },
+        
+        async writeLoop() {
+            while (true) {
+              let curWord = this.phrases[this.curPhraseIndex];
+  
+              for (let i = 0; i < curWord.length; i++) {
+                this.text = curWord.substring(0, i + 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 10);
+  
+              for (let i = curWord.length; i > 0; i--) {
+                this.text = curWord.substring(0, i - 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 5);
+  
+              if (this.curPhraseIndex === this.phrases.length - 1) 
+                {this.curPhraseIndex = 0;} 
+              else {this.curPhraseIndex++;}
+            }
         },
 
         resetSelected() {

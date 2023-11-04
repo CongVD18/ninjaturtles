@@ -36,6 +36,26 @@
      
       }
 
+      /* Filter */
+      @media (max-width: 768px) {
+      #button {
+        width: 100%;
+        }
+      }
+
+      @media (min-width: 768px) {
+      .textBox {
+        position: relative;
+        }
+
+      .filter {
+        position: absolute;
+        bottom: -75px;
+        left: 50%;
+        transform: translateX(-50%);
+        }
+      }
+
       #nav_bar {
       background-color: #fff;
       box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
@@ -145,24 +165,7 @@
 
    
 
-    @media (max-width: 768px) {
-      #button {
-        width: 100%;
-      }
-    }
 
-    @media (min-width: 768px) {
-    .textBox {
-      position: relative;
-    }
-
-    .filter {
-      position: absolute;
-      bottom: -75px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    }
     
     </style>
 </head>
@@ -238,7 +241,6 @@
             </div>
           </div>
         </div>
-
       </section>
 
       <!-- table display -->

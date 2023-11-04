@@ -28,15 +28,8 @@
         /* font-family: 'Poppins', 'sans-serif'; */
       }
 
-      /* body {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: white;
-      } */
 
-      /* Carousel Styling */
+      /* Tutor Profile Display */
       .card-display {
           border-radius: 25px;
           background-color: #FFF;
@@ -105,15 +98,8 @@
 
       .name {
           font-size: 22px;
-          /* font-weight: 500; */
-          /* color: #333; */
+          font-weight: 500;
       }
-
-      /* .description {
-          font-size: 14px;
-          color: #707070;
-          text-align: center;
-      } */
 
       .cardButton {
           position: absolute;
@@ -122,45 +108,10 @@
           bottom: 5px;
       }
 
-      /* .swiper-navBtn {
-          color: #6e93f7;
-          transition: color 0.3s ease;
-      } */
-
-      /* .swiper-navBtn:hover {
-          color: #4070F4;
-      } */
-
-      /* .swiper-navBtn::before,
-      .swiper-navBtn::after {
-          font-size: 40px;
-      } */
-
-      /* .swiper-button-next {
-          right: 0;
-      }
-
-      .swiper-button-prev {
-          left: 0;
-      }
-
-      .swiper-pagination-bullet {
-          background-color: #6e93f7;
-          opacity: 1;
-      }
-
-      .swiper-pagination-bullet-active {
-          background-color: #4070F4;
-      } */
-
-      /* Other Styling */
       .distanceInfor {
         position: absolute;
         font-size: 15px;
-        /* font-style: italic; */
         bottom: 60px;
-        
-
       }
 
       .mrtInfor {
@@ -173,15 +124,77 @@
         padding: 5px 10px;
       }
 
+      /* Top Section */
+      .topSection {
+        background-image: url('https://media.istockphoto.com/id/639392022/vector/bookshelves-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1DNOwFJabnlqHzShnSHfWOsNBUTtIaOgFBcpGQO_-oQ=');
+        /* background-color: #FFC436; */
+        background-size: contain;
+      }
+
+      .textBox {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+      }
+      /* Filter */
+      .form-field {
+      border-radius: 0;
+      }
+
+      .filter-left {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .filter-right {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      #button {
+        width: 85px;
+      }
+      @media (max-width: 768px) {
+      #button {
+        width: 100%;
+        }
+      }
+
+      @media (min-width: 768px) {
+      .textBox {
+        position: relative;
+        }
+
+      .filter {
+        position: absolute;
+        bottom: -75px;
+        left: 50%;
+        transform: translateX(-50%);
+        }
+      }
+
+      /* Typing Animation */
+      #cursor {
+        color: #FFC436;
+        animation: blink 1s linear infinite;
+      }
+
+      @keyframes blink {
+        0% {
+          opacity: 100%;
+        }
+        50% {
+          opacity: 0%;
+        }
+      }
+
     </style>
 
   </head>
 <body>
-    <!-- Tutor Listing -->
     <div id="app" style="background-color: whitesmoke;">
-       <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" data-bs-theme="dark">
+      <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
         <div class="container">
-          <a class="navbar-brand" href="index.html">Bridging Dream</a>
+          <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -189,85 +202,60 @@
             <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">My Profile</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Questions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Instructions</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 20px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
               </li>
             </ul>
           </div>
         </div>
-        </nav>   
-      <!-- Filter -->
-      <section class=" text-light p-5 text-center text-sm-start" id="container1" style="background-color: #0069d9;">
-        <div class="jumbotron">
-          <div class="text-center">
-            <h1 class="display-4">Welcome to Your Homepage</h1>
-            <p class="lead" style="font-style: italic;">"This is where you can find your desired tutors based on your preferences"</p>
-            <hr class="my-4">
-          </div>
-       
-          
-
-          <div class="container">
-            <div class="row">
-              <form @submit.prevent="handleFilter()">
-                <div class="input-group justify-content-center text-align-center">
-                  <!-- Filter for Education Level -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="eduLevel" class="form-label" style="font-size: 20px;">Education Level</label>
-                    <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
-                      <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
-                    </select>
+    </nav>   
+        <section class="topSection text-light p-5 text-center text-sm-start" id="container1">
+          <div class="jumbotron textBox">
+            <div>
+              <h1>Welcome to <span id="typewriter" style="color: #007bff;">{{text}}</span><span id="cursor">|</span></h1>
+              <p class="lead">
+                "This is where you will find your desired tutors based on your preferences"
+              </p>
+              <hr class="my-4">
+            </div>
+           
+            <div class="container filter">
+              <div class="row">
+                <form @submit.prevent="handleFilter()">
+                  <div class="input-group justify-content-center text-align-center">
+                    <!-- Filter for Education Level -->
+                    <div class="col-md-3 col-11 mt-1">
+                      <!-- <label for="eduLevel" class="form-label" style="font-size: 20px;font-weight: 600;">Education Level</label> -->
+                      <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
+                        <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
+                      </select>
+                    </div>
+                    <!-- Filter for Subjects, will change accordingly to Education Level -->
+                    <div class="col-md-3 col-11 mt-1">
+                      <!-- <label for="subject" class="form-label" style="font-size: 20px; font-weight: 600;">Subject</label> -->
+                      <select id="subject" class="form-select form-select-lg form-field border border-warning border-4" aria-label="Default select example" v-model="filterResult.subject">
+                        <option v-for="subject in filter.subjects">{{subject}}</option>
+                      </select>
+                    </div>
+                    <!-- Filter by Region -->
+                    <div class="col-md-3 col-11 mt-1">
+                      <!-- <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label> -->
+                      <input type="number" id="documentType" class="form-control form-control-lg form-field border border-warning border-4" v-model="filterResult.distanceRadius">
+                    </input>
+                    </div>
+                    <div class="col-md-1 col-11 mt-1">
+                      <button id="button" class="btn btn-primary btn-lg form-field filter-right border border-4 border-warning" type="submit">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
                   </div>
-                  <!-- Filter for Subjects, will change accordingly to Education Level -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="subject" class="form-label" style="font-size: 20px;">Subject</label>
-                    <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
-                      <option v-for="subject in filter.subjects">{{subject}}</option>
-                    </select>
-                  </div>
-                  <!-- Filter by Region -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="distanceRadius" class="form-label" style="font-size: 20px;">Distance Radius (km)</label>
-                    <input class="form-control" type="number" id="distanceRadius" v-model="filterResult.distanceRadius">
-
-                  </div>
-                  <div class="col-md-1 col-6 align-self-end m-1">
-                    <button id="button" class="btn btn-warning mx-1 h-50" type="submit">
-                      <i class="fas fa-search"></i>
-                    </button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-
-      </section>
+        </section>
      
       <!-- Recommended Section -->
       <!-- Tutor Browse -->
@@ -303,24 +291,21 @@
             
 
       </div>
-      <div class="container-fluid my-2">
-        <div class="row py-1">
+      <div class="container-fluid my-5">
+        <div class="row py-1 mx-5">
           <div class="col-lg-10 col-sm-12 py-1 bg-light">
             <div class="row text-center">
               <h4>Our Recommended Tutors</h4>
             </div>
             <div class="row justify-content-around">
               <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-2">
-                <div  class="card-display swiper-slide">
+                <div  class="card-display">
                   <div class="image-content">
                       <span class="overlay"></span>
     
                       <div class="card-image">
                           <img class="card-img" :src="tutor.profileURL" alt="">
                       </div>
-                      <!-- <div class="title" style="z-index: 100;">
-                        <h2 class="name text-dark">{{tutor.name}}</h2>
-                      </div> -->
                   </div>
                   <div class="card-content">
                     <h1 class="name text-dark">{{tutor.name}}</h1>
@@ -458,41 +443,8 @@
     <!-- Google Map API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkXhTb1Gj92FtV987iJRfW__Ne25HrEUU&libraries=geometry"></script>
     <!-- Processor -->
-    <script src="./booking.js"></script>
+    <script src="./parentHomepage.js"></script>
     <!-- Boostrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-     var swiper = new Swiper(".slide-content", {
-          slidesPerView: 3,
-          spaceBetween: 25,
-          loop: true,
-          centerSlide: true,
-          fade: true,
-          grabCursor: true,
-          pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-              dynamicBullets: true,
-          },
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-
-          breakpoints: {
-              0: {
-                  slidesPerView: 1,
-              }, 
-              550: {
-                  slidesPerView: 2,
-              },
-              950: {
-                  slidesPerView: 3,
-              }
-          }
-      });
-
-      
-  </script>
 </body>
 </html>
