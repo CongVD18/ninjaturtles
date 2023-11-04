@@ -12,7 +12,7 @@
      <!-- Search Icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <strong></strong>
-    <!-- <style>
+    <style>
       * {
         margin: 0;
         padding: 0;
@@ -20,79 +20,165 @@
         font-family: 'Constantia', serif;
         /* font-family: 'Poppins', 'sans-serif'; */
       }
-    </style> -->
+
+      body {
+        background-color: white
+      }
+
+      .topSection {
+        background-image: url(./pictures/library.jpeg);
+      }
+
+      .textBox {
+        background-color: rgba(0, 0, 0, 0.5);
+     
+      }
+
+      #nav_bar {
+      background-color: #fff;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+      
+    }
+    
+    /* Add space between the navigation brand and the navigation links */
+    .navbar-brand {
+      margin-right: 20px; /* Adjust the margin as needed */
+    }
+    
+    .navbar-nav {
+      margin-left: auto; /* Push the ul to the right to create space */
+    }
+
+
+    /* table display */
+    /* *{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    } */
+
+    h2{
+        text-align: center;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+        padding: 30px 0;
+    }
+
+    /* Table Styles */
+/* 
+    .table-wrapper{
+        box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.3 );
+    } */
+
+    .fl-table {
+        border-radius: 5px;
+        font-size: 13px;
+        font-weight: normal;
+        border: 1px solid black;
+        /* border-collapse: collapse; */
+        width: 100%;
+        max-width: 100%;
+        white-space: nowrap;
+        background-color: white;
+    }
+
+    .fl-table td, .fl-table th {
+      
+        text-align: center;
+        padding: 8px;
+        border: 1px solid black;
+    }
+
+    .fl-table td {
+        border: 1px solid black;
+        font-size: 15px;
+    }
+
+    .fl-table thead th {
+        color: #ffffff;
+        background: #4FC3A1;
+        border-bottom: 1px solid black;
+    }
+
+
+    .fl-table thead th:nth-child(odd) {
+        color: #ffffff;
+        background: #324960;
+    }
+
+    .fl-table tr:nth-child(even) {
+        background: #F8F8F8;
+        border: 1px solid black;
+    }
+
+    
+    
+    </style>
 </head>
 <body>
     <div id="app">
          <!-- Start of Navigation Bar -->
-      <nav class="navbar navbar-dark bg-dark navbar-expand-lg  py-3">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          Briding Dream
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Resource Library</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Log out</a>
-          </ul>
-        </div>
-      </div>
-      </nav>
+      <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
+          <div class="container">
+            <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 20px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>   
       <!-- End of Navigation Bar -->
 
       <!-- Start of hero section  -->
-      <section class=" text-light p-5 text-center text-sm-start" id="container1" style="background-color: #0069d9;">
-        <div class="jumbotron">
-          <div class="text-center">
+      <section class=" topSection text-light p-5 text-center text-sm-start" id="container1" style="background-color: #0069d9;">
+        <div class="jumbotron textBox">
+          <div class="">
             <h1 class="display-4">Welcome to Resource Library</h1>
-            <p class="lead" style="font-style: italic;">"This is where you will find all of the available Lecture Notes, Exercise Worksheets and Exam Papers"</p>
+            <p class="lead">"This is where you will find all of the available Lecture Notes, Exercise Worksheets and Exam Papers"</p>
             <hr class="my-4">
           </div>
          
-          
-
-          <div class="container ">
-            <div class="row">
+          <div class="container">
+            <div class="row text-wrap">
               <form @submit.prevent="handleFilter()">
                 <div class="input-group justify-content-center text-align-center">
                   <!-- Filter for Education Level -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="eduLevel" class="form-label" style="font-size: 20px;">Education Level</label>
+                  <div class="col-md-3 col-7 m-1">
+                    <label for="eduLevel" class="form-label" style="font-size: 20px;font-weight: 600;">Education Level</label>
                     <select id="eduLevel" class="form-select" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                       <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                     </select>
                   </div>
                   <!-- Filter for Subjects, will change accordingly to Education Level -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="subject" class="form-label" style="font-size: 20px;">Subject</label>
+                  <div class="col-md-3 col-7 m-1">
+                    <label for="subject" class="form-label" style="font-size: 20px; font-weight: 600;">Subject</label>
                     <select id="subject" class="form-select" aria-label="Default select example" v-model="filterResult.subject">
                       <option v-for="subject in filter.subjects">{{subject}}</option>
                     </select>
                   </div>
                   <!-- Filter by Region -->
-                  <div class="col-md-3 col-6 m-1">
-                    <label for="documentType" class="form-label" style="font-size: 20px;">Document Type</label>
+                  <div class="col-md-3 col-7 m-1">
+                    <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label>
                     <select id="documentType" class="form-select" v-model="filterResult.documentType">
                       <option selected value="note">Lecture Note</option>
                       <option value="worksheet">Exercise Worksheer</option>
                       <option value="examPaper">Exam Paper</option>
                     </select>
                   </div>
-                  <div class="col-md-1 col-6 align-self-end m-1">
-                    <button id="button" class="btn btn-warning mx-1 h-50" type="submit">
+                  <div class="col-md-1 col-7 align-self-end m-1">
+                    <button id="button" class="btn btn-warning h-50" type="submit">
                       <i class="fas fa-search"></i>
                     </button>
                   </div>
@@ -105,57 +191,63 @@
       </section>
 
       <!-- table display -->
-      <div class="container py-3">
-        <table class="table">
-          <tr>
-            <th>Title</th> 
-            <th>Type</th>
-            <th>Education Level</th>
-            <th>Subject</th>
-            <th>Action</th>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
-          <tr>
-            <td>Catholic High Math Paper 2</td>
-            <td>Exam Paper</td>
-            <td>Upper Secondary</td>
-            <td>E-Math</td>
-            <td><button class="btn btn-outline-dark">View</button></td>
-          </tr>
+      <!-- <div class="container py-3  my-3 table-wrapper"> -->
+        <div class="container my-3">
+        <!-- <table class=" fl-table"> -->
+          <table class="table fl-table text-center">
+          <thead>
+            <tr>
+              <th>Title</th> 
+              <th>Type</th>
+              <th>Education Level</th>
+              <th>Subject</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+            <tr>
+              <td>Catholic High Math Paper 2</td>
+              <td>Exam Paper</td>
+              <td>Upper Secondary</td>
+              <td>E-Math</td>
+              <td><button class="btn btn-outline-dark">View</button></td>
+            </tr>
+        </tbody>
         </table>
          
         </div>
