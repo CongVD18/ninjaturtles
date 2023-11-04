@@ -4,13 +4,13 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
-	background-color: #F4F3EE;
-	color: #646464;
-	font-family: "runda",sans-serif;
-	font-size: 18px;
-	font-weight: 300;
-	line-height: 1.5625;
+body{
+  height: 100vh;
+  background: whitesmoke !important;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
 }
 
 body.menu-open {
@@ -87,7 +87,6 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: 'Constantia', serif;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
-	text-transform: uppercase;	
 	margin-bottom: 1.5rem;
 }
 
@@ -117,7 +116,7 @@ p:last-child, ol:last-child, ul:last-child {
 	font-family: 'Constantia', serif;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
-	text-transform: uppercase;
+
 }
 
 .fw-bold, b, strong {
@@ -132,9 +131,6 @@ p:last-child, ol:last-child, ul:last-child {
 	color: #000;
 }
 
-.text-case-normal {
-	text-transform: none;
-}
 
 
 /* Colours */
@@ -272,7 +268,6 @@ section.section-sm {
 	color: #000;
 	font-family: 'Constantia', serif;
 	font-weight: bold;
-	text-transform: uppercase;
 	padding: 22px 40px 20px;
 	line-height: 1;
 	outline: none!important;
@@ -353,7 +348,6 @@ form label {
 	font-weight: 400;
 	letter-spacing: 0.1rem;
 	margin-bottom: 1rem;
-	text-transform: uppercase;
 }
 
 .form-check {
