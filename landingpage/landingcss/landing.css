@@ -1,13 +1,14 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #E5E5E5;
+    /* font-family: 'Roboto', sans-serif; */
+    background-color: whitesmoke;
+    font-family: 'Constantia', serif;
 }
 div {
     display: block;
     /* border: 1px solid; */
 }
 h1 {
-    font-family: 'Bebas Neue';
+    /* font-family: 'Bebas Neue'; */
     font-size: 80px;
     color: #363958;
     padding: 0px;
@@ -15,18 +16,18 @@ h1 {
     /* border: 1px solid; */
 }
 h2 {
-    font-family: 'Bebas Neue';
+    /* font-family: 'Bebas Neue'; */
     font-size: 48px;
     color: #363958;
 }
 h4 {
-    font-family: 'Roboto';
+    /* font-family: 'Roboto'; */
     font-size: 24px;
     font-weight: 1000;
     color: #363958;
 }
 h5 {
-    font-family: 'Roboto';
+    /* font-family: 'Roboto'; */
     font-size: 20px;
     font-weight: 1000;
     color: #363958;
@@ -36,6 +37,24 @@ a:hover {
     box-shadow: 20px 20px 30px #3D4FF3;
 }
 
+/* Jumping text effect */
+.waviy span {
+    position: relative;
+    display: inline-block;  
+    animation: waviy 2s infinite;
+    animation-delay: calc(.1s * var(--i));
+    
+}
+@keyframes waviy {
+0%,40%,100% {
+    transform: translateY(0)
+}
+20% {
+    transform: translateY(-20px)
+}
+}
+
+
 /* header */
 #header {
     height: auto;
@@ -44,6 +63,11 @@ a:hover {
 }
 #header span {
     font-weight: 1000;
+}
+
+#navbar {
+    text-transform: uppercase;
+    background-color: white;
 }
 
 .custom-ul {
