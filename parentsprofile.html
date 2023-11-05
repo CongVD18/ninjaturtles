@@ -241,19 +241,19 @@
     </section>
         <div class="container">
             <div class="row">
-              <div class="col-lg-1"></div>
-                <div class="col-sm-12 col-md-12 col-lg-5">
+              <div class="col-lg-0 col-xl-1"></div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
                     <div class="p-3 border bg-white border rounded-custom shadowed-container">
                       <form class="row g-3" enctype="multipart/form-data" id="parentForm">                        <!-- Add the input field for uploading an image -->
                         <div class="col-12 image-upload">
-                          <label for="imageUpload" class="form-label" style="font-size:18px;">Parent</label>
-                          <div class="image-preview">
+                          <label for="imageUpload" class="form-label" style="font-size:24px; font-weight:bolder;">Parent</label>
+                          <!-- <div class="image-preview">
                             <div id="imagePreview" class="image-placeholder"></div>
                             <input type="file" id="imageUpload" accept="image/*">
                             <label for="imageUpload" class="upload-button">Upload Image</label>
-                          </div>
+                          </div> -->
                         </div>
-                            <div class="col-xl-6 col-12">
+                            <div class="col-12">
                               <label for="firstName" class="form-label">Name *</label>
                               <input type="text" class="form-control" id="parentsName" placeholder="Enter your name" required>
                             </div>
@@ -261,51 +261,20 @@
                               <label for="emailAddress" class="form-label">Email Address</label>
                               <input type="email" disabled v-model="email" class="form-control" id="emailAddress" required>
                           </div>
-                            <div class="col-12">
-                              <label for="parentsGender" class="form-label">Gender:  </label>
-                              <select id="parentsGender" name="parentsGender">
-                                  <option value="male">Male</option>
-                                  <option value="female">Female</option>
-                              </select>
-                        </div>
-                            <div class="col-md-6">
+                            <div class="col-xl-6 col-12">
                               <label for="contactNumber" class="form-label">Contact Number *</label>
-                              <input type="number" class="form-control" id="phoneNumber" placeholder="Enter your phone number"required>
-                            </div>
-                            <div class="col-md-12">
-                              <label for="inputBio" class="form-label">Bio</label>
-                              <textarea class="form-control" id="inputBio" placeholder="Tell us a little about yourself"></textarea>
-                            </div>
-
-                          </form>
-                          </div>
-                        </div>
-                  <div class="col-sm-12 col-md-12 col-lg-5">
-                    <div class="p-3 bg-white border rounded-custom shadowed-container">
-                      <form class="row g-3" enctype="multipart/form-data" id="childForm">
-                        <!-- Add the input field for uploading an image -->
-                        <div class="col-12 image-upload">
-                          <label for="imageUpload2" class="form-label" style="font-size:18px;">Child</label>
-                          <div class="image-preview">
-                            <div id="imagePreview" class="image-placeholder"></div>
-                            <input type="file" id="imageUpload2" accept="image/*">
-                            <label for="imageUpload2" class="upload-button">Upload Image</label>
-                          </div>
-                        </div>
-                            <div class="col-12">
-                              <label for="firstName" class="form-label">Name *</label>
-                              <input type="text" class="form-control" id="nameChild" placeholder="Enter your child's name" required>
+                              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number"required>
                             </div>
                             <div class="col-12">
-                              <label for="parentsGender" class="form-label">Gender:  </label>
+                              <label for="parentsGender" class="form-label">Gender *:  </label>
                               <select id="parentsGender" name="parentsGender">
                                   <option value="male">Male</option>
                                   <option value="female">Female</option>
                               </select>
-                            </div>
+                        </div>
                             <!-- Create a list of all MRT's in Singapore -->
                             <div class="col-12">
-                              <label for="nearestMRT" class="form-label">Nearest MRT: </label>
+                              <label for="nearestMRT" class="form-label">Nearest MRT *: </label>
                               <div class="position-static">
                               <select id="nearestMRT" name="nearestMRT" class="form-select">
                                   <!-- The dropdown options will be added here -->
@@ -313,9 +282,43 @@
                             </div>
                           </div>
 
+
+                            <!-- <div class="col-md-12">
+                              <label for="inputBio" class="form-label">Bio</label>
+                              <textarea class="form-control" id="inputBio" placeholder="Tell us a little about yourself"></textarea>
+                            </div> -->
+
+                          </form>
+                          </div>
+                        </div>
+                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                    <div class="p-3 bg-white border rounded-custom shadowed-container">
+                      <form class="row g-3" enctype="multipart/form-data" id="childForm">
+                        <!-- Add the input field for uploading an image -->
+                        <div class="col-12 image-upload">
+                          <label for="imageUpload2" class="form-label" style="font-size:24px;font-weight:bolder;">Child</label>
+                          <!-- <div class="image-preview">
+                            <div id="imagePreview" class="image-placeholder"></div>
+                            <input type="file" id="imageUpload2" accept="image/*">
+                            <label for="imageUpload2" class="upload-button">Upload Image</label>
+                          </div> -->
+                        </div>
+                            <div class="col-12">
+                              <label for="firstName" class="form-label">Name *</label>
+                              <input type="text" class="form-control" id="nameChild" placeholder="Enter your child's name" required>
+                            </div>
+                            <div class="col-12">
+                              <label for="parentsGender" class="form-label">Gender *:  </label>
+                              <select id="parentsGender" name="parentsGender">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                              </select>
+                            </div>
+
+
                             
                             <div class="col-12">
-                              <label for="educationLevel" class="form-label">Current Education Level: </label>
+                              <label for="educationLevel" class="form-label">Current Education Level *: </label>
                               <select class="form-select" id="educationLevel">
                                   <option selected value="Primary">Primary School</option>
                                   <option value="LowerSecondary">Lower Secondary School</option>
@@ -325,7 +328,7 @@
 
 
                             <div class="col-12">
-                              <label for="subjects" class="form-label">Subjects</label>
+                              <label for="subjects" class="form-label">Subjects *</label>
                               <div id="subjects-checkbox">
                                 <!-- The checkbox options will be added here dynamically -->
                             </div>
@@ -337,7 +340,7 @@
           <button type="submit" id="saveDetailsButton" class="btn btn-primary">Save Details</button>
       </div>
         </div>
-        <div class="col-lg-1"></div>
+        <div class="col-lg-0 col-xl-1"></div>
 
         <script>
           // Get references to the select element and the div where checkboxes will be added

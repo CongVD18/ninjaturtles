@@ -12,7 +12,7 @@
 <style>
         body{
             height: 100vh;
-            background: #55CFE1 !important;
+            background: #6DBCDB !important;
             /* display: flex;
             flex-direction: column;
             align-items: center;
@@ -81,6 +81,11 @@
             border: 5px solid #8B4513; /* Dark border color resembling a chalkboard frame */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for depth */
         }
+            @media (max-width: 700px) {
+            .btn-separator {
+            margin-bottom: 5px;
+            }
+        }
 </style>
 <body>
 
@@ -143,14 +148,14 @@
                             <tr>
                                 <td>Catholic High Sec 2 Math Paper 1</td>
                                 <td class="text-end">
-                                    <a href="#" class="btn btn-primary btn-sm">View</a>
+                                    <a href="#" class="btn btn-primary btn-sm mb-2 mb-lg-0 btn-separator">View</a>
                                     <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Catholic High Sec 2 Math Paper 2</td>
                                 <td class="text-end">
-                                    <a href="#" class="btn btn-primary btn-sm">View</a>
+                                    <a href="#" class="btn btn-primary btn-sm mb-2 mb-lg-0 btn-separator">View</a>
                                     <a href="#" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
@@ -167,19 +172,19 @@
                     <h3 class="text-center">Upload a File</h3>
                     <form>
                         <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" name="title">
+                            <label for="title" class="form-label">Title *</label>
+                            <input type="text" class="form-control" id="title" name="title" required>
                         </div>
                         <div class="mb-3">
-                            <label for="file" class="form-label">Input File</label>
-                            <input type="file" class="form-control" id="file" name="file">
+                            <label for="file" class="form-label">Input File *</label>
+                            <input type="file" class="form-control" id="file" name="file" required>
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                            <label for="description" class="form-label">Description *</label>
+                            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="type" class="form-label">Type</label>
+                            <label for="type" class="form-label">Type *</label>
                             <select class="form-select" id="type" name="type">
                                 <option value="Worksheet">Worksheet</option>
                                 <option value="Notes">Notes</option>
@@ -187,7 +192,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="educationLevel" class="form-label">Education Level</label>
+                            <label for="educationLevel" class="form-label">Education Level *</label>
                             <select class="form-select" id="educationLevel" name="educationLevel">
                                 <option value="Primary">Primary</option>
                                 <option value="LowerSecondary">Lower Secondary</option>
@@ -195,10 +200,12 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
+                            <label for="subject" class="form-label">Subject *</label>
                             <select class="form-select" id="subject" name="subject"></select>
                         </div>
+                        <div class="text-center">
                         <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -214,7 +221,7 @@
         const subjectsOptions = {
             Primary: ['English', 'Math', 'Science', 'Chinese', 'Higher Chinese'],
             LowerSecondary: ['English', 'Math', 'Science', 'Chinese', 'Higher Chinese', 'Geography', 'Literature', 'History'],
-            UpperSecondary: ['English', 'E Math', 'A Math', 'Chinese', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Social Studies', 'Principles of Accounts', 'Literature']
+            UpperSecondary: ['English', 'E Math', 'A Math', 'Chinese', 'Physics', 'Chemistry', 'Biology', 'History', 'Geography', 'Social Studies', 'POA', 'Literature']
         };
 
         const educationLevelSelect = document.getElementById('educationLevel');
