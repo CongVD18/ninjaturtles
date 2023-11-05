@@ -32,10 +32,7 @@ h5 {
     font-weight: 1000;
     color: #363958;
 }
-a:hover {
-    transition: 1s;
-    box-shadow: 20px 20px 30px #3D4FF3;
-}
+
 
 /* Jumping text effect */
 .waviy span {
@@ -69,6 +66,7 @@ a:hover {
     text-transform: uppercase;
     background-color: white;
 }
+
 
 .custom-ul {
     text-align: center;
