@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briding Dreams | Landing Page</title>
+    <title>Bridging Dreams | Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="landingcss/landing.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -12,6 +12,15 @@
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+    <style>
+        /* Remove the outline on anchor (a) elements */
+        .navbar a.nav-link:focus,
+        .navbar a.nav-link:active {
+            outline: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+    </style>
 <body>
     <!-- header -->
     <header id="header">
@@ -19,8 +28,8 @@
         <nav class="navbar navbar-expand-lg fixed-top shadow custom-navbar">
             <div class="container container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
-                        <span class="custom-highlight">BRIDGING</span> DREAMS
+                    <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
+                        <img src="../images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="100" height="auto" style="margin-left: 60px; outline: none;">
                     </a>
                     <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -29,12 +38,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                          <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 18px; color: #007bff; font-weight: bold">Home</a>
+                            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold;">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 18px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
+                            <a class="nav-link font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 22px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
                         </li>
-                      </ul>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -87,7 +96,7 @@
         <section id="casual-shoes" class="mt-5">
             <h2>Our Highlight</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow custom-card">
                         <img src="../images/intro_photo_6.jpg" class="card-img-top w-100 custom-bg" alt="...">
                         <div class="card-body">
@@ -97,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow custom-card">
                         <img src="../images/intro_photo_3.jpg" class="card-img-top w-100 custom-bg" alt="...">
                         <div class="card-body">
@@ -107,7 +116,7 @@
                     </div>
                 </div>
 
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
                     <div class="card h-100 shadow custom-card">
                         <img src="../images/intro_photo_2.jpg" class="card-img-top w-100 custom-bg" alt="...">
                         <div class="card-body">
