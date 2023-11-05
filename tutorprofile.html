@@ -9,7 +9,7 @@
     <style>
         body{
             height: 100vh;
-            background: whitesmoke !important;
+            background: #E5E5E5 !important;
             /* display: flex;
             flex-direction: column;
             align-items: center;
@@ -232,7 +232,9 @@
 <body>
     <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
         <div class="container">
-          <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff; font-family: 'Constantia', serif; ">Bridging Dreams</a>
+            <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
+                <img src="images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="100" height="auto" style="margin-left: 60px; outline: none;">
+            </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -277,7 +279,7 @@
                 <div class="col-10 p-3 bg-white border rounded-custom shadowed-container">
                     <form class="row g-3 " id="profileForm" enctype="multipart/form-data" @submit.prevent="addNewProfile">
                         <!-- Image Upload and User Information Left Side -->
-                        <div class="col-md-12 col-sm-12 col-lg-3 text-center">
+                        <div class="col-md-12 col-sm-12 col-lg-4 text-center">
                             <div class="image-upload">
                                 <label for="imageUpload" class="form-label">Profile Image</label>
                                 <div class="image-preview " >
@@ -287,7 +289,7 @@
                             </div>
                         </div>
                         <!-- Right Side (Form) -->
-                        <div class="col-md-12 col-sm-12 col-lg-9 ">
+                        <div class="col-md-12 col-sm-12 col-lg-8 ">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="name" class="form-label">Name *</label>

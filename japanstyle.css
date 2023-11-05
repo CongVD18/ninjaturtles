@@ -242,17 +242,17 @@ p:last-child, ol:last-child, ul:last-child {
 
 section {
 	padding-top: 100px;
-	padding-bottom: 60px;
+	padding-bottom: 45px;
 }
 
 section.section-lg {
 	padding-top: 150px;
-	padding-bottom: 150px;
+	padding-bottom: 130px;
 }
 
 section.section-sm {
 	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-bottom: 45px;
 }
 
 
