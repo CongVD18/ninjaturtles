@@ -153,6 +153,7 @@
       #button {
         width: 85px;
       }
+
       @media (max-width: 768px) {
       #button {
         width: 100%;
@@ -228,25 +229,25 @@
                     <!-- Filter for Education Level -->
                     <div class="col-md-3 col-11 mt-1">
                       <!-- <label for="eduLevel" class="form-label" style="font-size: 20px;font-weight: 600;">Education Level</label> -->
-                      <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
+                      <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                         <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                       </select>
                     </div>
                     <!-- Filter for Subjects, will change accordingly to Education Level -->
                     <div class="col-md-3 col-11 mt-1">
                       <!-- <label for="subject" class="form-label" style="font-size: 20px; font-weight: 600;">Subject</label> -->
-                      <select id="subject" class="form-select form-select-lg form-field border border-warning border-4" aria-label="Default select example" v-model="filterResult.subject">
+                      <select id="subject" class="form-select form-select-lg form-field border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filterResult.subject">
                         <option v-for="subject in filter.subjects">{{subject}}</option>
                       </select>
                     </div>
                     <!-- Filter by Region -->
                     <div class="col-md-3 col-11 mt-1">
                       <!-- <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label> -->
-                      <input type="number" id="documentType" class="form-control form-control-lg form-field border border-warning border-4" v-model="filterResult.distanceRadius">
+                      <input type="number" id="documentType" class="form-control form-control-lg form-field border border-warning border-4 shadow-none" v-model="filterResult.distanceRadius">
                     </input>
                     </div>
                     <div class="col-md-1 col-11 mt-1">
-                      <button id="button" class="btn btn-primary btn-lg form-field filter-right border border-4 border-warning" type="submit">
+                      <button id="button" class="btn btn-primary btn-lg form-field filter-right border border-4 border-warning shadow-none" type="submit">
                         <i class="fas fa-search"></i>
                       </button>
                     </div>
