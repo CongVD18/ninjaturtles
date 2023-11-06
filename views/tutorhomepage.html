@@ -243,21 +243,48 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Accept or Reject Tuition Session with: </h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Tuition Booking Request from Parent {{listing.parentName}}: </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form>
                         <div class="modal-body">
-                          <ul>
-                            <li><strong>Parent's Name:</strong> {{listing.parentName}}</li>
-                            <li><strong>Child's Name:</strong> {{listing.childName}}</li>
-                            <li><strong>Child's Gender:</strong> {{listing.childGender}}</li>
-                            <li><strong>Education Level:</strong> {{listing.eduLevel}}</li>
-                            <li v-if="listing.addNote != ''">
-                              <strong>Note from Parent:</strong><br /> {{listing.addNote}}
-                            </li>
-
-                          </ul>
+                          <div class="container-fluid">
+                            <div class="row my-2 border-bottom">
+                              <div class="col-6">
+                               <strong>Child Name:</strong> 
+                              </div>
+                              <div class="col-6 text-center">
+                                Kua
+                              </div>
+                            </div>
+        
+                            <div class="row my-2 border-bottom">
+                              <div class="col-6">
+                                <strong>Gender:</strong> 
+                              </div>
+                              <div class="col-6 text-center">
+                                Female
+                              </div>
+                            </div>
+        
+                            <div class="row my-2 border-bottom">
+                              <div class="col-6">
+                                <strong>Subject:</strong> 
+                              </div>
+                              <div class="col-6 text-center">
+                                Upper Sec Math
+                              </div>
+                            </div>
+        
+                            <div v-if="listing.addNote != ''" class="row my-2">
+                              <div class="col-6">
+                                <strong>Additional Notes from Parent:</strong> 
+                              </div>
+                              <div class="col-12">
+                                {{listing.addNote}}
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div class="modal-footer">
                         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
@@ -356,37 +383,44 @@
                 </div>
                 <form>
                 <div class="modal-body">
-                  <ul class="list-group list-group-flush">
-
-                    <li id="parentName" class="list-group-item">Parent Name: {{listing.parentName}}</li>
-                    <li id="parentName" class="list-group-item">Parent Gender: {{listing.gender}}</li>
-                    <li id="parentName" class="list-group-item">Parent Name: {{listing.parentName}}</li>
-
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
-                  <!-- <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <!-- modal content -->
+                  <div class="container-fluid">
+                    <div class="row my-2 border-bottom">
+                      <div class="col-6">
+                       <strong>Child Name:</strong> 
+                      </div>
+                      <div class="col-6 text-center">
+                        Kua
+                      </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                  </div> -->
 
-                  <ul>
-                    <li><strong>Parent's Name: </strong>{{listing.parentName}}</li>
-                    <li><strong>Child's Name: </strong>{{listing.childName}}</li>
-                    <li><strong>Child's Gender: </strong>{{listing.childGender}}</li>
-                    <li><strong>Education Level: </strong>{{listing.eduLevel}}</li>
-                    <li v-if="listing.addNote != ''">
-                      <strong>Note from Parent:</strong><br /> {{listing.addNote}}
-                    </li>
+                    <div class="row my-2 border-bottom">
+                      <div class="col-6">
+                        <strong>Gender:</strong> 
+                      </div>
+                      <div class="col-6 text-center">
+                        Female
+                      </div>
+                    </div>
 
-                  </ul>
+                    <div class="row my-2 border-bottom">
+                      <div class="col-6">
+                        <strong>Subject:</strong> 
+                      </div>
+                      <div class="col-6 text-center">
+                        Upper Sec Math
+                      </div>
+                    </div>
+
+                    <div v-if="listing.addNote != ''" class="row my-2">
+                      <div class="col-6">
+                        <strong>Additional Notes from Parent:</strong> 
+                      </div>
+                      <div class="col-12">
+                        {{listing.addNote}}
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="modal-footer">
                 <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
