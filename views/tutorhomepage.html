@@ -5,19 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutor Homepage</title>
 
-     <!-- Vue.js 3 CDN -->
-     <script src="https://unpkg.com/vue@next"></script>
-     <!-- Axios CDN -->
-     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-     <!-- Boostrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Search Icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <!-- Swiperjs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-f56P1Kd4l5ndav7X55fqd9HgHfPBHHGk4ufa7XDDQYDx5gO3bIccE+Uy6c9U+fcg" crossorigin="anonymous"> -->
+    
+    <!-- Import Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body{
             height: 100vh;
-            background: #E5E5E5 !important;
+            background: whitesmoke !important;
+            font-family: 'Constantia', serif;
             /* display: flex;
             flex-direction: column;
             align-items: center;
@@ -62,66 +74,91 @@
           cursor: pointer;
       }
       #nav_bar {
-            background-color: #fff;
-            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            
-            }
+          background-color: #fff;
+          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          
+          }
 
-            /* Add space between the navigation brand and the navigation links */
-            .navbar-brand {
-            margin-right: 20px; /* Adjust the margin as needed */
-            }
+          /* Add space between the navigation brand and the navigation links */
+      .navbar-brand {
+          margin-right: 20px; /* Adjust the margin as needed */
+          }
 
-            .navbar-nav {
-            margin-left: auto; /* Push the ul to the right to create space */
-            }
-            .rounded-custom {
-            border-radius: 20px; /* Adjust the radius value as needed */
-            }
-        .shadowed-container {
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px; /* Add padding for spacing and better visualization */
-            background-color: whitesmoke; /* You can adjust the background color as needed */
+      .navbar-nav {
+          margin-left: auto; /* Push the ul to the right to create space */
+          }
+      .rounded-custom {
+          border-radius: 20px; /* Adjust the radius value as needed */
+          }
+      .shadowed-container {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px; /* Add padding for spacing and better visualization */
+          background-color: whitesmoke; /* You can adjust the background color as needed */
+          }
+      .topSection {
+          background-image: url('../images/tutorhomepagebookshelf.png');
+          /* background-color: #FFC436; */
+          background-size: contain;
+          }
+      .textBox {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 15px;
+      }
+      #cursor {
+        color: #007bff;
+        animation: blink 1s linear infinite;
+      }
+      @keyframes blink {
+        0% {
+          opacity: 100%;
         }
+        50% {
+          opacity: 0%;
+        }
+      }
     </style>
 </head>
   <body>
-    <!-- navigation -->
-    <nav class="navbar  navbar-expand-lg fixed-top shadow custom-navbar" id="navbar" >
-      <div class="container container-fluid">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
-                  <img src="../images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="75" height="auto" style="margin-left: 60px; outline: none;">
-              </a>
-          </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                      <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold;">Home</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 22px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-  <!-- end navigation -->
-    <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
-      <div class="container position-relative">
-        <div class="row justify-content-center">
-          <div class="col-md-9 col-lg-7 col-xl-6">
-            <div class="text-center chalkboard-text">
-              <h2 class="mb-3">Welcome xxx!</h2>
-            </div>
-          </div>         
+    <!-- Start of Navigation Bar -->
+    <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
+      <div class="container">
+        <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
+          <img src="../images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="80" height="auto" style="margin-left: 60px; outline: none;">
+      </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
+      </nav>   
+    <!-- End of Navigation Bar -->
+    <section class="topSection text-light p-5 text-center text-sm-start" id="container1">
+      <div class="jumbotron textBox">
+        <div>
+          <h1>Welcome to <span id="typewriter" style="color: #007bff;">Your Homepage</span><span id="cursor">|</span></h1>
+          <p class="lead">
+            "Create your listing and match with students!"
+          </p>
+          <hr class="my-4">
+        </div>
     </section>
     <div class="container" id="app">
       <div class="row">
@@ -250,7 +287,7 @@
         <!-- Display Confirmed Listing -->
         <div class="col-lg-3 my-4">
           <div class="p-3 bg-white border rounded-custom shadowed-container">
-            <center><h4>Upcoming Sessions</h4></center>
+            <h4>Upcoming Sessions</h4>
             <div v-for="listing of confirmedListings" class="card mb-3 text-center">
               <div class="card-body">
                 <h5 class="card-title">{{listing.childName}}</h5>
@@ -296,6 +333,79 @@
       </div>
     </div>
   </div>
+
+
+  <!-- footer -->
+  <footer id="footer" class="bg-light text-left text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Featured</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="text-dark">Bridging Dreams Creators</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Founded on 18th October 2023</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Information System Students </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Singapore Management Univeristy </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Follow Us</h5>
+            
+                <ul class="list-unstyled" id="icon">
+                    <li>
+                        <i class='bx bxl-facebook' style="color: #0069d9"> </i>
+                        <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
+                        <i class='bx bxl-twitter' style="color: #0069d9"> </i>
+                        <i class='bx bxl-youtube' style="color: #d9001d"> </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Contact Us</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <i class='bx bxs-phone'></i>
+                        <a href="#" class="text-dark">+65 94518710</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-envelope' ></i>
+                        <a href="#" class="text-dark">bridgingdreams@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Location</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="text-dark">#09-08</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Residences@Killiney</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">147 Killiney Road, S239566</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="custom-footer-margin ">
+    <div class="pt-2 pb-1 container text-center">
+        <h6>Copyright &copy; 2023 <span class="custom-highlight">Bridging Dreams </span></h6> 
+    </div>
+</div>
+
+<!-- end footer -->
     <!-- <script >
     document.getElementById("showPopupButton").addEventListener("click", function () {
         document.getElementById("popupForm").style.display = "block";
@@ -307,7 +417,13 @@
 
   </script> -->
   <script src="tutorHomepage.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Google Map API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkXhTb1Gj92FtV987iJRfW__Ne25HrEUU&libraries=geometry"></script>
+  <!-- Processor -->
+  <script src="./parentHomepage.js"></script>
+  <!-- Boostrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 </html>
