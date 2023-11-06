@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutor Profile Page</title>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="japanstyle.css">
+
+    <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <style>
         body{
             height: 100vh;
             background: #6DBCDB !important;
             font-family: 'Constantia', serif;
-            /* display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; */
         }
+
         .text-center {
             text-align: center!important;
         }
+
         .max-dimensions {
             max-width: 300px;
             max-height: 200px;
         }
+
         .image-upload {
             text-align: center;
             position: relative;
         }
+
         .image-preview {
             width: 200px; /* Set the desired width */
             height: 300px; /* Set the desired height */
@@ -41,9 +47,11 @@
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
         }
+
         #imageUpload {
             display: none;
         }
+
         .upload-button {
             position: absolute;
             top: 50%;
@@ -53,6 +61,7 @@
             color: #007bff;
             cursor: pointer;
         }
+        
         .subject-container {
             display: inline-block;
             width: auto; /* Let it adjust its width based on content */
@@ -138,20 +147,6 @@
         .btn-primary:hover {
             background-color: #0056b3; 
         }
-        #nav_bar {
-            background-color: #fff;
-            box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            
-            }
-
-            /* Add space between the navigation brand and the navigation links */
-            .navbar-brand {
-            margin-right: 20px; /* Adjust the margin as needed */
-            }
-
-            .navbar-nav {
-            margin-left: auto; /* Push the ul to the right to create space */
-            }
 
         .maximum-dimensions{
             max-width:800px;
@@ -182,26 +177,9 @@
             background-color: whitesmoke; /* You can adjust the background color as needed */
         }
         
-        /* Footer */
-        #footer {
-        padding: 25px 0px;
-        }
-        footer h5 {
-        padding: 10px 0px;
-        /* border: 1px solid; */
-        }
-        #footer li a {
-        text-decoration: none;
-        }
-        .custom-footer-margin {
-        background-color: black;
-        color: white;
-        }
-        /* end footer */
-        
-        </style>
+    </style>
 
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const teachPrimaryCheckbox = document.getElementById('teachPrimary');
             const teachLowerSecondaryCheckbox = document.getElementById('teachLowerSecondary');
@@ -239,37 +217,7 @@
 
 </head>
 <body>
-    <!-- Start of Navigation Bar -->
-  <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
-    <div class="container">
-      <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
-        <img src="./images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="75" height="58" style="margin-left: 60px; outline: none;">
-    </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav> 
-  <!-- End of Navigation Bar -->   
-
-        <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
+    <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
             <img class="position-absolute teacher-whiteboard z-index-minus-1 maximum-dimensions" src="images/teacher.png" alt="teacher">
             <img class="position-absolute teacherman-whiteboard z-index-minus-1 maximum-dimensions" src="images/teacherman.png" alt="teacherman">
             <div class="container position-relative">
@@ -282,9 +230,9 @@
                 </div>         
               </div>
             </div>
-          </section>
-        <div v-if="!uploaded">
-            <div class="container">
+    </section>
+    <div v-if="!uploaded">
+        <div class="container">
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10 p-3 bg-white border rounded-custom shadowed-container">
@@ -497,82 +445,10 @@
                 </div>
             </div>
             </div>
-        </div>
-        <div class="col-1"></div>
-    
-        <!-- footer -->
-  <footer id="footer" class="bg-light text-left text-lg-start mt-5">
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase" style="font-weight: bold">Featured</h5>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <a href="#" class="text-dark">Bridging Dreams Creators</a>
-                        
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark">Founded on 18th October 2023</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark">Information System Students </a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark">Singapore Management Univeristy </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-0" style="font-weight: bold">Follow Us</h5>
+    </div>
+    <div class="col-1"></div>
             
-                <ul class="list-unstyled" id="icon">
-                    <li>
-                        <i class='bx bxl-facebook' style="color: #0069d9"> </i>
-                        <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
-                        <i class='bx bxl-twitter' style="color: #0069d9"> </i>
-                        <i class='bx bxl-youtube' style="color: #d9001d"> </i>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase" style="font-weight: bold">Contact Us</h5>
-                <ul class="list-unstyled mb-0">
-                    <li>
-                        <i class='bx bxs-phone'></i>
-                        <a href="#" class="text-dark">+65 94518710</a>
-                    </li>
-                    <li>
-                        <i class='bx bxs-envelope' ></i>
-                        <a href="#" class="text-dark">bridgingdreams@gmail.com</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-0" style="font-weight: bold">Location</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="#" class="text-dark">#09-08</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark">Residences@Killiney</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-dark">147 Killiney Road, S239566</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    </footer>
-    <div class="custom-footer-margin ">
-    <div class="pt-2 pb-1 container text-center">
-        <h6>Copyright &copy; 2023 <span class="custom-highlight">Bridging Dreams </span></h6> 
-    </div>
-    </div>
-  
-    <!-- end footer -->
-            
-        <script>
+    <script>
             function populateDropdown() {
             // Path to your text file containing station names
             const textFilePath = 'stations.txt';
@@ -603,10 +479,9 @@
         // Call the populateDropdown function to populate the dropdown list
         populateDropdown();
 
-        </script>
+    </script>
 
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
