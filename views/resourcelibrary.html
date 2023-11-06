@@ -37,6 +37,10 @@
       }
 
       /* Filter */
+      #button {
+      width: 85px;
+      }
+
       @media (max-width: 768px) {
       #button {
         width: 100%;
@@ -151,9 +155,6 @@
       border-bottom-right-radius: 5px;
     }
 
-    #button {
-      width: 85px;
-    }
 
     .table-cutom {
       border-radius: 10px;
@@ -211,21 +212,21 @@
                   <!-- Filter for Education Level -->
                   <div class="col-md-3 col-11 mt-1">
                     <!-- <label for="eduLevel" class="form-label" style="font-size: 20px;font-weight: 600;">Education Level</label> -->
-                    <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
+                    <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                       <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                     </select>
                   </div>
                   <!-- Filter for Subjects, will change accordingly to Education Level -->
                   <div class="col-md-3 col-11 mt-1">
                     <!-- <label for="subject" class="form-label" style="font-size: 20px; font-weight: 600;">Subject</label> -->
-                    <select id="subject" class="form-select form-select-lg form-field border border-warning border-4" aria-label="Default select example" v-model="filterResult.subject">
+                    <select id="subject" class="form-select form-select-lg form-field border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filterResult.subject">
                       <option v-for="subject in filter.subjects">{{subject}}</option>
                     </select>
                   </div>
                   <!-- Filter by Region -->
                   <div class="col-md-3 col-11 mt-1">
                     <!-- <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label> -->
-                    <select id="documentType" class="form-select form-select-lg form-field border border-warning border-4" v-model="filterResult.documentType">
+                    <select id="documentType" class="form-select form-select-lg form-field border border-warning border-4 shadow-none" v-model="filterResult.documentType">
                       <option selected value="note">Lecture Note</option>
                       <option value="worksheet">Exercise Worksheer</option>
                       <option value="examPaper">Exam Paper</option>

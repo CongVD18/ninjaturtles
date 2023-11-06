@@ -56,11 +56,6 @@
             vertical-align: top;
         }
 
-        /* Add some margin between the containers */
-        .subject-container + .subject-container {
-            margin-left: 10px;
-        }
-
         /* Adjust styles for the label elements if needed */
         .subject-container label {
             margin-bottom: 5px;
@@ -281,7 +276,7 @@
                         <!-- Image Upload and User Information Left Side -->
                         <div class="col-md-12 col-sm-12 col-lg-4 text-center">
                             <div class="image-upload">
-                                <label for="imageUpload" class="form-label">Profile Image</label>
+                                <label for="imageUpload" class="form-label">Profile Image *</label>
                                 <div class="image-preview " >
                                     <input type="file" ref="myPhoto" id="imageUpload" name="profileImage" accept="image/*">
                                     <label for="imageUpload" class="upload-button">Upload Image</label>
@@ -295,7 +290,7 @@
                                     <label for="name" class="form-label">Name *</label>
                                     <input type="text" v-model="form.name" class="form-control mb-0" id="name" placeholder = 'Enter your name' required>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 mt-4 mt-md-0">
                                     <label for="emailAddress" class="form-label">Email Address</label>
                                     <input type="email" disabled v-model="email" class="form-control" id="emailAddress">
                                 </div>
@@ -312,14 +307,14 @@
                             </div>
                             <div class="row pt-3">
                                 <div class="col-6 ">
-                                    <label for="tutorGender" class="form-label">Gender:  </label>
+                                    <label for="tutorGender" class="form-label">Gender *:  </label>
                                     <select id="tutorGender" v-model="form.gender" name="tutorGender">
                                         <option value="male">Male</option>
                                         <option value="female">Female</option>
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <label for="nearestMRT" class="form-label">Nearest MRT: </label>
+                                    <label for="nearestMRT" class="form-label">Nearest MRT *: </label>
                                     <div class="position-static">
                                         <select id="nearestMRT" v-model="form.location" name="nearestMRT" class="form-select">
                                             <!-- The dropdown options will be added here -->
@@ -334,7 +329,7 @@
                             <!-- Checkbox Options -->
                             <div class="row">
                                 <div class="col-12 pt-3">
-                                    <label class="form-label">I prefer to teach:</label>
+                                    <label class="form-label">I prefer to teach *:</label>
                                     <div class="form-check">
                                         <input class="form-check-input" value="Primary" v-model="form.selectedLevel" type="checkbox" id="teachPrimary">
                                         <label class="form-check-label"  for="teachPrimary">Primary School</label>
@@ -353,8 +348,8 @@
                             <!-- Checkbox Options - Preferred Subjects (Initially Hidden) -->
                             <div class="row">
                                 <div class="col-12 pt-3 pb-3" id="preferredSubjects" >
-                                    <label class="form-label">Preferred Subjects:</label>
-                                    <div class="d-flex flex-wrap">
+                                    <label class="form-label">Preferred Subjects *:</label>
+                                    <div class="d-flex flex-wrap-md">
                                         <!-- Primary School Subjects -->
                                         <div id="primarySubjects"  :style="{display: form.selectedLevel.includes('Primary') ? 'block' : 'none'}" class="subject-container">
                                             <div class="form-check">
@@ -467,13 +462,13 @@
                                             </div>
                                             <div class="form-check">
                                                 <input class="form-check-input" value="Principles of Accounts" v-model="form.selectedSubjects" type="checkbox" id="upperSecPOASubject">
-                                                <label class="form-check-label" for="literatureSubject">Principles of Accounts</label>
+                                                <label class="form-check-label" for="literatureSubject">Upper Sec POA</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary">Create Profile</button>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary">Save Details</button>
                                 </div>
                             </div>
                         </div>  
