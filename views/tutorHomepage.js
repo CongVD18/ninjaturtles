@@ -26,6 +26,9 @@ let parentProfiles = [
 const app = Vue.createApp({
     created() {
         this.renderListings()
+
+        //typing animation
+        this.writeLoop();
     },
 
     data() {
@@ -37,7 +40,13 @@ const app = Vue.createApp({
             newListing: {
                 date: '',
                 time: ''
-            }
+            },
+
+            //Typing animation data
+            text: '',
+            phrases: ['Your Homepage'],
+            sleepTime: 100,
+            curPhraseIndex: 0,
         }
     },
 
@@ -115,7 +124,35 @@ const app = Vue.createApp({
             formatedDate = this.handleDateFormat(this.newListing.date)
             tuitionListing.push({listingID: 'asdwasdw', tutorID: tutorID, date: formatedDate, time: this.newListing.time, status: 'available', parentID: ''})
             console.log(tuitionListing)
-        }
+        },
+
+        sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        },
+        
+        async writeLoop() {
+            while (true) {
+              let curWord = this.phrases[this.curPhraseIndex];
+  
+              for (let i = 0; i < curWord.length; i++) {
+                this.text = curWord.substring(0, i + 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 10);
+  
+              for (let i = curWord.length; i > 0; i--) {
+                this.text = curWord.substring(0, i - 1);
+                await this.sleep(this.sleepTime);
+              }
+  
+              await this.sleep(this.sleepTime * 5);
+  
+              if (this.curPhraseIndex === this.phrases.length - 1) 
+                {this.curPhraseIndex = 0;} 
+              else {this.curPhraseIndex++;}
+            }
+        },
 
 
     }

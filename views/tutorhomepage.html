@@ -97,11 +97,12 @@
           }
       .topSection {
           background-image: url('../images/tutorhomepagebookshelf.png');
+  
           /* background-color: #FFC436; */
           background-size: contain;
           }
       .textBox {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.7);
         padding: 15px;
       }
       #cursor {
@@ -155,10 +156,18 @@
             transform: translate(-50%, -50%);
       }
 
+
+      .textBox {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        border: 5px solid #8B4513;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);                               
+      }
+
       
     </style>
 </head>
-  <body>
+  <body id="app">
     <!-- Start of Navigation Bar -->
     <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
       <div class="container">
@@ -191,28 +200,29 @@
     <section class="topSection text-light p-5 text-center text-sm-start" id="container1">
       <div class="jumbotron textBox">
         <div>
-          <h1>Welcome to <span id="typewriter" style="color: #007bff;">Your Homepage</span><span id="cursor">|</span></h1>
+          <h1>Welcome to <span id="typewriter" style="color: #007bff;">{{text}}</span><span id="cursor">|</span></h1>
           <p class="lead">
-            "Create your listing and match with students!"
+            This is where you can create your listings and match with students.
           </p>
           <hr class="my-4">
         </div>
         <img class="position-absolute bookshelf maximum-dimensions" src="../images/tuition.png" alt="teacherman">
     </section>
-    <div class="container" id="app">
-      <div class="row">
-        <div class="col-lg-9 my-4 border-end">
+    <div class="container ">
+      <div class="row mx-2 justify-content-center">
+        <div class="col-lg-8 my-2">
           <!-- Display Pending Listing -->
-          <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-10 p-3 mb-3 bg-white border rounded-custom shadowed-container">
+          <div class="row justify-content-center">
+          <!-- <div class="col-md-1"></div> -->
+          <div class="p-3 mb-3 bg-white border ">
             <h4 class="text-center" style="font-weight:bolder">Your Requests</h4>
-            <table class="table">
+            <table class="table text-center">
               <thead>
                   <tr>
                       <th>Parent's Name</th>
                       <th>Child's Name</th>
                       <th>Education Level</th>
+                      <th>Subject</th>
                       <th>Date & Time</th>
                       <th>Action</th>
                   </tr>
@@ -223,8 +233,9 @@
                   <td>{{listing.parentName}}</td>
                   <td>{{listing.childName}}</td>
                   <td>{{listing.eduLevel}}</td>
+                  <td>Math</td>
                   <td>{{listing.date}} {{listing.time}}</td>
-                  <td><button class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</button></td>
+                  <td><button class="btn btn-sm btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">View</button></td>
                 </tr>
                 <!-- Modal to accept/reject -->
                 <div v-for="listing of pendingListings">
@@ -261,13 +272,13 @@
               </tbody>
               </table>
           </div>
-          <div class="col-md-1"></div>
+          <!-- <div class="col-md-1"></div> -->
         </div>
 
               <!-- Display Available Listing -->
-        <div class="row">
-          <div class="col-md-1"></div>
-          <div class="p-3 col-md-10 bg-white border rounded-custom shadowed-container">
+        <div class="row justify-content-center">
+          <!-- <div class="col-md-1"></div> -->
+          <div class="p-3 bg-white border">
                 <h4 class="text-center" style="font-weight:bolder;">Your Listings</h4>
                 <table class="table text-center">
                   <tr>
@@ -278,7 +289,7 @@
                   <tr v-for="listing in availableListings" >
                     <td>{{listing.date}}</td>
                     <td>{{listing.time}}</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
+                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
                   </tr>
                 </table>
                 <!-- Create New Listing Form --> 
@@ -320,13 +331,13 @@
                     </div>
                 </div>
           </div>
-          <div class="col-md-1"></div>
+          <!-- <div class="col-md-1"></div> -->
         </div>
         </div>
         <!-- Display Confirmed Listing -->
-        <div class="col-lg-3 my-4">
-          <div class="p-3 bg-white border rounded-custom shadowed-container">
-            <h4 class="text-center" style="font-weight:bolder;">Upcoming Sessions</h4>
+        <div class="col-lg-3 my-2">
+          <div class="p-3 bg-white border">
+            <h5 class="text-center" style="font-weight:bolder;">Upcoming Sessions</h5>
             <div v-for="listing of confirmedListings" class="card mb-3 text-center">
               <div class="card-body">
                 <h5 class="card-title">{{listing.childName}}</h5>
@@ -340,11 +351,32 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Previously Confirmed Listing</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Upcoming Session with {{listing.childName}}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form>
                 <div class="modal-body">
+                  <ul class="list-group list-group-flush">
+
+                    <li id="parentName" class="list-group-item">Parent Name: {{listing.parentName}}</li>
+                    <li id="parentName" class="list-group-item">Parent Gender: {{listing.gender}}</li>
+                    <li id="parentName" class="list-group-item">Parent Name: {{listing.parentName}}</li>
+
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+                  <!-- <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Cras justo odio</li>
+                      <li class="list-group-item">Dapibus ac facilisis in</li>
+                      <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>
+                  </div> -->
+
                   <ul>
                     <li><strong>Parent's Name: </strong>{{listing.parentName}}</li>
                     <li><strong>Child's Name: </strong>{{listing.childName}}</li>
@@ -457,8 +489,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- Google Map API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkXhTb1Gj92FtV987iJRfW__Ne25HrEUU&libraries=geometry"></script>
-  <!-- Processor -->
-  <script src="./parentHomepage.js"></script>
   <!-- Boostrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
