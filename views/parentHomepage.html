@@ -24,13 +24,11 @@
 
                 
     <style>
-      @import url('https://fonts.cdnfonts.com/css/callie-chalk-font');
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Constantia', serif;
-        /* font-family: 'Poppins', 'sans-serif'; */
       }
 
       body {
@@ -136,7 +134,6 @@
       /* Top Section */
       .topSection {
         background-image: url('https://media.istockphoto.com/id/639392022/vector/bookshelves-background-vector-illustration.jpg?s=612x612&w=0&k=20&c=1DNOwFJabnlqHzShnSHfWOsNBUTtIaOgFBcpGQO_-oQ=');
-        /* background-color: #FFC436; */
         background-size: contain;
       }
 
@@ -245,7 +242,6 @@
       }
       footer h5 {
         padding: 10px 0px;
-      /* border: 1px solid; */
       }
       #footer li a {
         text-decoration: none;
@@ -413,10 +409,10 @@
           </div>
           
           <div class="col-lg-1 col-12 upcoming-request "> 
-            <div class="row justify-content-between">
+            <div class="row  text-center">
               <!-- Upcoming Session -->
               <div class="container-fluid bg-light py-1  upcoming-box border mt-2">
-                <h4 style="font-weight: bold" >Upcoming Sessions</h4>
+                <h4 style="font-weight: 600;" >Upcoming Sessions</h4>
                 <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
                   <div class="card-body">
                     <h5 class="card-title">{{listing.tutorName}}</h5>
