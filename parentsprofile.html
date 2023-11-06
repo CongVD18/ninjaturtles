@@ -6,10 +6,13 @@
     <title>Parents Profile Page</title>
     <link rel="stylesheet" href="japanstyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Import Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
       body{
         height: 100vh;
-        background: #fff9f4 !important;
+        background: #E5E5E5 !important;
+        font-family: 'Constantia', serif;
         /* display: flex;
         flex-direction: column;
         align-items: center;
@@ -146,8 +149,6 @@
       #nav_bar {
           background-color: #fff;
           box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
           
           }
 
@@ -193,14 +194,35 @@
             text-transform: none; /* This prevents the uppercase transformation */
         }
 
+        /* Footer */
+        #footer {
+          width: 100%;
+        }
+
+        #footer {
+          padding: 25px 0px;
+        }
+        footer h5 {
+          padding: 10px 0px;
+        /* border: 1px solid; */
+        }
+        #footer li a {
+          text-decoration: none;
+        }
+        .custom-footer-margin {
+          background-color: black;
+          color: white;
+        }
+      /* end footer */
 
       </style>
 </head>
 <body>
-  <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
+  <!-- Start of Navigation Bar -->
+  <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
     <div class="container">
       <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
-        <img src="images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="80" height="auto" style="margin-left: 60px; outline: none;">
+        <img src="images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="100" height="auto" style="margin-left: 60px; outline: none;">
     </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -209,21 +231,22 @@
         <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
+            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
+            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
+            <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
           </li>
         </ul>
       </div>
     </div>
-    </nav>  
+</nav> 
+  <!-- End of Navigation Bar -->
 
     <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
       <img class="position-absolute teacher-whiteboard z-index-minus-1 maximum-dimensions" src="images/manpointing.png" alt="teacher">
@@ -239,108 +262,183 @@
         </div>
       </div>
     </section>
-        <div class="container">
-            <div class="row">
-              <div class="col-lg-0 col-xl-1"></div>
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
-                    <div class="p-3 border bg-white border rounded-custom shadowed-container">
-                      <form class="row g-3" enctype="multipart/form-data" id="parentForm">                        <!-- Add the input field for uploading an image -->
-                        <div class="col-12 image-upload">
-                          <label for="imageUpload" class="form-label" style="font-size:24px; font-weight:bolder;">Parent</label>
-                          <!-- <div class="image-preview">
-                            <div id="imagePreview" class="image-placeholder"></div>
-                            <input type="file" id="imageUpload" accept="image/*">
-                            <label for="imageUpload" class="upload-button">Upload Image</label>
-                          </div> -->
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-0 col-xl-1"></div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5">
+                <div class="p-3 border bg-white border rounded-custom shadowed-container">
+                  <form class="row g-3" enctype="multipart/form-data" id="parentForm">                        <!-- Add the input field for uploading an image -->
+                    <div class="col-12 image-upload">
+                      <label for="imageUpload" class="form-label" style="font-size:24px; font-weight:bolder;">Parent</label>
+                      <!-- <div class="image-preview">
+                        <div id="imagePreview" class="image-placeholder"></div>
+                        <input type="file" id="imageUpload" accept="image/*">
+                        <label for="imageUpload" class="upload-button">Upload Image</label>
+                      </div> -->
+                    </div>
+                        <div class="col-12">
+                          <label for="firstName" class="form-label">Name *</label>
+                          <input type="text" class="form-control" id="parentsName" placeholder="Enter your name" required>
                         </div>
-                            <div class="col-12">
-                              <label for="firstName" class="form-label">Name *</label>
-                              <input type="text" class="form-control" id="parentsName" placeholder="Enter your name" required>
-                            </div>
-                            <div class="col-xl-6 col-12">
-                              <label for="emailAddress" class="form-label">Email Address</label>
-                              <input type="email" disabled v-model="email" class="form-control" id="emailAddress" required>
-                          </div>
-                            <div class="col-xl-6 col-12">
-                              <label for="contactNumber" class="form-label">Contact Number *</label>
-                              <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number"required>
-                            </div>
-                            <div class="col-12">
-                              <label for="parentsGender" class="form-label">Gender *:  </label>
-                              <select id="parentsGender" name="parentsGender">
-                                  <option value="male">Male</option>
-                                  <option value="female">Female</option>
-                              </select>
+                        <div class="col-xl-6 col-12">
+                          <label for="emailAddress" class="form-label">Email Address</label>
+                          <input type="email" disabled v-model="email" class="form-control" id="emailAddress" required>
+                      </div>
+                        <div class="col-xl-6 col-12">
+                          <label for="contactNumber" class="form-label">Contact Number *</label>
+                          <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number"required>
                         </div>
-                            <!-- Create a list of all MRT's in Singapore -->
-                            <div class="col-12">
-                              <label for="nearestMRT" class="form-label">Nearest MRT *: </label>
-                              <div class="position-static">
-                              <select id="nearestMRT" name="nearestMRT" class="form-select">
-                                  <!-- The dropdown options will be added here -->
-                              </select>
-                            </div>
-                          </div>
-
-
-                            <!-- <div class="col-md-12">
-                              <label for="inputBio" class="form-label">Bio</label>
-                              <textarea class="form-control" id="inputBio" placeholder="Tell us a little about yourself"></textarea>
-                            </div> -->
-
-                          </form>
-                          </div>
+                        <div class="col-12">
+                          <label for="parentsGender" class="form-label">Gender *:  </label>
+                          <select id="parentsGender" name="parentsGender">
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                          </select>
+                    </div>
+                        <!-- Create a list of all MRT's in Singapore -->
+                        <div class="col-12">
+                          <label for="nearestMRT" class="form-label">Nearest MRT *: </label>
+                          <div class="position-static">
+                          <select id="nearestMRT" name="nearestMRT" class="form-select">
+                              <!-- The dropdown options will be added here -->
+                          </select>
                         </div>
-                  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
-                    <div class="p-3 bg-white border rounded-custom shadowed-container">
-                      <form class="row g-3" enctype="multipart/form-data" id="childForm">
-                        <!-- Add the input field for uploading an image -->
-                        <div class="col-12 image-upload">
-                          <label for="imageUpload2" class="form-label" style="font-size:24px;font-weight:bolder;">Child</label>
-                          <!-- <div class="image-preview">
-                            <div id="imagePreview" class="image-placeholder"></div>
-                            <input type="file" id="imageUpload2" accept="image/*">
-                            <label for="imageUpload2" class="upload-button">Upload Image</label>
-                          </div> -->
+                      </div>
+
+
+                        <!-- <div class="col-md-12">
+                          <label for="inputBio" class="form-label">Bio</label>
+                          <textarea class="form-control" id="inputBio" placeholder="Tell us a little about yourself"></textarea>
+                        </div> -->
+
+                      </form>
+                      </div>
+                    </div>
+              <div class="col-sm-12 col-md-12 col-lg-6 col-xl-5 mt-4 mt-lg-0">
+                <div class="p-3 bg-white border rounded-custom shadowed-container">
+                  <form class="row g-3" enctype="multipart/form-data" id="childForm">
+                    <!-- Add the input field for uploading an image -->
+                    <div class="col-12 image-upload">
+                      <label for="imageUpload2" class="form-label" style="font-size:24px;font-weight:bolder;">Child</label>
+                      <!-- <div class="image-preview">
+                        <div id="imagePreview" class="image-placeholder"></div>
+                        <input type="file" id="imageUpload2" accept="image/*">
+                        <label for="imageUpload2" class="upload-button">Upload Image</label>
+                      </div> -->
+                    </div>
+                        <div class="col-12">
+                          <label for="firstName" class="form-label">Name *</label>
+                          <input type="text" class="form-control" id="nameChild" placeholder="Enter your child's name" required>
                         </div>
-                            <div class="col-12">
-                              <label for="firstName" class="form-label">Name *</label>
-                              <input type="text" class="form-control" id="nameChild" placeholder="Enter your child's name" required>
-                            </div>
-                            <div class="col-12">
-                              <label for="parentsGender" class="form-label">Gender *:  </label>
-                              <select id="parentsGender" name="parentsGender">
-                                  <option value="male">Male</option>
-                                  <option value="female">Female</option>
-                              </select>
-                            </div>
-
-
-                            
-                            <div class="col-12">
-                              <label for="educationLevel" class="form-label">Current Education Level *: </label>
-                              <select class="form-select" id="educationLevel">
-                                  <option selected value="Primary">Primary School</option>
-                                  <option value="LowerSecondary">Lower Secondary School</option>
-                                  <option value="UpperSecondary">Upper Secondary School</option>
-                              </select>
-                          </div>
-
-
-                            <div class="col-12">
-                              <label for="subjects" class="form-label">Subjects *</label>
-                              <div id="subjects-checkbox">
-                                <!-- The checkbox options will be added here dynamically -->
-                            </div>
-                          </div>
-                        </form>
+                        <div class="col-12">
+                          <label for="parentsGender" class="form-label">Gender *:  </label>
+                          <select id="parentsGender" name="parentsGender">
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                          </select>
                         </div>
-        </div>
-        <div class="col-12 text-center pt-3">
-          <button type="submit" id="saveDetailsButton" class="btn btn-primary">Save Details</button>
+
+
+                        
+                        <div class="col-12">
+                          <label for="educationLevel" class="form-label">Current Education Level *: </label>
+                          <select class="form-select" id="educationLevel">
+                              <option selected value="Primary">Primary School</option>
+                              <option value="LowerSecondary">Lower Secondary School</option>
+                              <option value="UpperSecondary">Upper Secondary School</option>
+                          </select>
+                      </div>
+
+
+                        <div class="col-12">
+                          <label for="subjects" class="form-label">Subjects *</label>
+                          <div id="subjects-checkbox">
+                            <!-- The checkbox options will be added here dynamically -->
+                        </div>
+                      </div>
+                    </form>
+                    </div>
+    </div>
+    <div class="col-12 text-center pt-3">
+      <button type="submit" id="saveDetailsButton" class="btn btn-primary">Save Details</button>
+  </div>
+    </div>
+    <div class="col-lg-0 col-xl-1"></div>
+    </div>
+
+
+  <!-- footer -->
+  <footer id="footer" class="bg-light text-left text-lg-start mt-5">
+  <div class="container p-4">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase" style="font-weight: bold">Featured</h5>
+              <ul class="list-unstyled mb-0">
+                  <li>
+                      <a href="#" class="text-dark">Bridging Dreams Creators</a>
+                      
+                  </li>
+                  <li>
+                      <a href="#" class="text-dark">Founded on 18th October 2023</a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-dark">Information System Students </a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-dark">Singapore Management Univeristy </a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0" style="font-weight: bold">Follow Us</h5>
+          
+              <ul class="list-unstyled" id="icon">
+                  <li>
+                      <i class='bx bxl-facebook' style="color: #0069d9"> </i>
+                      <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
+                      <i class='bx bxl-twitter' style="color: #0069d9"> </i>
+                      <i class='bx bxl-youtube' style="color: #d9001d"> </i>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase" style="font-weight: bold">Contact Us</h5>
+              <ul class="list-unstyled mb-0">
+                  <li>
+                      <i class='bx bxs-phone'></i>
+                      <a href="#" class="text-dark">+65 94518710</a>
+                  </li>
+                  <li>
+                      <i class='bx bxs-envelope' ></i>
+                      <a href="#" class="text-dark">bridgingdreams@gmail.com</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+              <h5 class="text-uppercase mb-0" style="font-weight: bold">Location</h5>
+              <ul class="list-unstyled">
+                  <li>
+                      <a href="#" class="text-dark">#09-08</a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-dark">Residences@Killiney</a>
+                  </li>
+                  <li>
+                      <a href="#" class="text-dark">147 Killiney Road, S239566</a>
+                  </li>
+              </ul>
+          </div>
       </div>
-        </div>
-        <div class="col-lg-0 col-xl-1"></div>
+  </div>
+  </footer>
+  <div class="custom-footer-margin ">
+  <div class="pt-2 pb-1 container text-center">
+      <h6>Copyright &copy; 2023 <span class="custom-highlight">Bridging Dreams </span></h6> 
+  </div>
+  </div>
+
+  <!-- end footer -->
 
         <script>
           // Get references to the select element and the div where checkboxes will be added

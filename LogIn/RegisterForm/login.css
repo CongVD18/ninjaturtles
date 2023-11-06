@@ -1,16 +1,19 @@
 body{
   height: 100vh;
-  background: whitesmoke !important;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  font-family: 'Constantia', serif;
 }
 
 #nav_bar {
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
+
 }
+
+
+.login_link {
+  font-weight: bold;
+  
+}
+
 
 /* Add space between the navigation brand and the navigation links */
 .navbar-brand {
@@ -113,3 +116,20 @@ body{
   color: #0069d9;
   text-decoration: none;
 }
+
+/* Footer */
+#footer {
+  padding: 25px 0px;
+}
+footer h5 {
+  padding: 10px 0px;
+  /* border: 1px solid; */
+}
+#footer li a {
+  text-decoration: none;
+}
+.custom-footer-margin {
+  background-color: black;
+  color: white;
+}
+/* end footer */

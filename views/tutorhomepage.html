@@ -20,6 +20,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-f56P1Kd4l5ndav7X55fqd9HgHfPBHHGk4ufa7XDDQYDx5gO3bIccE+Uy6c9U+fcg" crossorigin="anonymous"> -->
+    
+    <!-- Import Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body{
@@ -283,7 +287,7 @@
         <!-- Display Confirmed Listing -->
         <div class="col-lg-3 my-4">
           <div class="p-3 bg-white border rounded-custom shadowed-container">
-            <center><h4>Upcoming Sessions</h4></center>
+            <h4>Upcoming Sessions</h4>
             <div v-for="listing of confirmedListings" class="card mb-3 text-center">
               <div class="card-body">
                 <h5 class="card-title">{{listing.childName}}</h5>
@@ -329,6 +333,79 @@
       </div>
     </div>
   </div>
+
+
+  <!-- footer -->
+  <footer id="footer" class="bg-light text-left text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Featured</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="text-dark">Bridging Dreams Creators</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Founded on 18th October 2023</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Information System Students </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Singapore Management Univeristy </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Follow Us</h5>
+            
+                <ul class="list-unstyled" id="icon">
+                    <li>
+                        <i class='bx bxl-facebook' style="color: #0069d9"> </i>
+                        <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
+                        <i class='bx bxl-twitter' style="color: #0069d9"> </i>
+                        <i class='bx bxl-youtube' style="color: #d9001d"> </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Contact Us</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <i class='bx bxs-phone'></i>
+                        <a href="#" class="text-dark">+65 94518710</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-envelope' ></i>
+                        <a href="#" class="text-dark">bridgingdreams@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Location</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="text-dark">#09-08</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Residences@Killiney</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">147 Killiney Road, S239566</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="custom-footer-margin ">
+    <div class="pt-2 pb-1 container text-center">
+        <h6>Copyright &copy; 2023 <span class="custom-highlight">Bridging Dreams </span></h6> 
+    </div>
+</div>
+
+<!-- end footer -->
     <!-- <script >
     document.getElementById("showPopupButton").addEventListener("click", function () {
         document.getElementById("popupForm").style.display = "block";
