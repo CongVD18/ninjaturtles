@@ -227,7 +227,7 @@
       }
 
      
-      
+      /* No Resesult Image Sizing */
       .no-result-img {
         width: 100px;
       }
@@ -369,6 +369,7 @@
       </div>
       <div class="container-fluid my-5">
         <div class="row py-1 mx-4 justify-content-around">
+          <!-- Display Tutors' Profiles Section -->
           <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display border mt-2">
             <div class="row text-center">
               <h4 style="font-weight: bold" >Our Recommended Tutors</h4>
@@ -408,11 +409,12 @@
             
           </div>
           
+          <!-- Display Upcoming and Your Requests -->
           <div class="col-lg-1 col-12 upcoming-request "> 
             <div class="row  text-center">
               <!-- Upcoming Session -->
               <div class="container-fluid bg-light py-1  upcoming-box border mt-2">
-                <h4 style="font-weight: 600;" >Upcoming Sessions</h4>
+                <h5 style="font-weight: 600;" >Upcoming Sessions</h5>
                 <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
                   <div class="card-body">
                     <h5 class="card-title">{{listing.tutorName}}</h5>
@@ -422,7 +424,7 @@
               </div>
               <!-- Your Requests -->
               <div class="container-fluid bg-light py-1 request-box border mt-2">
-                <h4 style="font-weight: bold">Your Requests</h4>
+                <h5 style="font-weight: bold">Your Requests</h5>
                 <div v-for="listing of pendingBooking" class="card my-2 w-100 text-center">
                   <div class="card-body">
                     <h5 class="card-title">{{listing.tutorName}}</h5>

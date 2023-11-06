@@ -6,10 +6,10 @@
     <title>Resource Library</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-     <!-- Vue.js 3 CDN -->
-     <script src="https://unpkg.com/vue@next"></script>
-     <!-- Search Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Search Icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -19,11 +19,6 @@
         padding: 0;
         box-sizing: border-box;
         font-family: 'Constantia', serif;
-        /* font-family: 'Poppins', 'sans-serif'; */
-      }
-
-      body {
-        /* background-color: #FFEED9 */
       }
 
       .topSection {
@@ -101,48 +96,7 @@
         padding: 30px 0;
     }
 
-    /* Table Styles */
-    .fl-table {
-        border-radius: 5px;
-        font-size: 13px;
-        font-weight: normal;
-        border: 1px solid black;
-        /* border-collapse: collapse; */
-        width: 100%;
-        max-width: 100%;
-        white-space: nowrap;
-        background-color: white;
-    }
-
-    .fl-table td, .fl-table th {
-      
-        text-align: center;
-        padding: 8px;
-        border: 1px solid black;
-    }
-
-    .fl-table td {
-        border: 1px solid black;
-        font-size: 15px;
-    }
-
-    .fl-table thead th {
-        color: #ffffff;
-        background: #4FC3A1;
-        border-bottom: 1px solid black;
-    }
-
-
-    .fl-table thead th:nth-child(odd) {
-        color: #ffffff;
-        background: #324960;
-    }
-
-    .fl-table tr:nth-child(even) {
-        background: #F8F8F8;
-        border: 1px solid black;
-    }
-
+    /* Filter Styling and Positioning */
     .form-field {
       border-radius: 0;
     }
@@ -158,6 +112,7 @@
     }
 
 
+    /* Table Custom */
     .table-cutom {
       border-radius: 10px;
     }
@@ -167,6 +122,7 @@
     }
 
 
+    /* No Result Found Img Sizing */
     .no-result-img {
       width: 100px;
     }
@@ -240,21 +196,18 @@
                 <div class="input-group justify-content-center text-align-center">
                   <!-- Filter for Education Level -->
                   <div class="col-md-3 col-11 mt-1">
-                    <!-- <label for="eduLevel" class="form-label" style="font-size: 20px;font-weight: 600;">Education Level</label> -->
                     <select id="eduLevel" class="form-select form-select-lg form-field filter-left border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filter.eduLevel" @change="changeSubjects()">
                       <option v-for="eduLevel in eduLevels" :value="eduLevel.key">{{eduLevel.string}}</option>
                     </select>
                   </div>
                   <!-- Filter for Subjects, will change accordingly to Education Level -->
                   <div class="col-md-3 col-11 mt-1">
-                    <!-- <label for="subject" class="form-label" style="font-size: 20px; font-weight: 600;">Subject</label> -->
                     <select id="subject" class="form-select form-select-lg form-field border border-warning border-4 shadow-none" aria-label="Default select example" v-model="filterResult.subject">
                       <option v-for="subject in filter.subjects">{{subject}}</option>
                     </select>
                   </div>
                   <!-- Filter by Region -->
                   <div class="col-md-3 col-11 mt-1">
-                    <!-- <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label> -->
                     <select id="documentType" class="form-select form-select-lg form-field border border-warning border-4 shadow-none" v-model="filterResult.documentType">
                       <option value="note">Lecture Note</option>
                       <option value="worksheet">Exercise Worksheer</option>
@@ -274,8 +227,6 @@
       </section>
 
       <!-- table display -->
-
-      <!--  -->
         <div class="container table-box">
           <!-- No result found -->
           <div class="row justify-content-center text-center">
@@ -283,7 +234,7 @@
             <h4>Sorry, we can't find any document that match your preferences!</h4>
             <p>Please try search using different Education Level, Subject or Document Type</p>
           </div>
-          <!-- <table class="table table-bordered text-center shadow table-customer">
+          <table class="table table-bordered text-center shadow table-customer">
           <thead>
             <tr>
               <th>Title</th> 
@@ -365,9 +316,7 @@
               <td><button class="btn btn-outline-primary">View</button></td>
             </tr>
         </tbody>
-        </table> -->
-
-         
+        </table>
         </div>
       </div>
 
@@ -443,10 +392,9 @@
     </div>
     
 
-
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-     <script src="resourcelibrary.js"></script>
-     
-      
+    <!-- Boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Processor -->
+    <script src="resourcelibrary.js"></script>
 </body>
 </html>
