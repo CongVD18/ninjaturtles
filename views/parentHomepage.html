@@ -21,7 +21,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Chalk Board Font -->
+    <link href="https://fonts.cdnfonts.com/css/callie-chalk-font" rel="stylesheet">
+                
     <style>
+      @import url('https://fonts.cdnfonts.com/css/callie-chalk-font');
       * {
         margin: 0;
         padding: 0;
@@ -137,7 +141,7 @@
         background-color: rgba(0, 0, 0, 0.7);
         padding: 15px;
         border: 5px solid #8B4513;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);                               
       }
 
       .chalkboard-text {
@@ -256,6 +260,7 @@
       #nav_bar {
         box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
+
     </style>
 
   </head>
@@ -291,7 +296,7 @@
         <section class="topSection text-light p-5 text-center text-sm-start" id="container1">
           <div class="jumbotron textBox">
             <div>
-              <h1>Welcome to <span id="typewriter" style="color: #007bff;">{{text}}</span><span id="cursor">|</span></h1>
+              <h1 id="bannerText">Welcome to <span id="typewriter" style="color: #007bff;">{{text}}</span><span id="cursor">|</span></h1>
               <p class="lead">
                 This is where you will find your desired tutors based on your preferences.
               </p>

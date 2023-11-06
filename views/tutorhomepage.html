@@ -114,7 +114,9 @@
         }
         50% {
           opacity: 0%;
-        }
+        }}
+      table{
+        border: 3px solid black;
       }
 
       /* Footer */
@@ -133,6 +135,18 @@
         color: white;
         }
         /* end footer */
+      th{
+        background: #6dbcd6 !important;
+        font-weight:bolder;
+      }
+      td{
+        padding-top:15px !important;
+        padding-bottom:15px !important;
+        background: whitesmoke !important;
+        text-align:center;
+      }
+
+      
     </style>
 </head>
   <body>
@@ -182,7 +196,7 @@
           <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10 p-3 mb-3 bg-white border rounded-custom shadowed-container">
-            <h4 class="text-center">Your Requests</h4>
+            <h4 class="text-center" style="font-weight:bolder">Your Requests</h4>
             <table class="table">
               <thead>
                   <tr>
@@ -208,26 +222,26 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Book a Tuition Session with </h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Accept or Reject Tuition Session with: </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form>
                         <div class="modal-body">
                           <ul>
-                            <li>{{listing.parentName}}</li>
-                            <li>{{listing.childName}}</li>
-                            <li>{{listing.childGender}}</li>
-                            <li>{{listing.eduLevel}}</li>
+                            <li><strong>Parent's Name:</strong> {{listing.parentName}}</li>
+                            <li><strong>Child's Name:</strong> {{listing.childName}}</li>
+                            <li><strong>Child's Gender:</strong> {{listing.childGender}}</li>
+                            <li><strong>Education Level:</strong> {{listing.eduLevel}}</li>
                             <li v-if="listing.addNote != ''">
-                              {{listing.addNote}}
+                              <strong>Note from Parent:</strong><br /> {{listing.addNote}}
                             </li>
 
                           </ul>
                         </div>
                         <div class="modal-footer">
                         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                        <button v-on:click="handleAccept(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Accept</button> 
-                        <button v-on:click="handleReject(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Reject</button> 
+                        <button v-on:click="handleAccept(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-success">Accept</button> 
+                        <button v-on:click="handleReject(listing.listingID)" data-bs-dismiss="modal"  type="submit" class="btn btn-danger">Reject</button> 
                         <!-- data-bs-dismiss="modal" to close modal after booking -->
                         </div>
                       </form>
@@ -244,7 +258,7 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="p-3 col-md-10 bg-white border rounded-custom shadowed-container">
-                <h4 class="text-center">Your Listings</h4>
+                <h4 class="text-center" style="font-weight:bolder;">Your Listings</h4>
                 <table class="table text-center">
                   <tr>
                     <th>Date</th>
@@ -260,14 +274,14 @@
                 <!-- Create New Listing Form --> 
                 <!-- open button -->
                 <div class="text-center">
-                  <button type="button" class="btn btn-light text-center fs-4" data-bs-toggle="modal" data-bs-target="#modal"> + </button>  
+                  <button type="button" class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#modal"> Create Listing</button>  
                 </div>
                 <!-- Modal -->
                 <div id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Viewing Pending Listing </h5>
+                        <h5 class="modal-title" id="staticBackdropLabel">Create Listing</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form @submit.prevent="handleNewListing()">
@@ -287,8 +301,8 @@
                             <br>
                           </div>
                         <div class="modal-footer">
+                        <button data-bs-dismiss="modal"  type="submit" class="btn btn-success">Create</button> 
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button data-bs-dismiss="modal"  type="submit" class="btn btn-primary">Create</button> 
                         <!-- data-bs-dismiss="modal" to close modal after booking -->
                         </div>
                       </form>
@@ -302,7 +316,7 @@
         <!-- Display Confirmed Listing -->
         <div class="col-lg-3 my-4">
           <div class="p-3 bg-white border rounded-custom shadowed-container">
-            <h4>Upcoming Sessions</h4>
+            <h4 class="text-center" style="font-weight:bolder;">Upcoming Sessions</h4>
             <div v-for="listing of confirmedListings" class="card mb-3 text-center">
               <div class="card-body">
                 <h5 class="card-title">{{listing.childName}}</h5>
@@ -316,18 +330,18 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">View confirmed listing</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Previously Confirmed Listing</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form>
                 <div class="modal-body">
                   <ul>
-                    <li>{{listing.parentName}}</li>
-                    <li>{{listing.childName}}</li>
-                    <li>{{listing.childGender}}</li>
-                    <li>{{listing.eduLevel}}</li>
+                    <li><strong>Parent's Name: </strong>{{listing.parentName}}</li>
+                    <li><strong>Child's Name: </strong>{{listing.childName}}</li>
+                    <li><strong>Child's Gender: </strong>{{listing.childGender}}</li>
+                    <li><strong>Education Level: </strong>{{listing.eduLevel}}</li>
                     <li v-if="listing.addNote != ''">
-                      {{listing.addNote}}
+                      <strong>Note from Parent:</strong><br /> {{listing.addNote}}
                     </li>
 
                   </ul>
