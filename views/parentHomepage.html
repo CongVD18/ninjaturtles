@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Import Boxicon CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
       * {
         margin: 0;
@@ -188,14 +190,36 @@
         }
       }
 
+      #nar_bar {
+        height: 84px;
+      }
+
+      /* Footer */
+      #footer {
+        padding: 25px 0px;
+      }
+      footer h5 {
+        padding: 10px 0px;
+      /* border: 1px solid; */
+      }
+      #footer li a {
+        text-decoration: none;
+      }
+      .custom-footer-margin {
+        background-color: black;
+        color: white;
+      }
+      /* end footer */
     </style>
 
   </head>
 <body>
     <div id="app" style="background-color: whitesmoke;">
-      <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
+      <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
         <div class="container">
-          <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
+          <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
+            <img src="../images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="75" height="58" style="margin-left: 60px; outline: none;">
+        </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -203,10 +227,16 @@
             <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 20px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
+                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
               </li>
             </ul>
           </div>
@@ -243,8 +273,7 @@
                     <!-- Filter by Region -->
                     <div class="col-md-3 col-11 mt-1">
                       <!-- <label for="documentType" class="form-label" style="font-size: 20px; font-weight: 600;">Document Type</label> -->
-                      <input type="number" id="documentType" class="form-control form-control-lg form-field border border-warning border-4 shadow-none" v-model="filterResult.distanceRadius">
-                    </input>
+                      <input type="number" id="documentType" class="form-control form-control-lg form-field border border-warning border-4 shadow-none" v-model="filterResult.distanceRadius" placeholder="Radius Distance (in Km)"></input>
                     </div>
                     <div class="col-md-1 col-11 mt-1">
                       <button id="button" class="btn btn-primary btn-lg form-field filter-right border border-4 border-warning shadow-none" type="submit">
@@ -366,75 +395,78 @@
           </div>
         </div>
       </div>
-        <!-- start of footer section -->
-        <footer id="contact" class="page-footer p-2 text-md-left">
-          <div class="container py-5">
-            <div class="row g-4">
-              <div class="col-lg-3 col-md-6">
-                <h5 class="text-uppercase font-weight-bold mb-4">
-                  Bridging Dreams
-                </h5>
-                <p>
-                  Founded on 18th October 2023
-                </p>
-    
-                <p>
-                  Made by Information System Students 
-                </p>
-                
-                <p>
-                  Singapore Management Univeristy 
-                </p>
-                  
-              </div>
-              
-              <div class="col-lg-2 col-md-2 mx-auto">
-                <h5 class="text-uppercase font-weight-bold mb-4">Follow Us</h5>
-    
-                <p id="icon">
-                  <i class='bx bxl-facebook'></i>
-                  <i class='bx bxl-instagram'></i>
-                  <i class='bx bxl-twitter'></i>
-                  <i class='bx bxl-youtube'></i>
-    
-                </p>
-              </div>
-    
-              
-              <div class="col-lg-3 col-xs-12 location">
-                <h5 class="text-uppercase font-weight-bold mb-4">Location</h5>
-    
-                <p class="d-flex">
-                  147 Killiney Road
-                </p>
-                <p class="d-flex">
-                  +65 9451 8710
-                </p>
-                <p class="d-flex">
-                  bridgingdreamsinfo@gmail.com
-                </p>
-    
-              </div>
+
+        <!-- footer -->
+  <footer id="footer" class="bg-light text-left text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Featured</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="text-dark">Bridging Dreams Creators</a>
+                        
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Founded on 18th October 2023</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Information System Students </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Singapore Management Univeristy </a>
+                    </li>
+                </ul>
             </div>
-          </div>
-        </footer>
-    
-        <!-- End of footer section -->
-    
-        <!-- Start of footer bottom -->
-        <footer class="p-3 bg-dark text-white text-center position-relative">
-          <div class="container">
-            <p class="mb-0">
-              Copyright &copy; 2023 Bridging Dreams
-            </p>
-    
-            <a href="#" class="position-absolute bottom-0 end-0 p-5">
-              <i class="bi bi-arrow-up-circle h1"></i>
-            </a>
-          </div>
-        </footer>
-        <!-- End of footer bottom -->
-  </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Follow Us</h5>
+            
+                <ul class="list-unstyled" id="icon">
+                    <li>
+                        <i class='bx bxl-facebook' style="color: #0069d9"> </i>
+                        <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
+                        <i class='bx bxl-twitter' style="color: #0069d9"> </i>
+                        <i class='bx bxl-youtube' style="color: #d9001d"> </i>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase" style="font-weight: bold">Contact Us</h5>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <i class='bx bxs-phone'></i>
+                        <a href="#" class="text-dark">+65 94518710</a>
+                    </li>
+                    <li>
+                        <i class='bx bxs-envelope' ></i>
+                        <a href="#" class="text-dark">bridgingdreams@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-0" style="font-weight: bold">Location</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#" class="text-dark">#09-08</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">Residences@Killiney</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-dark">147 Killiney Road, S239566</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="custom-footer-margin ">
+    <div class="pt-2 pb-1 container text-center">
+        <h6>Copyright &copy; 2023 <span class="custom-highlight">Bridging Dreams </span></h6> 
+    </div>
+</div>
+
+<!-- end footer -->
 
 
     <!-- Google Map API -->
