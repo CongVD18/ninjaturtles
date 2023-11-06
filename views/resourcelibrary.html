@@ -166,7 +166,10 @@
       margin-top: 65px;
     }
 
-    </style>
+
+    .no-result-img {
+      width: 100px;
+    }
     
     /* Footer */
     #footer {
@@ -273,9 +276,14 @@
       <!-- table display -->
 
       <!--  -->
-
         <div class="container table-box">
-          <table class="table table-bordered text-center shadow table-customer">
+          <!-- No result found -->
+          <div class="row justify-content-center text-center">
+            <img class="no-result-img" src="https://cdn-icons-png.flaticon.com/512/6134/6134065.png"  alt="">
+            <h4>Sorry, we can't find any document that match your preferences!</h4>
+            <p>Please try search using different Education Level, Subject or Document Type</p>
+          </div>
+          <!-- <table class="table table-bordered text-center shadow table-customer">
           <thead>
             <tr>
               <th>Title</th> 
@@ -357,7 +365,7 @@
               <td><button class="btn btn-outline-dark">View</button></td>
             </tr>
         </tbody>
-        </table>
+        </table> -->
 
          
         </div>

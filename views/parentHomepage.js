@@ -60,7 +60,7 @@ const app = Vue.createApp({
         this.renderProfiles()
         
         //typing animation
-        this.writeLoop();
+        this.writeLoop()
         
     },
 
