@@ -145,6 +145,15 @@
         background: whitesmoke !important;
         text-align:center;
       }
+      .bookshelf {
+            position: absolute;
+            max-width: 2000px; /* You can adjust the max-width if needed */
+            max-height: 700px; /* You can adjust the max-height if needed */
+            z-index: -1; /* Place the image behind the content */
+            top: 90%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+      }
 
       
     </style>
@@ -188,6 +197,7 @@
           </p>
           <hr class="my-4">
         </div>
+        <img class="position-absolute bookshelf maximum-dimensions" src="../images/tuition.png" alt="teacherman">
     </section>
     <div class="container" id="app">
       <div class="row">
