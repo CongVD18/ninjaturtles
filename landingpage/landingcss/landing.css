@@ -63,7 +63,7 @@ h5 {
 }
 
 #navbar {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     background-color: white;
 }
 
@@ -82,9 +82,7 @@ h5 {
 /* end header */
 
 /* header, casual shoes, formal shoes */
-.custom-highlight {
-    color: #007bff;
-}
+
 .custom-btn {
     background-color: #3D4FF3;
     padding: 10px;
@@ -142,3 +140,6 @@ footer h5 {
     color: white;
 }
 /* end footer */
+
+
+
