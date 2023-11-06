@@ -11,12 +11,8 @@
     <style>
         body{
             height: 100vh;
-<<<<<<< HEAD
             background: #E5E5E5 !important;
             font-family: 'Constantia', serif;
-=======
-            background: #fff9f4 !important;
->>>>>>> b57b2c184846605040a24ced39e46fc49612d253
             /* display: flex;
             flex-direction: column;
             align-items: center;
@@ -243,7 +239,6 @@
 
 </head>
 <body>
-<<<<<<< HEAD
     <!-- Start of Navigation Bar -->
   <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
     <div class="container">
@@ -273,35 +268,6 @@
     </div>
 </nav> 
   <!-- End of Navigation Bar -->   
-=======
-    <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
-        <div class="container">
-            <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
-                <img src="images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="80" height="auto" style="margin-left: 60px; outline: none;">
-            </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        </nav>   
->>>>>>> b57b2c184846605040a24ced39e46fc49612d253
 
         <section class="pt-5 position-relative" data-sal="slide-up" data-sal-delay="400">
             <img class="position-absolute teacher-whiteboard z-index-minus-1 maximum-dimensions" src="images/teacher.png" alt="teacher">
@@ -323,6 +289,7 @@
                 <div class="col-1"></div>
                 <div class="col-10 p-3 bg-white border rounded-custom shadowed-container">
                     <form class="row g-3 " id="profileForm" enctype="multipart/form-data" @submit.prevent="addNewProfile">
+                        
                         <!-- Image Upload and User Information Left Side -->
                         <div class="col-md-12 col-sm-12 col-lg-4 text-center">
                             <div class="image-upload">
@@ -333,6 +300,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- Right Side (Form) -->
                         <div class="col-md-12 col-sm-12 col-lg-8 ">
                             <div class="row">
@@ -345,6 +313,7 @@
                                     <input type="email" disabled v-model="email" class="form-control" id="emailAddress">
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="contact" class="form-label">Contact Number *</label>
@@ -355,6 +324,7 @@
                                     <input type="text" v-model="form.highestEdu" class="form-control" id="highestEdu" placeholder = 'Enter your highest education' required>
                                 </div>
                             </div>
+
                             <div class="row pt-3">
                                 <div class="col-6 ">
                                     <label for="tutorGender" class="form-label">Gender *:  </label>
@@ -375,7 +345,8 @@
                                         </select>
                                     </div>
                                 </div>
-                            
+                            </div>
+
                             <!-- Checkbox Options -->
                             <div class="row">
                                 <div class="col-12 pt-3">
@@ -517,11 +488,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 text-center">
-                                    <button class="btn btn-primary">Save Details</button>
-                                </div>
                             </div>
-                        </div>  
+                        </div>
+                    <div class="col-12 text-center">
+                        <button class="btn btn-primary">Save Details</button>
+                    </div>
                     </form>
                 </div>
             </div>

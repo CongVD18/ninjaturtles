@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Chalk Board Font -->
-    <link href="https://fonts.cdnfonts.com/css/callie-chalk-font" rel="stylesheet">
+
                 
     <style>
       @import url('https://fonts.cdnfonts.com/css/callie-chalk-font');
@@ -219,11 +218,13 @@
 
         .upcoming-box {
           width: 49%;
+          float: left;
           background-color: whitesmoke;
         }
 
         .request-box {
           width: 49%;
+          float: right;
           background-color: whitesmoke;
         }
       }
@@ -276,16 +277,16 @@
             <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
+                <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
+                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
+                <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
+                <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
               </li>
             </ul>
           </div>
@@ -371,10 +372,10 @@
 
       </div>
       <div class="container-fluid my-5">
-        <div class="row py-1 mx-5 justify-content-around">
-          <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display">
+        <div class="row py-1 mx-4 justify-content-around">
+          <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display border mt-2">
             <div class="row text-center">
-              <h4>Our Recommended Tutors</h4>
+              <h4 style="font-weight: bold" >Our Recommended Tutors</h4>
             </div>
             <!-- No Result Found -->
             <div class="row justify-content-center text-center">
@@ -383,7 +384,7 @@
               <p>Please try search using different Education Level, Subject or Distance</p>
             </div>
             <!-- Display Tutors' Profiles -->
-            <div class="row justify-content-around">
+            <div class="row px-1 justify-content-around ">
               <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-2">
                 <div  class="card-display">
                   <div class="image-content">
@@ -411,25 +412,25 @@
             
           </div>
           
-          <div class="col-lg-2 col-12 upcoming-request"> 
-            <div class="row">
+          <div class="col-lg-1 col-12 upcoming-request "> 
+            <div class="row justify-content-between">
               <!-- Upcoming Session -->
-              <div class="container-fluid bg-light py-1 upcoming-box">
-                <h4>Upcoming Sessions</h4>
+              <div class="container-fluid bg-light py-1  upcoming-box border mt-2">
+                <h4 style="font-weight: bold" >Upcoming Sessions</h4>
                 <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
                   <div class="card-body">
                     <h5 class="card-title">{{listing.tutorName}}</h5>
-                    <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                    <p class="card-text">{{listing.date}}<br>{{listing.time}}</p>
                   </div>
                 </div>
               </div>
               <!-- Your Requests -->
-              <div class="container-fluid bg-light py-1 request-box">
-                <h4>Your Requests</h4>
+              <div class="container-fluid bg-light py-1 request-box border mt-2">
+                <h4 style="font-weight: bold">Your Requests</h4>
                 <div v-for="listing of pendingBooking" class="card my-2 w-100 text-center">
                   <div class="card-body">
                     <h5 class="card-title">{{listing.tutorName}}</h5>
-                    <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                    <p class="card-text">{{listing.date}}<br>{{listing.time}}</p>
                     <p>Subject: Math</p>
                     <div v-if="listing.status == 'pending'" class="container-fluid" style="border-radius: 25px;" >
                       <h6 class="text-warning">PENDING</h6>
