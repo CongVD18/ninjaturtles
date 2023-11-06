@@ -134,8 +134,20 @@
       }
 
       .textBox {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.7);
         padding: 15px;
+        border: 5px solid #8B4513;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .chalkboard-text {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 20px;
+        border-radius: 5px;
+        z-index: -1;
+        border: 5px solid #8B4513;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
       /* Filter */
       .form-field {
@@ -189,6 +201,36 @@
           opacity: 0%;
         }
       }
+
+      /* Upcoming layout */
+      .upcoming-request {
+        min-width: 185px;
+      }
+
+      @media (max-width: 1231px) {
+        .upcoming-request {
+          min-width: 100%;
+          margin-top: 10px;
+        }
+
+        .tutor-display {
+          min-width: 100%;
+          background-color: whitesmoke;
+        }
+
+        .upcoming-box {
+          width: 49%;
+          background-color: whitesmoke;
+        }
+
+        .request-box {
+          width: 49%;
+          background-color: whitesmoke;
+        }
+      }
+
+     
+      
 
       #nar_bar {
         height: 84px;
@@ -251,7 +293,7 @@
             <div>
               <h1>Welcome to <span id="typewriter" style="color: #007bff;">{{text}}</span><span id="cursor">|</span></h1>
               <p class="lead">
-                "This is where you will find your desired tutors based on your preferences"
+                This is where you will find your desired tutors based on your preferences.
               </p>
               <hr class="my-4">
             </div>
@@ -326,8 +368,8 @@
 
       </div>
       <div class="container-fluid my-5">
-        <div class="row py-1 mx-5">
-          <div class="col-lg-10 col-sm-12 py-1 bg-light">
+        <div class="row py-1 mx-5 justify-content-around">
+          <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display">
             <div class="row text-center">
               <h4>Our Recommended Tutors</h4>
             </div>
@@ -366,32 +408,34 @@
             
           </div>
           
-          <div class="col-lg-2 col-12"> 
-            <div class="container-fluid bg-light py-1">
-              <h4>Upcoming Sessions</h4>
-              <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
-                <div class="card-body">
-                  <h5 class="card-title">{{listing.tutorName}}</h5>
-                  <p class="card-text">{{listing.date}} {{listing.time}}</p>
+          <div class="col-lg-2 col-12 upcoming-request"> 
+            <div class="row">
+              <div class="container-fluid bg-light py-1 upcoming-box">
+                <h4>Upcoming Sessions</h4>
+                <div v-for="listing of confirmedBooking" class="card my-2 w-100 text-center" class="btn btn-primary" data-bs-toggle="modal" :data-bs-target="'#' + listing.listingID">
+                  <div class="card-body">
+                    <h5 class="card-title">{{listing.tutorName}}</h5>
+                    <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="container-fluid bg-light py-1">
-              <h4>Your Requests</h4>
-              <div v-for="listing of pendingBooking" class="card my-2 w-100 text-center">
-                <div class="card-body">
-                  <h5 class="card-title">{{listing.tutorName}}</h5>
-                  <p class="card-text">{{listing.date}} {{listing.time}}</p>
-                  <p>Subject: Math</p>
-                  <div v-if="listing.status == 'pending'" class="container-fluid" style="border-radius: 25px;" >
-                    <h6 class="text-warning">PENDING</h6>
+              <div class="container-fluid bg-light py-1 request-box">
+                <h4>Your Requests</h4>
+                <div v-for="listing of pendingBooking" class="card my-2 w-100 text-center">
+                  <div class="card-body">
+                    <h5 class="card-title">{{listing.tutorName}}</h5>
+                    <p class="card-text">{{listing.date}} {{listing.time}}</p>
+                    <p>Subject: Math</p>
+                    <div v-if="listing.status == 'pending'" class="container-fluid" style="border-radius: 25px;" >
+                      <h6 class="text-warning">PENDING</h6>
+                    </div>
+                    <div v-if="listing.status == 'rejected'" class="container-fluid" style="border-radius: 25px;">
+                      <h6 class="text-danger">REJECTED</h6>
+                      <button class="btn btn-secondary btn-sm">Ackowledge</button>
+                    </div>
+                    
+                    
                   </div>
-                  <div v-if="listing.status == 'rejected'" class="container-fluid" style="border-radius: 25px;">
-                    <h6 class="text-danger">REJECTED</h6>
-                    <button class="btn btn-primary btn-sm">Ackowledge</button>
-                  </div>
-                  
-                  
                 </div>
               </div>
             </div>

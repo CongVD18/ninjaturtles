@@ -11,7 +11,8 @@
      <script src="https://unpkg.com/vue@next"></script>
      <!-- Search Icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <strong></strong>
+    <!-- Import Boxicon CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
       * {
         margin: 0;
@@ -31,9 +32,10 @@
       }
 
       .textBox {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.7);
         padding: 15px;
-     
+        border: 5px solid #8B4513;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
 
       /* Filter */
@@ -164,35 +166,58 @@
       margin-top: 65px;
     }
 
-   
-
-
     
-    </style>
+    /* Footer */
+    #footer {
+      padding: 25px 0px;
+      }
+      footer h5 {
+      padding: 10px 0px;
+      /* border: 1px solid; */
+      }
+      #footer li a {
+      text-decoration: none;
+      }
+      .custom-footer-margin {
+      background-color: black;
+      color: white;
+      }
+    /* end footer */
+</style>
+
+
 </head>
 <body>
     <div id="app">
          <!-- Start of Navigation Bar -->
-      <nav class="navbar dark navbar-expand-lg bg-body-tertiary py-3" id="nav_bar">
-          <div class="container">
-            <a class="navbar-brand " href="/ninjaturtles/landingpage/landingpage.html" style="font-weight: bolder; font-size: 26px; color: #007bff">Bridging Dreams</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 20px; color: #007bff; font-weight: bold">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active font-weight-bold" aria-current="page" href="../LogIn/RegisterForm/login.html" style="font-size: 20px; color: #007bff; font-weight: bold">Log In/Sign Up</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-      </nav>   
-      <!-- End of Navigation Bar -->
+  <nav class="navbar dark navbar-expand-lg bg-body-tertiary" id="nav_bar">
+    <div class="container">
+      <a class="navbar-brand" href="/ninjaturtles/landingpage/landingpage.html">
+        <img src="../images/bridgingdreamslogo.png" alt="bridgingDreamsLogo" width="75" height="58" style="margin-left: 60px; outline: none;">
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- ms-auto allows spacebetween the link "Bridging Dream" and others ul-->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Resource Library</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  font-weight-bold" aria-current="page" href="#" style="font-size: 22px; color: #007bff; font-weight: bold; font-family: 'Constantia', serif;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav> 
+  <!-- End of Navigation Bar --> 
 
       <!-- Start of hero section  -->
       <section class=" topSection text-light p-5 text-center text-sm-start" id="container1">
@@ -200,7 +225,7 @@
           <div class="">
             <h1 class="static-txt" >Welcome to <span id="typewriter" style="color: #FFC436;">{{text}}</span><span id="cursor">|</span></h1>
             <p class="lead">
-              "This is where you will find all of the available Lecture Notes, Exercise Worksheets and Exam Papers"
+              This is where you will find all of the available Lecture Notes, Exercise Worksheets and Exam Papers.
             </p>
             <hr class="my-4">
           </div>
@@ -363,13 +388,13 @@
                     <h5 class="text-uppercase mb-0">Follow Us</h5>
                 
                     <ul class="list-unstyled" id="icon">
-                        <li>
-                            <i class='bx bxl-facebook'></i>
-                            <i class='bx bxl-instagram'></i>
-                            <i class='bx bxl-twitter'></i>
-                            <i class='bx bxl-youtube'></i>
-                        </li>
-                    </ul>
+                      <li>
+                          <i class='bx bxl-facebook' style="color: #0069d9"> </i>
+                          <i class='bx bxl-instagram' style="color: rgb(171, 57, 127)"> </i>
+                          <i class='bx bxl-twitter' style="color: #0069d9"> </i>
+                          <i class='bx bxl-youtube' style="color: #d9001d"> </i>
+                      </li>
+                  </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Contact Us</h5>
