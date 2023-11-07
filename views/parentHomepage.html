@@ -255,7 +255,83 @@
       #nav_bar {
         box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
       }
+      /* Nav Bar hovering */
 
+      .navbar-nav li {
+        padding: 0 10px; /* Add padding to create a gap between nav items */
+      }
+
+      .navbar-nav li a {
+        position: relative;
+        text-decoration: none;
+        padding: 6px 0;
+      }
+
+      .navbar-nav li a:before{
+        content: '';
+        height: 3px;
+        width: 0%;
+        background-color: #0D82FF;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all 0.4s ease;
+      }
+
+      .navbar-nav li a:hover:before{
+        width: 100%;
+      }
+
+
+
+      /* End of Nav bar hovering */
+
+      /* button hovering effect */
+      /* Button hovering effect for all buttons except the Acknowledge button */
+      button {
+        border: none;
+        color: #fff;
+        background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
+        border-radius: 20px;
+        background-size: 100% auto;
+        font-family: inherit;
+        font-size: 17px;
+        padding: 0.6em 1.5em;
+      }
+
+      button:hover {
+        background-position: right center;
+        background-size: 200% auto;
+        -webkit-animation: pulse 2s infinite;
+        animation: pulse512 1.5s infinite;
+      }
+
+      @keyframes pulse512 {
+        0% {
+          box-shadow: 0 0 0 0 #05bada66;
+        }
+
+        70% {
+          box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+        }
+      }
+
+      /* end button hovering effect */
+
+      /* Remove the hovering effect and any other styles for the Acknowledge button */
+      button.btn-secondary.btn-sm {
+        background: grey; /* Remove background color */
+        box-shadow: none; /* Remove box shadow */
+        -webkit-animation: none; /* Remove animation */
+        animation: none; /* Remove animation */
+      }
+      /* end of removing effect */
+
+      
     </style>
 
   </head>
@@ -395,7 +471,7 @@
                     <h1 class="name text-dark">{{tutor.name}}</h1>
                     <div class="subjects text-center">
                       <h5 >I'm efficient in teaching:</h5>
-                      <button class="btn btn-warning m-1" disabled v-for="subject in tutor.subject">
+                      <button class="btn btn-warning m-1" disabled v-for="subject in tutor.subject" id="changetext">
                         {{subject}}
                       </button>
                     </div>  
