@@ -258,123 +258,12 @@ section.section-sm {
 
 /* Buttons */
 
-.btn {
-	background-image: url('../img/bg-gold.png');
-	background-position: center;
-	background-size: cover;
-	border-radius: 0;
-	border: none;
-	font-size: 14px;
-	color: #000;
-	font-family: 'Constantia', serif;
-	font-weight: bold;
-	padding: 22px 40px 20px;
-	line-height: 1;
-	outline: none!important;
-	box-shadow: none!important;
-	position: relative;
-}
-
-.btn:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255,255,255,0.4);
-	transition: none;
-}
-
-.btn:hover:before {
-  width: 120%;
-  background-color: rgba(255,255,255,0);
-	transition: all 0.3s ease-in-out;
-}
 
 
-@media (pointer: fine) {
-	.btn:hover:after {
-		right: 40px;
-	}
-}
-
-.btn.btn-transparent {
-	background-image: none;
-	border: 1px solid #707070;
-	text-decoration: underline;
-}
-
-.btn.btn-transparent:before,.btn.btn-transparent:after {
-	display: none;
-}
 
 
-/* Forms */
 
-.form-control {
-	background-color: transparent;
-	border: none;
-	border-bottom: 2px solid #707070;
-	border-radius: 0;
-	color: #646464;
-	font-size: 18px;
-	font-weight: 300;
-	padding: 0 0 1rem;
-}
 
-.form-control:focus {
-  color: #646464;
-  background-color: transparent;
-  border-color: #707070;
-  box-shadow: none;
-}
 
-.form-control::placeholder {
-  color: #b1b1b1;
-}
 
-.form-group {
-	margin-bottom: 3rem;
-}
 
-.subscribe-form {
-	width: 320px;
-}
-
-form label {
-	font-family: 'Constantia', serif;
-	font-size: 25px;
-	font-weight: 400;
-	letter-spacing: 0.1rem;
-	margin-bottom: 1rem;
-}
-
-.form-check {
-	padding-left: 0;
-}
-
-.form-check-input {
-	margin: 4px 10px 0 0;
-	position: relative;
-}
-
-.form-check label {
-	color: #979797;
-	font-family: "runda",sans-serif;
-	font-size: 14px;
-	font-weight: 300;
-	letter-spacing: 0;
-	text-transform: none;
-}
-/* stylelint-disable-next-line no-duplicate-selectors */
-select.form-control {
-  &[size],
-  &[multiple] {
-    height: auto;
-  }
-}
-
-textarea.form-control {
-  height: auto;
-}

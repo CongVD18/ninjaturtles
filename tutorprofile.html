@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutor Profile Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="japanstyle.css">
-
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
@@ -47,9 +44,59 @@
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
         }
+        section {
+            padding-top: 100px;
+            padding-bottom: 45px;
+        }
+
+        section.section-lg {
+            padding-top: 150px;
+            padding-bottom: 130px;
+        }
+
+        section.section-sm {
+            padding-top: 50px;
+            padding-bottom: 45px;
+        }
+
+        h2 {
+            font-size: 33px;
+            letter-spacing: 0.28rem;
+        }
+
+        h3 {
+            font-size: 35px;
+        }
+
+        h4 {
+            font-size: 25px;
+        }
+        .form-check label {
+            color: #979797;
+            font-family: "runda",sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+        .form-check-input {
+            margin: 4px 10px 0 0;
+            position: relative;
+        }
+        p:last-child, ol:last-child, ul:last-child {
+            margin-bottom: 0;
+        }
+
+
 
         #imageUpload {
             display: none;
+        }
+        .z-index-1 {
+	        z-index: 1;
+        }
+        .z-index-minus-1 {
+            z-index: -1!important;
         }
 
         .upload-button {
