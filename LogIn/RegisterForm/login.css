@@ -14,6 +14,33 @@ body{
   
 }
 
+/* Nav Bar hovering */
+
+.navbar-nav li {
+  padding: 0 10px; /* Add padding to create a gap between nav items */
+}
+
+.navbar-nav li a {
+  position: relative;
+  text-decoration: none;
+  padding: 6px 0;
+}
+
+.navbar-nav li a:before{
+  content: '';
+  height: 3px;
+  width: 0%;
+  background-color: #0D82FF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 0.4s ease;
+}
+
+.navbar-nav li a:hover:before{
+  width: 100%;
+}
+/* End of Nav bar hovering */
 
 /* Add space between the navigation brand and the navigation links */
 .navbar-brand {
