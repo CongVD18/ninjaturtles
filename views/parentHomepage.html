@@ -22,7 +22,9 @@
     <!-- Import Boxicon CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-                
+       
+    <!-- Changes made: change background colour of the profile display, add in the hovering effect for buttons, change layout of the display, change from container-fluid to container (change col-1 to col-2 for upcoming requests and add margin left for the profiles display) -->
+    <!-- change font size of the subjects to 14px -->
     <style>
       * {
         margin: 0;
@@ -37,6 +39,17 @@
 
 
       /* Tutor Profile Display */
+
+
+      .card-display:hover {
+        transform: scale(1.05);
+      }
+      .card-display {
+        transition: transform 0.5s;
+      }
+
+
+      
       .card-display {
           border-radius: 25px;
           background-color: #FFF;
@@ -69,13 +82,15 @@
           padding: 18px 0;
       }
 
+
+      /* Need to change the colour */
       .overlay {
           position: absolute;
           left: 0;
           top: 0;
           height: 100%;
           width: 100%;
-          background-color: #4070F4;
+          background-color: #AEDEFC;
           border-radius: 25px 25px 0 25px;
       }
 
@@ -87,8 +102,11 @@
           bottom: -40px;
           height: 40px;
           width: 40px;
-          background-color: #4070F4;
+          background-color: #AEDEFC;
       }
+
+
+      /* Need to change the colour */
 
       .overlay::after {
           border-radius: 0 25px 0 0;
@@ -106,6 +124,7 @@
       .name {
           font-size: 22px;
           font-weight: 500;
+          margin-top: 5px;
       }
 
       .cardButton {
@@ -284,6 +303,8 @@
 
 
 
+
+
       /* End of Nav bar hovering */
 
       /* button hovering effect */
@@ -424,9 +445,9 @@
 
       </div>
       <div class="container-fluid my-5">
-        <div class="row py-1 mx-4 justify-content-around">
+        <div class="row py-1 mx-2 justify-content-center">
           <!-- Display Tutors' Profiles Section -->
-          <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display border mt-2">
+          <div class="col-lg-9 col-sm-12 py-1 bg-light tutor-display border mt-2 me-3">
             <div class="row text-center">
               <h4 style="font-weight: bold" >Our Recommended Tutors</h4>
             </div>
@@ -438,7 +459,7 @@
             </div>
             <!-- Display Tutors' Profiles -->
             <div class="row px-1 justify-content-around ">
-              <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-2">
+              <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-3">
                 <div  class="card-display">
                   <div class="image-content">
                       <span class="overlay"></span>
@@ -451,7 +472,8 @@
                     <h1 class="name text-dark">{{tutor.name}}</h1>
                     <div class="subjects text-center">
                       <h5 >I'm efficient in teaching:</h5>
-                      <button class="btn btn-warning m-1" disabled v-for="subject in tutor.subject" id="changetext">
+                      <!-- Change font size to 14px -->
+                      <button class="btn btn-warning m-1" style="font-size: 14px;" disabled v-for="subject in tutor.subject" id="changetext">
                         {{subject}}
                       </button>
                     </div>  
@@ -466,7 +488,7 @@
           </div>
           
           <!-- Display Upcoming and Your Requests -->
-          <div class="col-lg-1 col-12 upcoming-request "> 
+          <div class="col-lg-2 col-12 upcoming-request "> 
             <div class="row  text-center">
               <!-- Upcoming Session -->
               <div class="container-fluid bg-light py-1  upcoming-box border mt-2">
