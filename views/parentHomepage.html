@@ -37,6 +37,19 @@
 
 
       /* Tutor Profile Display */
+
+
+      /* Add this inn, its new */
+      .card-display:hover {
+        transform: scale(1.05);
+      }
+      .card-display {
+        transition: transform 0.5s;
+      }
+
+      /* End of add this in */
+
+      
       .card-display {
           border-radius: 25px;
           background-color: #FFF;
@@ -69,13 +82,15 @@
           padding: 18px 0;
       }
 
+
+      /* Need to change the colour */
       .overlay {
           position: absolute;
           left: 0;
           top: 0;
           height: 100%;
           width: 100%;
-          background-color: #4070F4;
+          background-color: #98E4FF;
           border-radius: 25px 25px 0 25px;
       }
 
@@ -87,8 +102,11 @@
           bottom: -40px;
           height: 40px;
           width: 40px;
-          background-color: #4070F4;
+          background-color: #98E4FF;
       }
+
+
+      /* Need to change the colour */
 
       .overlay::after {
           border-radius: 0 25px 0 0;
@@ -106,6 +124,7 @@
       .name {
           font-size: 22px;
           font-weight: 500;
+          margin-top: 5px;
       }
 
       .cardButton {
@@ -288,7 +307,7 @@
 
       /* button hovering effect */
       /* Button hovering effect for all buttons except the Acknowledge button */
-      button {
+      /* button {
         border: none;
         color: #fff;
         background-image: linear-gradient(30deg, #0400ff, #4ce3f7);
@@ -329,7 +348,7 @@
         -webkit-animation: none; /* Remove animation */
         animation: none; /* Remove animation */
       }
-      /* end of removing effect */
+     /* end of removing effect */
 
       
     </style>
@@ -444,7 +463,7 @@
 
       </div>
       <div class="container-fluid my-5">
-        <div class="row py-1 mx-4 justify-content-around">
+        <div class="row py-1 mx-2 justify-content-around">
           <!-- Display Tutors' Profiles Section -->
           <div class="col-lg-10 col-sm-12 py-1 bg-light tutor-display border mt-2">
             <div class="row text-center">
@@ -458,7 +477,7 @@
             </div>
             <!-- Display Tutors' Profiles -->
             <div class="row px-1 justify-content-around ">
-              <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-2">
+              <div v-for="tutor of tutors" class="col-lg-3 col-md-5 col-12 my-3">
                 <div  class="card-display">
                   <div class="image-content">
                       <span class="overlay"></span>
