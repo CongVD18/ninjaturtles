@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2'
+
 
 //Retrieve tutors with active = true"
 let tutorProfiles = [
